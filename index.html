@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 231 - Web Frontend Development - Danilo Rafael da Silva Costa</title>
+    <meta name="description" content="Academic portfolio of Danilo Rafael da Silva Costa for the WDD 231 course, featuring web development courses and projects.">
+    <meta name="author" content="Danilo Rafael da Silva Costa">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.svg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    
+    <!-- JavaScript Files -->
+    <script src="scripts/dates.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/courses.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo-box">
+            <img src="images/logo.svg" alt="Danilo Costa Logo" width="40" height="40">
+            <span class="site-name">Danilo Rafael da Silva Costa</span>
+        </div>
+        <button id="menu" aria-label="Navigation Menu"></button>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="chamber.html">Chamber Project</a>
+            <a href="project.html">Final Project</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Home</h1>
+
+        <section class="card">
+            <h2>Course Work</h2>
+            <ul>
+                <li>WDD 231 - Web Frontend Development II</li>
+                <li>HTML5 & CSS3 Modern Standards</li>
+                <li>Responsive Web Design & Grid Systems</li>
+                <li>JavaScript DOM Manipulation & Asynchronous Programming</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Student Photo</h2>
+            <img src="images/profile.jpg" alt="Profile photo of Danilo Rafael da Silva Costa" loading="lazy" width="200" height="200">
+        </section>
+
+        <section class="card courses-section">
+            <h2>Web Certificate Courses</h2>
+
+            <div class="filters">
+                <button id="all">All</button>
+                <button id="wdd">WDD</button>
+                <button id="cse">CSE</button>
+            </div>
+
+            <div id="courses"></div>
+
+            <p id="credits"></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social">
+            <a href="https://github.com/danilorsc" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://linkedin.com/in/danilo-rafael-silva-costa" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:danilo.costa@escola.fiap.com.br">Email</a>
+        </div>
+
+        <p>
+            &copy; <span id="currentyear"></span> 
+            Danilo Rafael da Silva Costa 
+            | São Paulo, Brazil
+        </p>
+
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
