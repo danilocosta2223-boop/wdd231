@@ -62,7 +62,6 @@ function displayCourses(courseList){
         courseContainer.appendChild(card);
     });
 
-    // Soma os créditos utilizando reduce()
     const totalCredits = courseList.reduce(
         (sum, course) => sum + course.credits, 0
     );
@@ -70,10 +69,8 @@ function displayCourses(courseList){
     creditsContainer.textContent = `Total Credits: ${totalCredits}`;
 }
 
-// Inicializa a página exibindo todos os cursos
 displayCourses(courses);
 
-// Event Listeners para os botões de filtro
 document.querySelector("#all").addEventListener("click", () => {
     displayCourses(courses);
 });
