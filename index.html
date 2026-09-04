@@ -3,56 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WDD231 Certificate Course Work portfolio and dynamic course list developed by Danilo Rafael da Silva Costa.">
+    <meta name="description" content="Página inicial do curso WDD231">
     <meta name="author" content="Danilo Rafael da Silva Costa">
-    <meta name="robots" content="index, follow">
-    <title>WDD231 - Certificate Course Work</title>
-    
-    <!-- Caminhos corretos para a pasta styles -->
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/larger.css">
-    
-    <!-- Caminhos corretos para a pasta scripts -->
-    <script src="scripts/courses.js" defer></script>
-    <script src="scripts/dates.js" defer></script>
-    <script src="scripts/navigation.js" defer></script>
-</head>
-<body>
-    <header>
-        <h1>WDD231 - Web Frontend Development</h1>
-        <nav aria-label="Main Navigation">
-            <a href="index.html" class="active">Home</a>
-            <a href="certificate.html">Certificado</a>
-            <a href="projects.html">Projetos</a>
-        </nav>
-    </header>
 
-    <main>
-        <section class="card">
-            <h2>Certificado de Desenvolvimento Web</h2>
-            <p>Lista de cursos cursados e planejados para o certificado WDD231.</p>
-            
-            <!-- Filtros de Cursos -->
-            <div class="filter-buttons" role="group" aria-label="Course Filters">
-                <button id="all-btn" type="button">All</button>
-                <button id="wdd-btn" type="button">WDD</button>
-                <button id="cse-btn" type="button">CSE</button>
-            </div>
+    <title>WDD231 - Danilo Costa</title>
 
-            <!-- Container onde os cursos serão injetados dinamicamente via JS -->
-            <div id="courses-container" class="courses-grid"></div>
+    images/logo.svg
 
-            <!-- Exibição do total de créditos usando reduce() -->
-            <div class="credits-summary">
-                <p>Total de créditos das matérias exibidas: <span id="total-credits">0</span></p>
-            </div>
-        </section>
-    </main>
+    <link rel="preconnect" href="https://fonts.googleapis.comref="https://fonts.gstatic.coms.googleapis.com/css2?family=Poppins:wght@300;400;600=swap
 
-    <footer>
-        <p>&copy; <span id="anoatual"></span> | Danilo Rafael da Silva Costa | Brasil</p>
-        <p>Última modificação: <span id="ultimamodificacao"></span></p>
-    </footer>
+    <link rel="stylesheet"   <link rel="l.css
+    <link rel="stylesheet  <script src="scripts/navigation  scripts/dates.jsscript>
+    <script src="scripts/courses.js" defer></
+<header>
+    <div class="logo-area">
+        images/logo.svg
+        <span>Danilo Costa</span>
+    </div>
+
+    <button id="menuButton">☰</button>
+
+    <nav id="navMenu">
+        <a href="index.html" class="active">Home</a>
+        <a href="chamber.html">Projeto
+        <a href="project.html">Projeto Final</v>
+</header>
+
+<main>
+    <h1>Home</h1>
+
+    <section>
+        <h2>Sobre Mim</h2>
+        <p>Sou estudante da FIAP, formado em Administração, com MBA em Gestão de Projetos e experiência em coordenação administrativa, gestão operacional e tecnologia.</p>
+    </section>
+
+    <section>
+        <h2>Foto</h2>
+        <img src="images/profile.jpg" alt="Foto<section>
+        <h2>Certificados e Cursos</h2>
+
+        <div class="filters">
+            <button id="all">Todos</button>
+            <button id="wdd">WDD</button>
+            <button id="cse">CSE</button>
+        </div>
+
+        <div id="courseContainer"></div>
+
+        <p id="credits"></p>
+    </section>
+</main>
+
+<footer>
+    <div class="social">
+        <a href="https://m/GitHub</a>
+        <a href="https://www.linkedin.com/in/ta2223/LinkedIn</a>
+    </div>
+
+    <p>
+        © <span id="currentYear"></span>
+        Danilo Rafael da Silva Costa | São Paulo - Brasil
+    </p>
+
+    <p id="lastModified"></p>
+</footer>
+
 </body>
 </html>
