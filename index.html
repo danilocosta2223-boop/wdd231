@@ -3,70 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Página inicial do curso WDD231">
+    <meta name="description" content="Página inicial do curso WDD231 - Desenvolvido por Danilo Rafael da Silva Costa">
     <meta name="author" content="Danilo Rafael da Silva Costa">
+    <meta name="robots" content="index, follow">
+    
+    <title>WDD231 | Danilo Costa</title>
+    
+    <!-- Links para Fontes e Estilos nas pastas corretas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="estilos/normalize.css">
+    <link rel="stylesheet" href="estilos/small.css">
+    <link rel="stylesheet" href="estilos/larger.css">
+    
+    <!-- Scripts JavaScript com defer -->
+    <script src="roteiros/navigation.js" defer></script>
+    <script src="roteiros/dates.js" defer></script>
+    <script src="roteiros/courses.js" defer></script>
+</head>
+<body>
 
-    <title>WDD231 - Danilo Costa</title>
-
-    images/logo.svg
-
-    <link rel="preconnect" href="https://fonts.googleapis.comref="https://fonts.gstatic.coms.googleapis.com/css2?family=Poppins:wght@300;400;600=swap
-
-    <link rel="stylesheet"   <link rel="l.css
-    <link rel="stylesheet  <script src="scripts/navigation  scripts/dates.jsscript>
-    <script src="scripts/courses.js" defer></
-<header>
-    <div class="logo-area">
-        images/logo.svg
-        <span>Danilo Costa</span>
-    </div>
-
-    <button id="menuButton">☰</button>
-
-    <nav id="navMenu">
-        <a href="index.html" class="active">Home</a>
-        <a href="chamber.html">Projeto
-        <a href="project.html">Projeto Final</v>
-</header>
-
-<main>
-    <h1>Home</h1>
-
-    <section>
-        <h2>Sobre Mim</h2>
-        <p>Sou estudante da FIAP, formado em Administração, com MBA em Gestão de Projetos e experiência em coordenação administrativa, gestão operacional e tecnologia.</p>
-    </section>
-
-    <section>
-        <h2>Foto</h2>
-        <img src="images/profile.jpg" alt="Foto<section>
-        <h2>Certificados e Cursos</h2>
-
-        <div class="filters">
-            <button id="all">Todos</button>
-            <button id="wdd">WDD</button>
-            <button id="cse">CSE</button>
+    <header>
+        <div class="logo-area">
+            <img src="imagens/logo.svg" alt="Logo do site WDD231">
+            <span>Danilo Costa</span>
         </div>
+        
+        <button id="menuButton" aria-label="Abrir Menu">☰</button>
+        
+        <nav id="navMenu">
+            <a href="index.html" class="active">Home</a>
+            <a href="camara.html">Projeto Câmara</a>
+            <a href="projeto.html">Projeto Final</a>
+        </nav>
+    </header>
 
-        <div id="courseContainer"></div>
+    <main>
+        <h1>Home</h1>
+        
+        <section>
+            <h2>Sobre Mim</h2>
+            <p>
+                Sou estudante da FIAP, formado em Administração, com MBA em Gestão de Projetos e experiência em coordenação administrativa, gestão operacional e tecnologia.
+            </p>
+        </section>
+        
+        <section>
+            <h2>Foto de Perfil</h2>
+            <img src="imagens/profile.jpg" alt="Foto de perfil de Danilo Rafael da Silva Costa" class="profile">
+        </section>
+        
+        <section class="courses-section">
+            <h2>Certificados e Cursos</h2>
+            
+            <div class="filters" role="group" aria-label="Filtros de Cursos">
+                <button id="all" type="button">Todos</button>
+                <button id="wdd" type="button">WDD</button>
+                <button id="cse" type="button">CSE</button>
+            </div>
+            
+            <div id="courseContainer"></div>
+            
+            <p id="credits"></p>
+        </section>
+    </main>
 
-        <p id="credits"></p>
-    </section>
-</main>
-
-<footer>
-    <div class="social">
-        <a href="https://m/GitHub</a>
-        <a href="https://www.linkedin.com/in/ta2223/LinkedIn</a>
-    </div>
-
-    <p>
-        © <span id="currentYear"></span>
-        Danilo Rafael da Silva Costa | São Paulo - Brasil
-    </p>
-
-    <p id="lastModified"></p>
-</footer>
+    <footer>
+        <div class="social">
+            <a href="https://github.com/danilocosta2223-boop" target="_blank" rel="noopener">GitHub</a> | 
+            <a href="https://www.linkedin.com/in/danilocosta2223/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        
+        <p>
+            &copy; <span id="currentYear"></span> 
+            Danilo Rafael da Silva Costa | São Paulo - Brasil
+        </p>
+        
+        <p id="lastModified"></p>
+    </footer>
 
 </body>
 </html>
