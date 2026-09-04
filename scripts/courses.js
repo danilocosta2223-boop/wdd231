@@ -1,3 +1,4 @@
+// Array de Cursos (Item 8 da Rubrica)
 const courses = [
     {
         subject: 'CSE',
@@ -43,42 +44,57 @@ const courses = [
     }
 ];
 
-const courseContainer = document.querySelector("#courses");
-const creditsContainer = document.querySelector("#credits");
+// Elementos do DOM
+const coursesContainer = document.getElementById('courses-container');
+const totalCreditsEl = document.getElementById('total-credits');
+const allBtn = document.getElementById('all-btn');
+const wddBtn = document.getElementById('wdd-btn');
+const cseBtn = document.getElementById('cse-btn');
 
-function displayCourses(courseList){
-    courseContainer.innerHTML = "";
-
-    courseList.forEach(course => {
-        const card = document.createElement("div");
-        card.textContent = `${course.subject} ${course.number}`;
+// Função para exibir os cursos e calcular os créditos com reduce() (Item 10 e 11)
+function displayCourses(filteredCourses) {
+    coursesContainer.innerHTML = '';
+    
+    filteredCourses.forEach(course => {
+        const card = document.createElement('div');
+        card.classList.add('course-card');
         
-        if(course.completed){
-            card.classList.add("completed");
-        } else {
-            card.classList.add("incomplete");
+        // Aplica a classe completed se o curso estiver concluído (Item 11)
+        if (course.completed) {
+            card.classList.add('completed');
         }
         
-        courseContainer.appendChild(card);
+        card.innerHTML = `
+            <h3>${course.subject} ${course.number}</h3>
+            <p>${course.credits} Créditos</p>
+        `;
+        coursesContainer.appendChild(card);
     });
 
-    const totalCredits = courseList.reduce(
-        (sum, course) => sum + course.credits, 0
+    // Cálculo total de créditos utilizando obrigatoriamente reduce() (Item 10)
+    const totalCredits = filteredCourses.reduce(
+        (sum, course) => sum + course.credits, 
+        0
     );
-
-    creditsContainer.textContent = `Total Credits: ${totalCredits}`;
+    totalCreditsEl.textContent = totalCredits;
 }
 
+// Eventos de clique para os filtros (Item 9)
+allBtn.addEventListener('click', () => displayCourses(courses));
+
+wddBtn.addEventListener('click', () => {
+    const wddFiltered = courses.filter(course => course.subject === 'WDD');
+    displayCourses(wddFiltered);
+});
+
+cseBtn.addEventListener('click', () => {
+    const cseFiltered = courses.filter(course => course.subject === 'CSE');
+    displayCourses(cseFiltered);
+});
+
+// Rodapé dinâmico: Ano atual e última modificação (Item 12)
+document.getElementById("anoatual").textContent = new Date().getFullYear();
+document.getElementById("ultimamodificacao").textContent = document.lastModified;
+
+// Inicializa a página exibindo todos os cursos por padrão
 displayCourses(courses);
-
-document.querySelector("#all").addEventListener("click", () => {
-    displayCourses(courses);
-});
-
-document.querySelector("#wdd").addEventListener("click", () => {
-    displayCourses(courses.filter(course => course.subject === "WDD"));
-});
-
-document.querySelector("#cse").addEventListener("click", () => {
-    displayCourses(courses.filter(course => course.subject === "CSE"));
-});

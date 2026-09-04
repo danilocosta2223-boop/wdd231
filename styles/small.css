@@ -1,199 +1,149 @@
-* {
-    box-sizing: border-box;
+:root {
+    --primary-color: #0A3B77;
+    --accent-color: #2563EB;
+    --bg-color: #F8FAFC;
+    --card-bg: #FFFFFF;
+    --text-color: #0F172A;
+    --text-muted: #334155;
+    --border-color: #CBD5E1;
 }
 
 body {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f6f8;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
 header {
-    background-color: #002244;
-    color: white;
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    padding: 1rem 2rem;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    position: relative;
+    gap: 1rem;
 }
 
-.logo-box {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-header img {
-    height: 40px;
-    width: auto;
-}
-
-.site-name {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: white;
-}
-
-#menu {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.8rem;
-    cursor: pointer;
-}
-
-#menu::before {
-    content: "☰";
-}
-
-#menu.open::before {
-    content: "✖";
+header h1 {
+    font-size: 1.25rem;
+    margin: 0;
+    color: #FFFFFF;
 }
 
 nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #002244;
-    flex-direction: column;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    z-index: 10;
-}
-
-nav.open {
     display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
 }
 
 nav a {
-    color: white;
+    color: #FFFFFF;
     text-decoration: none;
-    padding: 1rem;
-    text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.3s;
+    font-weight: 600;
 }
 
-nav a:hover, nav a.active {
-    background-color: #004080;
+/* Indicador de página atual (Wayfinding - Item 5) */
+nav a.active, nav a:hover {
+    background-color: var(--accent-color);
 }
 
 main {
-    padding: 1rem;
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-h1 {
-    text-align: center;
-    color: #002244;
-}
-
-section {
-    background: white;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-section img {
-    display: block;
+    padding: 1.5rem;
+    max-width: 1000px;
     margin: 0 auto;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 1.5rem;
     border-radius: 8px;
-    max-width: 100%;
-    height: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border: 1px solid var(--border-color);
 }
 
-.card ul {
-    padding-left: 1.2rem;
-    margin: 0.5rem 0;
-}
-
-.card li {
-    margin: 0.3rem 0;
-    font-size: 0.95rem;
-}
-
-.filters {
+.filter-buttons {
+    margin: 1.5rem 0;
     display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-.filters button {
-    padding: 0.5rem 1rem;
-    border: 1px solid #002244;
-    background: white;
-    color: #002244;
-    border-radius: 5px;
+.filter-buttons button {
+    padding: 0.6rem 1.2rem;
+    background-color: #E2E8F0;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
     cursor: pointer;
-    font-weight: 700;
+    font-weight: bold;
+    color: var(--text-color);
+    transition: background 0.2s, color 0.2s;
 }
 
-.filters button:hover {
-    background: #002244;
-    color: white;
+.filter-buttons button:hover, .filter-buttons button:focus {
+    background-color: var(--accent-color);
+    color: #FFFFFF;
 }
 
-#courses {
+.courses-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 0.75rem;
-    margin-bottom: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-#courses div {
-    background: #cbd5e1;
-    padding: 1rem;
-    text-align: center;
+.course-card {
+    background-color: #F1F5F9;
+    border: 1px solid var(--border-color);
+    padding: 1.2rem;
     border-radius: 6px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    color: #1e293b;
-}
-
-.completed {
-    background: #166534 !important;
-    color: white !important;
-}
-
-#credits {
     text-align: center;
-    font-weight: 700;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* Destaque para cursos concluídos (Item 11 com alto contraste garantido) */
+.course-card.completed {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    border-color: var(--primary-color);
+}
+
+.credits-summary {
+    font-size: 1.1rem;
+    font-weight: bold;
     margin-top: 1rem;
-    color: #002244;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+    color: var(--text-color);
 }
 
 footer {
-    background-color: #002244;
-    color: white;
     text-align: center;
-    padding: 1.5rem 1rem;
-    margin-top: 2rem;
-}
-
-footer .social {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-footer .social a {
-    color: white;
-    text-decoration: none;
-}
-
-footer .social a:hover {
-    text-decoration: underline;
-}
-
-footer p {
-    margin: 0.5rem 0;
+    padding: 1.5rem;
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    margin-top: 3rem;
     font-size: 0.9rem;
+}
+
+/* Responsividade Mobile Ajustada */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav {
+        width: 100%;
+        justify-content: space-between;
+    }
+    main {
+        padding: 1rem;
+    }
 }
