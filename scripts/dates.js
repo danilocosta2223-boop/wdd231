@@ -1,5 +1,14 @@
-document.getElementById("currentYear").textContent =
-new Date().getFullYear();
+// Ano atual no rodapé
+const currentYear = document.querySelector('#currentYear');
 
-document.getElementById("lastModified").textContent =
-`Última Modificação: ${document.lastModified}`;
+if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+}
+
+// Data da última modificação
+const lastModified = document.querySelector('#lastModified');
+
+if (lastModified) {
+    lastModified.textContent =
+        `Última Modificação: ${document.lastModified}`;
+}
