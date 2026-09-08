@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Diretório de Empresas da Câmara de Comércio de São Paulo">
+    <meta name="author" content="Danilo Rafael da Silva Costa">
+    
+    <title>Diretório de Empresas | Câmara de Comércio</title>
+    
+    <meta property="og:title" content="Diretório de Empresas | Câmara de Comércio">
+    <meta property="og:description" content="Diretório de empresas da Câmara de Comércio de São Paulo">
+    <meta property="og:image" content="https://danilocosta2223-boop.github.io/wdd231/camara/imagens/social.jpg">
+    <meta property="og:url" content="https://danilocosta2223-boop.github.io/wdd231/camara/diretorio.html">
+
+    <link rel="icon" href="imagens/favicon.ico">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="estilos/normalize.css">
+    <link rel="stylesheet" href="estilos/directory.css">
+    
+    <script src="scripts/directory.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <h1>Câmara de Comércio</h1>
+        </div>
+        
+        <button id="menuButton" aria-label="Abrir Menu">☰</button>
+        
+        <nav id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="diretorio.html" class="active">Diretório</a>
+            <a href="#">Descobrir</a>
+            <a href="#">Junte-se</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Diretório de Empresas</h2>
+        
+        <div class="view-buttons" role="group" aria-label="Alternar Visualização">
+            <button id="grid" class="active-view">Grid</button>
+            <button id="list">Lista</button>
+        </div>
+        
+        <div id="directory" class="grid"></div>
+    </main>
+
+    <footer>
+        <p>
+            &copy; <span id="currentYear"></span> 
+            Danilo Rafael da Silva Costa | WDD 231
+        </p>
+        <p id="lastModified"></p>
+    </footer>
+
+</body>
+</html>

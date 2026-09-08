@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Padaria São Paulo",
+        "address": "Rua Central, 100 - Centro, São Paulo",
+        "phone": "(11) 99999-1111",
+        "website": "https://www.padariasaopaulo.com.br",
+        "image": "padaria.jpg",
+        "membership": 3,
+        "description": "Tradição em pães artesanais e confeitaria fina desde 1995."
+    },
+    {
+        "name": "Mercado Brasil",
+        "address": "Av. Paulista, 500 - Bela Vista, São Paulo",
+        "phone": "(11) 99999-2222",
+        "website": "https://www.mercadobrasil.com.br",
+        "image": "mercado.jpg",
+        "membership": 2,
+        "description": "Supermercado completo com produtos locais e importados."
+    },
+    {
+        "name": "Tech Soluções SP",
+        "address": "Rua Augusta, 1200 - Consolação, São Paulo",
+        "phone": "(11) 99999-3333",
+        "website": "https://www.techsp.com.br",
+        "image": "tech.jpg",
+        "membership": 3,
+        "description": "Consultoria em TI, automação e infraestrutura de redes."
+    },
+    {
+        "name": "Café Paulista",
+        "address": "Praça da Sé, 45 - Centro, São Paulo",
+        "phone": "(11) 99999-4444",
+        "website": "https://www.cafepaulista.com.br",
+        "image": "cafe.jpg",
+        "membership": 1,
+        "description": "Cafeteria aconchegante com grãos especiais do estado."
+    },
+    {
+        "name": "Logística Express",
+        "address": "Av. Marginal Tietê, 1500 - Barra Funda, São Paulo",
+        "phone": "(11) 99999-5555",
+        "website": "https://www.logisticaexpress.com.br",
+        "image": "logistica.jpg",
+        "membership": 2,
+        "description": "Serviços de entrega rápida e transporte corporativo."
+    },
+    {
+        "name": "Academia Corpo & Vida",
+        "address": "Rua Oscar Freire, 800 - Jardins, São Paulo",
+        "phone": "(11) 99999-6666",
+        "website": "https://www.corpovida.com.br",
+        "image": "academia.jpg",
+        "membership": 3,
+        "description": "Musculação, treinos funcionais e acompanhamento personalizado."
+    },
+    {
+        "name": "Livraria Saber",
+        "address": "Av. Brigadeiro Luís Antônio, 300 - Bela Vista, São Paulo",
+        "phone": "(11) 99999-7777",
+        "website": "https://www.livrariasaber.com.br",
+        "image": "livraria.jpg",
+        "membership": 1,
+        "description": "Livros técnicos, literários e espaço para eventos culturais."
+    }
+]
