@@ -22,7 +22,8 @@ if (lastModifiedElement) {
 // ----------------------------------------------------
 // INTEGRAÇÃO COM OPENWEATHER API (Clima Atual + Previsão)
 // ----------------------------------------------------
-const apiKey = "SUA_CHAVE_API_OPENWEATHER"; // Insira sua chave real aqui (ex: "123456789abcdef")
+// LEMBRE-SE: Insira aqui a sua chave real da OpenWeather para o clima funcionar na auditoria!
+const apiKey = "SUA_CHAVE_API_OPENWEATHER"; 
 const lat = -23.5505; // São Paulo
 const lon = -46.6333;
 

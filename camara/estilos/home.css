@@ -1,17 +1,213 @@
-/* Classes para o Clima (Eliminando estilos inline exigidos pela auditoria) */
-.weather-desc {
-    text-transform: capitalize;
+/* ==========================================
+   RESET E CONFIGURAÇÕES GLOBAIS
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.forecast-desc {
-    font-size: 0.85rem;
-    text-transform: capitalize;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #f4f6f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* ==========================================
+   HEADER E NAVEGAÇÃO
+   ========================================== */
+header {
+    background-color: #0b2545;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+#menuButton {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: none; /* Oculto no desktop */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    background-color: #134074;
+}
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+.hero {
+    margin-bottom: 2.5rem;
+}
+
+.hero-image-container {
+    position: relative;
+    width: 100%;
+    max-height: 450px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.cta-button {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #8da9c4;
+    color: #0b2545;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #ee6c4d;
+    color: #ffffff;
+    transform: translateX(-50%) translateY(-2px);
+}
+
+/* ==========================================
+   SEÇÕES GERAIS (Títulos e Espaçamentos)
+   ========================================== */
+section {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+section h2 {
+    color: #0b2545;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+}
+
+/* ==========================================
+   EVENTOS
+   ========================================== */
+.events-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.events-container article {
+    background-color: #f8fafc;
+    border-left: 4px solid #134074;
+    padding: 1.2rem;
+    border-radius: 4px;
+}
+
+.events-container h3 {
+    color: #134074;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.events-container p {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+}
+
+/* ==========================================
+   CLIMA E PREVISÃO DO TEMPO
+   ========================================== */
+.weather-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    align-items: center;
 }
 
 .weather-current-card {
     display: flex;
     align-items: center;
     gap: 1rem;
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.weather-current-card img {
+    width: 64px;
+    height: 64px;
+}
+
+.temp {
+    font-size: 1.5rem;
+    color: #0b2545;
+}
+
+.weather-desc {
+    text-transform: capitalize;
+    color: #555555;
 }
 
 .forecast-list {
@@ -23,8 +219,152 @@
 
 .forecast-item {
     text-align: center;
-    border: 1px solid #ddd;
-    padding: 0.5rem;
+    border: 1px solid #e2e8f0;
+    padding: 0.8rem;
     border-radius: 8px;
-    background: #f9f9f9;
+    background: #f8fafc;
+    flex: 1;
+    min-width: 90px;
+}
+
+.forecast-item img {
+    width: 45px;
+    height: 45px;
+}
+
+.forecast-desc {
+    font-size: 0.85rem;
+    text-transform: capitalize;
+    color: #666666;
+}
+
+/* ==========================================
+   SPOTLIGHTS (Empresas em Destaque)
+   ========================================== */
+.spotlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.member-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.member-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    background: #ffffff;
+    padding: 0.5rem;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+}
+
+.member-info h3 {
+    color: #0b2545;
+    margin-bottom: 0.5rem;
+}
+
+.member-info .tagline {
+    font-style: italic;
+    color: #666666;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.member-info p {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.member-info a {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #134074;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.member-info a:hover {
+    background-color: #0b2545;
+}
+
+/* ==========================================
+   RODAPÉ
+   ========================================== */
+footer {
+    background-color: #0b2545;
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin-bottom: 0.3rem;
+}
+
+/* ==========================================
+   RESPONSIVIDADE (Mobile)
+   ========================================== */
+@media (max-width: 768px) {
+    #menuButton {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #0b2545;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    nav.open {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    nav a {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 0;
+    }
+
+    .weather-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-button {
+        font-size: 0.95rem;
+        padding: 0.6rem 1.2rem;
+        bottom: 15px;
+    }
 }
