@@ -1,0 +1,30 @@
+/* Classes para o Clima (Eliminando estilos inline exigidos pela auditoria) */
+.weather-desc {
+    text-transform: capitalize;
+}
+
+.forecast-desc {
+    font-size: 0.85rem;
+    text-transform: capitalize;
+}
+
+.weather-current-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.forecast-list {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.forecast-item {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
