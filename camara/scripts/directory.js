@@ -1,4 +1,5 @@
-const url = "dados/membros.json";
+// URL corrigida para a pasta "data" exigida pela auditoria
+const url = "data/membros.json";
 const directory = document.querySelector("#directory");
 const gridButton = document.querySelector("#grid");
 const listButton = document.querySelector("#list");
