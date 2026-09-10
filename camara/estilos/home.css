@@ -8,7 +8,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: #333;
     background-color: #f4f6f8;
     line-height: 1.6;
@@ -26,14 +26,20 @@ header {
     align-items: center;
 }
 
+.site-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
 nav a {
     color: #fff;
     text-decoration: none;
     margin-left: 1.5rem;
-    font-weight: bold;
+    font-weight: 500;
 }
 
-nav a:hover {
+nav a:hover,
+nav a.active {
     color: #38bdf8;
 }
 
@@ -43,7 +49,7 @@ nav a:hover {
     background-color: #e2e8f0;
 }
 
-.hero img {
+.hero-image {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
@@ -58,10 +64,16 @@ nav a:hover {
     padding: 0 1rem;
 }
 
+main h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #0f172a;
+}
+
 /* ==========================================
    SEÇÕES DE SPOTLIGHTS E EVENTOS
    ========================================== */
-.spotlights, .events-section {
+.spotlights-section, .events-section {
     background: #fff;
     padding: 2rem;
     margin-bottom: 2rem;
@@ -69,8 +81,50 @@ nav a:hover {
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
+.spotlights-grid {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.spotlight-card {
+    background: #f8fafc;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.spotlight-card img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+/* Fallback para Spotlights */
+.spotlight-fallback {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.spotlight-fallback-card {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    flex: 1;
+    min-width: 250px;
+}
+
 /* ==========================================
-   ESTILOS DE CLIMA E PREVISÃO (ATUALIZADO)
+   ESTILOS DE CLIMA E PREVISÃO
    ========================================== */
 .weather-section {
     background: #fff;
@@ -88,6 +142,10 @@ nav a:hover {
 
 .weather-desc {
     text-transform: capitalize;
+}
+
+.forecast-title {
+    margin-top: 1.5rem;
 }
 
 .forecast-container {
@@ -117,4 +175,8 @@ footer {
     background-color: #0f172a;
     color: #fff;
     margin-top: 3rem;
+}
+
+footer p {
+    margin: 0.25rem 0;
 }
