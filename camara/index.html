@@ -3,24 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Câmara de Comércio | Página Inicial</title>
-    <meta name="description" content="Página inicial da Câmara de Comércio. Conectando empresários, fortalecendo negócios e impulsionando o desenvolvimento regional.">
-    <meta name="author" content="Danilo Rafael da Silva Costa">
+    <title>Câmara de Comércio de São Paulo | Página Inicial</title>
+    
+    <!-- Meta Tags Open Graph -->
+    <meta property="og:title" content="Câmara de Comércio | Página Inicial">
+    <meta property="og:description" content="Página inicial da Câmara de Comércio de São Paulo com eventos, informações climáticas e empresas em destaque.">
+    <meta property="og:image" content="https://danilocosta2223-boop.github.io/wdd231/camara/imagens/social.jpg">
+    <meta property="og:url" content="https://danilocosta2223-boop.github.io/wdd231/camara/index.html">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos (Normalize + Home) -->
+    <link rel="stylesheet" href="estilos/normalize.css">
     <link rel="stylesheet" href="estilos/home.css">
-    <link rel="stylesheet" href="estilos/directory.css">
+
+    <!-- Script Principal -->
     <script src="scripts/home.js" defer></script>
 </head>
 <body>
+
     <header>
         <div class="logo-container">
-            <img src="imagens/logo.png" alt="Logo da Câmara de Comércio" class="logo">
-            <h1>Câmara de Comércio</h1>
+            <img src="imagens/logo.png" alt="Logo Câmara de Comércio" class="logo">
+            <h1>Câmara de Comércio de SP</h1>
         </div>
-        <button id="menuButton" aria-label="Abrir Menu">☰</button>
+        <button id="menuButton" aria-label="Menu de Navegação">☰</button>
         <nav id="navMenu">
             <ul>
                 <li><a href="index.html" class="active">Início</a></li>
-                <li><a href="directory.html">Diretório</a></li>
+                <li><a href="diretorio.html">Diretório</a></li>
                 <li><a href="join.html">Associe-se</a></li>
                 <li><a href="contact.html">Contato</a></li>
             </ul>
@@ -28,56 +46,54 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
         <section class="hero">
             <div class="hero-image-container">
-                <img src="imagens/hero.jpg" alt="Conferência de negócios em São Paulo" loading="lazy">
-                <a href="#" class="cta-button">Torne-se um Membro</a>
+                <img src="imagens/hero.jpg" alt="Empresários reunidos em conferência de negócios" width="1200" height="600">
+                <a href="join.html" class="cta-button">Junte-se a Nós</a>
             </div>
         </section>
 
-        <!-- Eventos Recentes -->
-        <section class="events">
-            <h2>Próximos Eventos & Reuniões</h2>
+        <section class="events-section">
+            <h2>Próximos Eventos</h2>
             <div class="events-container">
                 <article>
-                    <h3>Fórum de Inovação Tecnológica 2026</h3>
-                    <p><strong>Data:</strong> 25 de Outubro de 2026</p>
-                    <p>Discussões sobre automação, segurança da informação e transformação digital para empresas associadas.</p>
+                    <h3>Fórum de Inovação Tecnológica</h3>
+                    <p><strong>Data:</strong> 15 de Outubro, 2026</p>
+                    <p>Discussões sobre transformação digital e segurança da informação nas empresas.</p>
                 </article>
                 <article>
-                    <h3>Rodada de Negócios e Networking</h3>
-                    <p><strong>Data:</strong> 10 de Novembro de 2026</p>
-                    <p>Oportunidade para fechar parcerias estratégicas e expandir o portfólio de clientes corporativos.</p>
+                    <h3>Rodada de Negócios Internacional</h3>
+                    <p><strong>Data:</strong> 28 de Outubro, 2026</p>
+                    <p>Oportunidades de conexões B2B com investidores e empresários da América Latina.</p>
                 </article>
             </div>
         </section>
 
-        <!-- Clima Atual e Previsão -->
-        <section class="weather">
-            <h2>Condições Climáticas Regionais</h2>
+        <section class="weather-section">
+            <h2>Clima em São Paulo</h2>
             <div class="weather-grid">
                 <div id="current-weather">
-                    <!-- Preenchido via JavaScript -->
+                    <p>Carregando clima atual...</p>
                 </div>
                 <div id="forecast">
-                    <!-- Preenchido via JavaScript -->
+                    <p>Carregando previsão...</p>
                 </div>
             </div>
         </section>
 
-        <!-- Spotlights (Destaques de Empresas Nível 2 ou 3) -->
-        <section class="spotlights">
+        <section class="spotlights-section">
             <h2>Empresas em Destaque</h2>
             <div id="spotlights-container" class="spotlights-grid">
-                <!-- Preenchido dinamicamente via JavaScript -->
+                <p>Carregando destaques...</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="currentYear"></span> Câmara de Comércio. Todos os direitos reservados.</p>
+        <p>&copy; <span id="currentYear"></span> Câmara de Comércio de São Paulo</p>
+        <p>Danilo Rafael da Silva Costa | WDD 231</p>
         <p id="lastModified"></p>
     </footer>
+
 </body>
 </html>

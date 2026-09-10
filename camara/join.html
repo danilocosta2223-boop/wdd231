@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Associe-se | Câmara de Comércio de São Paulo</title>
+    
+    <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="estilos/home.css">
+    <script src="scripts/home.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="imagens/logo.png" alt="Logo Câmara de Comércio" class="logo">
+            <h1>Câmara de Comércio de SP</h1>
+        </div>
+        <button id="menuButton" aria-label="Menu de Navegação">☰</button>
+        <nav id="navMenu">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="directory.html">Diretório</a></li>
+                <li><a href="join.html" class="active">Associe-se</a></li>
+                <li><a href="contact.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="join-section">
+            <h2>Formulário de Associação</h2>
+            <form action="thankyou.html" method="get" class="join-form">
+                <label for="firstName">Nome: *</label>
+                <input type="text" id="firstName" name="firstName" required autocomplete="given-name">
+
+                <label for="lastName">Sobrenome: *</label>
+                <input type="text" id="lastName" name="lastName" required autocomplete="family-name">
+
+                <label for="title">Título Organizacional: *</label>
+                <input type="text" id="title" name="title" required autocomplete="organization-title" pattern="[A-Za-z\s]{7,}">
+
+                <label for="email">E-mail Corporativo: *</label>
+                <input type="email" id="email" name="email" required placeholder="exemplo@dominio.com" autocomplete="email">
+
+                <label for="phone">Telefone Celular: *</label>
+                <input type="tel" id="phone" name="phone" required autocomplete="tel">
+
+                <label for="organization">Nome da Organização: *</label>
+                <input type="text" id="organization" name="organization" required autocomplete="organization">
+
+                <label for="membershipLevel">Nível de Associação:</label>
+                <select id="membershipLevel" name="membershipLevel">
+                    <option value="" disabled selected>Selecione uma opção</option>
+                    <option value="np">NP Non-Profit Membership (Sem custos)</option>
+                    <option value="bronze">Bronze Membership</option>
+                    <option value="silver">Silver Membership</option>
+                    <option value="gold">Gold Membership</option>
+                </select>
+
+                <label for="description">Descrição da Organização:</label>
+                <textarea id="description" name="description" rows="4"></textarea>
+
+                <input type="hidden" id="timestamp" name="timestamp">
+
+                <input type="submit" value="Enviar Inscrição" class="submit-btn">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Câmara de Comércio de São Paulo</p>
+        <p>Danilo Rafael da Silva Costa | WDD 231</p>
+        <p id="lastModified"></p>
+    </footer>
+
+</body>
+</html>

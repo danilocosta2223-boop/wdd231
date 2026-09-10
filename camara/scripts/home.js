@@ -1,4 +1,3 @@
-// Configuração do Menu Responsivo e Rodapé Dinâmico
 const menuButton = document.querySelector("#menuButton");
 const navMenu = document.querySelector("#navMenu");
 
@@ -19,11 +18,14 @@ if (lastModifiedElement) {
     lastModifiedElement.textContent = `Última Modificação: ${document.lastModified}`;
 }
 
-// ----------------------------------------------------
-// INTEGRAÇÃO COM OPENWEATHER API (Clima Atual + Previsão)
-// ----------------------------------------------------
-// LEMBRE-SE: Insira aqui a sua chave real da OpenWeather para o clima funcionar na auditoria!
-const apiKey = "SUA_CHAVE_API_OPENWEATHER"; 
+// Timestamp para o formulário de join (se houver o input)
+const timestampInput = document.querySelector("#timestamp");
+if (timestampInput) {
+    timestampInput.value = new Date().toISOString();
+}
+
+// OpenWeather Integration
+const apiKey = "SUA_CHAVE_API_OPENWEATHER"; // Substitua pela sua chave real
 const lat = -23.5505; // São Paulo
 const lon = -46.6333;
 
@@ -32,26 +34,21 @@ const forecastDiv = document.querySelector("#forecast");
 
 async function getWeather() {
     try {
-        // Clima Atual
         const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=pt_br&appid=${apiKey}`;
         const response = await fetch(weatherUrl);
         if (!response.ok) throw new Error("Erro ao buscar dados do clima.");
         const data = await response.json();
-
         displayCurrentWeather(data);
 
-        // Previsão (Forecast - 3 dias)
         const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&lang=pt_br&appid=${apiKey}`;
         const forecastResponse = await fetch(forecastUrl);
         if (!forecastResponse.ok) throw new Error("Erro ao buscar previsão.");
         const forecastData = await forecastResponse.json();
-
         displayForecast(forecastData);
-
     } catch (error) {
         console.error("Erro no clima:", error);
         if (currentWeatherDiv) {
-            currentWeatherDiv.innerHTML = `<p>Não foi possível carregar os dados meteorológicos no momento. Verifique sua chave da API.</p>`;
+            currentWeatherDiv.innerHTML = `<p>Não foi possível carregar os dados meteorológicos.</p>`;
         }
     }
 }
@@ -76,12 +73,9 @@ function displayCurrentWeather(data) {
 
 function displayForecast(data) {
     if (!forecastDiv) return;
-    
-    // Filtrar dados para pegar aproximação de 3 dias (meio-dia)
     const dailyForecasts = data.list.filter(item => item.dt_txt.includes("12:00:00")).slice(0, 3);
 
     let forecastHTML = "<h3>Previsão para os Próximos 3 Dias</h3><div class='forecast-list'>";
-    
     dailyForecasts.forEach(day => {
         const date = new Date(day.dt * 1000).toLocaleDateString("pt-BR", { weekday: 'short', day: 'numeric', month: 'numeric' });
         const temp = Math.round(day.main.temp);
@@ -97,29 +91,21 @@ function displayForecast(data) {
             </div>
         `;
     });
-    
     forecastHTML += "</div>";
     forecastDiv.innerHTML = forecastHTML;
 }
 
-// ----------------------------------------------------
-// DESTAQUES DE EMPRESAS (Spotlights - Nível 2 ou 3)
-// ----------------------------------------------------
+// Spotlights
 const spotlightsContainer = document.querySelector("#spotlights-container");
-const membersUrl = "data/membros.json";
+const membersUrl = "data/membros.json"; // Ou o caminho correto para o seu JSON de membros
 
 async function getSpotlights() {
     try {
         const response = await fetch(membersUrl);
         if (!response.ok) throw new Error("Erro ao carregar membros.");
         const members = await response.json();
-
-        // Filtrar apenas membros de nível 2 (Prata) ou 3 (Ouro)
         const filtered = members.filter(m => m.membership === 2 || m.membership === 3);
-
-        // Selecionar aleatoriamente 3 empresas
         const featured = filtered.sort(() => 0.5 - Math.random()).slice(0, 3);
-
         displaySpotlights(featured);
     } catch (error) {
         console.error("Erro nos destaques:", error);
@@ -129,11 +115,9 @@ async function getSpotlights() {
 function displaySpotlights(members) {
     if (!spotlightsContainer) return;
     spotlightsContainer.innerHTML = "";
-
     members.forEach(member => {
         const card = document.createElement("section");
         card.classList.add("member-card");
-
         let levelText = member.membership === 3 ? "Membro Ouro" : "Membro Prata";
 
         card.innerHTML = `
@@ -147,11 +131,9 @@ function displaySpotlights(members) {
                 <a href="${member.website}" target="_blank" rel="noopener">Visitar Website</a>
             </div>
         `;
-
         spotlightsContainer.appendChild(card);
     });
 }
 
-// Executar funções principais
-getWeather();
-getSpotlights();
+if (currentWeatherDiv) getWeather();
+if (spotlightsContainer) getSpotlights();

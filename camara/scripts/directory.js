@@ -1,87 +1,64 @@
-// URL corrigida para a pasta "data" exigida pela auditoria
-const url = "data/membros.json";
-const directory = document.querySelector("#directory");
-const gridButton = document.querySelector("#grid");
-const listButton = document.querySelector("#list");
-const menuButton = document.querySelector("#menuButton");
-const navMenu = document.querySelector("#navMenu");
+const membersContainer = document.querySelector("#membersContainer");
+const gridButton = document.querySelector("#gridButton");
+const listButton = document.querySelector("#listButton");
+const membersUrl = "data/membros.json";
 
 async function getMembers() {
     try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`Erro ao carregar dados: ${response.status}`);
-        }
-        const data = await response.json();
-        displayMembers(data);
+        const response = await fetch(membersUrl);
+        if (!response.ok) throw new Error("Erro ao carregar membros.");
+        const members = await response.json();
+        displayMembers(members);
     } catch (error) {
-        console.error("Não foi possível buscar os membros:", error);
+        console.error("Erro:", error);
+        if (membersContainer) {
+            membersContainer.innerHTML = "<p>Não foi possível carregar os dados dos membros.</p>";
+        }
     }
 }
 
 function displayMembers(members) {
-    if (!directory) return;
-    directory.innerHTML = "";
+    if (!membersContainer) return;
+    membersContainer.innerHTML = "";
 
     members.forEach(member => {
-        const card = document.createElement("section");
+        const card = document.createElement("div");
         card.classList.add("member-card");
 
-        let levelText = "Membro Comum";
-        if (member.membership === 2) levelText = "Membro Prata";
-        if (member.membership === 3) levelText = "Membro Ouro";
+        let levelText = member.membership === 3 ? "Ouro" : (member.membership === 2 ? "Prata" : "Padrão");
 
         card.innerHTML = `
             <img src="imagens/${member.image}" alt="Logo de ${member.name}" loading="lazy">
             <div class="member-info">
-                <h3>${member.name}</h3>
-                <p class="tagline">${member.description}</p>
-                <p><strong>Endereço:</strong> ${member.address}</p>
-                <p><strong>Telefone:</strong> ${member.phone}</p>
-                <p><strong>Nível:</strong> ${levelText}</p>
-                <a href="${member.website}" target="_blank" rel="noopener">Visitar Website</a>
+                <div>
+                    <h3>${member.name}</h3>
+                    <p><em>${member.address}</em></p>
+                    <p>${member.phone}</p>
+                </div>
+                <div>
+                    <p><a href="${member.website}" target="_blank" rel="noopener">Website</a></p>
+                    <p><strong>Nível:</strong> ${levelText}</p>
+                </div>
             </div>
         `;
-
-        directory.appendChild(card);
+        membersContainer.appendChild(card);
     });
 }
 
-if (gridButton && listButton && directory) {
+if (gridButton && listButton && membersContainer) {
     gridButton.addEventListener("click", () => {
-        directory.classList.add("grid");
-        directory.classList.remove("list");
-        gridButton.classList.add("active-view");
-        listButton.classList.remove("active-view");
+        membersContainer.classList.add("grid-view");
+        membersContainer.classList.remove("list-view");
+        gridButton.classList.add("active");
+        listButton.classList.remove("active");
     });
 
     listButton.addEventListener("click", () => {
-        directory.classList.add("list");
-        directory.classList.remove("grid");
-        listButton.classList.add("active-view");
-        gridButton.classList.remove("active-view");
+        membersContainer.classList.add("list-view");
+        membersContainer.classList.remove("grid-view");
+        listButton.classList.add("active");
+        gridButton.classList.remove("active");
     });
-}
-
-if (menuButton && navMenu) {
-    menuButton.addEventListener("click", () => {
-        navMenu.classList.toggle("open");
-        if (navMenu.classList.contains("open")) {
-            menuButton.textContent = "✕";
-        } else {
-            menuButton.textContent = "☰";
-        }
-    });
-}
-
-const currentYearElement = document.querySelector("#currentYear");
-if (currentYearElement) {
-    currentYearElement.textContent = new Date().getFullYear();
-}
-
-const lastModifiedElement = document.querySelector("#lastModified");
-if (lastModifiedElement) {
-    lastModifiedElement.textContent = `Última Modificação: ${document.lastModified}`;
 }
 
 getMembers();

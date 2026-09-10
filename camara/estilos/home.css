@@ -1,6 +1,3 @@
-/* ==========================================
-   RESET E CONFIGURAÇÕES GLOBAIS
-   ========================================== */
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +5,7 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     line-height: 1.6;
     color: #333333;
     background-color: #f4f6f9;
@@ -25,9 +22,6 @@ main {
     padding: 2rem 1rem;
 }
 
-/* ==========================================
-   HEADER E NAVEGAÇÃO
-   ========================================== */
 header {
     background-color: #0b2545;
     color: #ffffff;
@@ -61,7 +55,7 @@ header h1 {
     color: #ffffff;
     font-size: 1.8rem;
     cursor: pointer;
-    display: none; /* Oculto no desktop */
+    display: none;
 }
 
 nav ul {
@@ -84,9 +78,6 @@ nav a.active {
     background-color: #134074;
 }
 
-/* ==========================================
-   HERO SECTION
-   ========================================== */
 .hero {
     margin-bottom: 2.5rem;
 }
@@ -129,9 +120,6 @@ nav a.active {
     transform: translateX(-50%) translateY(-2px);
 }
 
-/* ==========================================
-   SEÇÕES GERAIS (Títulos e Espaçamentos)
-   ========================================== */
 section {
     background-color: #ffffff;
     padding: 2rem;
@@ -148,9 +136,6 @@ section h2 {
     padding-bottom: 0.5rem;
 }
 
-/* ==========================================
-   EVENTOS
-   ========================================== */
 .events-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -170,14 +155,6 @@ section h2 {
     font-size: 1.1rem;
 }
 
-.events-container p {
-    font-size: 0.95rem;
-    margin-bottom: 0.4rem;
-}
-
-/* ==========================================
-   CLIMA E PREVISÃO DO TEMPO
-   ========================================== */
 .weather-grid {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -238,9 +215,6 @@ section h2 {
     color: #666666;
 }
 
-/* ==========================================
-   SPOTLIGHTS (Empresas em Destaque)
-   ========================================== */
 .spotlights-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -287,11 +261,6 @@ section h2 {
     font-size: 0.9rem;
 }
 
-.member-info p {
-    font-size: 0.9rem;
-    margin-bottom: 0.3rem;
-}
-
 .member-info a {
     display: inline-block;
     margin-top: 1rem;
@@ -308,9 +277,45 @@ section h2 {
     background-color: #0b2545;
 }
 
-/* ==========================================
-   RODAPÉ
-   ========================================== */
+/* Formulário (Join) */
+.join-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+}
+
+.join-form label {
+    font-weight: bold;
+    color: #0b2545;
+}
+
+.join-form input,
+.join-form select,
+.join-form textarea {
+    padding: 0.8rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.submit-btn {
+    background-color: #134074;
+    color: #ffffff;
+    border: none;
+    padding: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background-color: #0b2545;
+}
+
 footer {
     background-color: #0b2545;
     color: #ffffff;
@@ -324,9 +329,6 @@ footer p {
     margin-bottom: 0.3rem;
 }
 
-/* ==========================================
-   RESPONSIVIDADE (Mobile)
-   ========================================== */
 @media (max-width: 768px) {
     #menuButton {
         display: block;
@@ -360,11 +362,5 @@ footer p {
 
     .weather-grid {
         grid-template-columns: 1fr;
-    }
-
-    .cta-button {
-        font-size: 0.95rem;
-        padding: 0.6rem 1.2rem;
-        bottom: 15px;
     }
 }

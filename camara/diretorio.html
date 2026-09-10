@@ -3,65 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Diretório oficial das empresas associadas à Câmara de Comércio de São Paulo com informações de contato, endereço e nível de associação.">
-    <meta name="author" content="Danilo Rafael da Silva Costa">
+    <title>Diretório de Empresas | Câmara de Comércio de São Paulo</title>
     
-    <title>Diretório | Câmara de Comércio de São Paulo</title>
-    
-    <!-- Open Graph Meta Tags Obrigatórias -->
-    <meta property="og:title" content="Diretório de Empresas | Câmara de Comércio">
-    <meta property="og:description" content="Diretório de empresas da Câmara de Comércio de São Paulo">
-    <meta property="og:image" content="https://danilocosta2223-boop.github.io/wdd231/camara/imagens/social.jpg">
-    <meta property="og:url" content="https://danilocosta2223-boop.github.io/wdd231/camara/diretorio.html">
-
-    <!-- Favicon -->
-    <link rel="icon" href="imagens/favicon.ico">
-    
-    <!-- Google Fonts -->
+    <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Normalize e Estilos da Aplicação -->
-    <link rel="stylesheet" href="estilos/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="estilos/directory.css">
-    
     <script src="scripts/directory.js" defer></script>
 </head>
 <body>
 
     <header>
-        <div class="logo-area">
-            <h1>Câmara de Comércio</h1>
+        <div class="logo-container">
+            <img src="imagens/logo.png" alt="Logo Câmara de Comércio" class="logo">
+            <h1>Câmara de Comércio de SP</h1>
         </div>
-        
-        <button id="menuButton" aria-label="Abrir Menu">☰</button>
-        
+        <button id="menuButton" aria-label="Menu de Navegação">☰</button>
         <nav id="navMenu">
-            <a href="index.html">Home</a>
-            <a href="diretorio.html" class="active">Diretório</a>
-            <a href="#">Descobrir</a>
-            <a href="#">Junte-se</a>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="directory.html" class="active">Diretório</a></li>
+                <li><a href="join.html">Associe-se</a></li>
+                <li><a href="contact.html">Contato</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
-        <h2>Diretório de Empresas</h2>
-        
-        <div class="view-buttons" role="group" aria-label="Alternar Visualização">
-            <button id="grid" class="active-view">Grid</button>
-            <button id="list">Lista</button>
-        </div>
-        
-        <!-- Container onde as empresas do JSON serão injetadas -->
-        <div id="directory" class="grid"></div>
+        <section class="directory-header">
+            <h2>Diretório de Membros</h2>
+            <div class="view-options">
+                <button id="gridButton" class="view-btn active" aria-label="Visualização em Grade">Grade</button>
+                <button id="listButton" class="view-btn" aria-label="Visualização em Lista">Lista</button>
+            </div>
+        </section>
+
+        <section class="directory-content">
+            <div id="membersContainer" class="grid-view">
+                <!-- Preenchido dinamicamente via directory.js -->
+                <p>Carregando membros...</p>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>
-            &copy; <span id="currentYear"></span> 
-            Danilo Rafael da Silva Costa | WDD 231
-        </p>
+        <p>&copy; <span id="currentYear"></span> Câmara de Comércio de São Paulo</p>
+        <p>Danilo Rafael da Silva Costa | WDD 231</p>
         <p id="lastModified"></p>
     </footer>
 
