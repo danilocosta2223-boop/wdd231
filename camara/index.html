@@ -5,31 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Câmara de Comércio de São Paulo | Página Inicial</title>
     
-    <!-- Meta Tags SEO e Open Graph -->
-    <meta name="description" content="Página inicial da Câmara de Comércio de São Paulo com eventos, clima e empresas em destaque.">
-    <meta name="author" content="Danilo Rafael da Silva Costa">
-    <meta property="og:title" content="Câmara de Comércio de São Paulo | Página Inicial">
-    <meta property="og:description" content="Acompanhe eventos, informações climáticas e empresas em destaque da Câmara de Comércio de São Paulo.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://danilocosta2223-boop.github.io/wdd231/camara/imagens/hero.jpg">
-    <meta property="og:url" content="https://danilocosta2223-boop.github.io/wdd231/camara/index.html">
-
     <!-- Favicon -->
     <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
 
+    <!-- Metadados -->
+    <meta name="description" content="Câmara de Comércio e Indústria de São Paulo - Conectando empresas e impulsionando negócios.">
+    <meta name="author" content="Danilo Rafael da Silva Costa">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Câmara de Comércio de São Paulo | Página Inicial">
+    <meta property="og:description" content="Conectando empresas e impulsionando negócios.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://danilocosta2223-boop.github.io/wdd231/camara/index.html">
+    <meta property="og:image" content="https://danilocosta2223-boop.github.io/wdd231/camara/imagens/hero.jpg">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <!-- Normalize.css e Estilos -->
+    
+    <!-- Estilos -->
     <link rel="stylesheet" href="estilos/normalize.css">
     <link rel="stylesheet" href="estilos/home.css">
+    
+    <!-- Script no head com defer (Conforme exigência da auditoria) -->
+    <script src="scripts/home.js" defer></script>
 </head>
 <body>
 
+    <!-- Cabeçalho e Navegação -->
     <header>
-        <span class="site-title">Câmara de Comércio de São Paulo</span>
+        <div class="site-title">Câmara de Comércio de São Paulo</div>
         <nav>
             <a href="index.html" class="active">Início</a>
             <a href="diretorio.html">Diretório</a>
@@ -38,35 +44,27 @@
         </nav>
     </header>
 
+    <!-- Conteúdo Principal Envolvendo a Hero e as Seções -->
     <main class="container">
-        <h1>Câmara de Comércio de São Paulo</h1>
-
-        <!-- Seção Hero com a imagem otimizada -->
+        
+        <!-- Seção Principal (Hero) -->
         <section class="hero">
-            <h2>Bem-vindo à nossa plataforma</h2>
-            <p>Acompanhe as novidades e o clima da cidade.</p>
-            
-            <img 
-                src="imagens/hero.jpg" 
-                alt="Empresários reunidos em conferência de negócios" 
-                class="hero-image" 
-                width="1200" 
-                height="600">
+            <h1>Impulsionando o Desenvolvimento e os Negócios</h1>
+            <p>Unimos forças para fortalecer o comércio e a indústria regional com inovação, parcerias estratégicas e suporte contínuo.</p>
+            <img src="imagens/hero.jpg" alt="Fachada da Câmara de Comércio e ambiente corporativo" class="hero-image">
         </section>
 
-        <!-- Seção de Clima -->
+        <!-- Seção de Clima e Previsão -->
         <section class="weather-section">
-            <h3>Clima Atual</h3>
-            <div id="current-weather">Carregando clima atual...</div>
-
+            <h2>Clima em São Paulo</h2>
+            <div id="current-weather">
+                <p>Carregando clima atual...</p>
+            </div>
+            
             <h3 class="forecast-title">Previsão para os Próximos Dias</h3>
-            <div id="forecast">Carregando previsão...</div>
-        </section>
-
-        <!-- Seção de Eventos -->
-        <section class="events-section">
-            <h2>Próximos Eventos</h2>
-            <p>Informações sobre eventos e reuniões da Câmara.</p>
+            <div id="forecast">
+                <p>Carregando previsão...</p>
+            </div>
         </section>
 
         <!-- Seção de Empresas em Destaque (Spotlights) -->
@@ -76,15 +74,23 @@
                 <p>Carregando destaques...</p>
             </div>
         </section>
+
+        <!-- Seção de Eventos -->
+        <section class="events-section">
+            <h2>Próximos Eventos</h2>
+            <ul>
+                <li><strong>Encontro de Networking Empresarial:</strong> 15 de Outubro às 19h</li>
+                <li><strong>Palestra sobre Inovação e Tecnologia:</strong> 22 de Outubro às 20h</li>
+            </ul>
+        </section>
+
     </main>
 
+    <!-- Rodapé -->
     <footer>
-        <p>&copy; <span id="currentYear"></span> Câmara de Comércio de São Paulo</p>
-        <p>Danilo Rafael da Silva Costa | WDD 231</p>
+        <p>&copy; <span id="currentYear"></span> Câmara de Comércio e Indústria de São Paulo</p>
         <p id="lastModified"></p>
     </footer>
 
-    <!-- Script JavaScript com defer -->
-    <script src="scripts/home.js" defer></script>
 </body>
 </html>
