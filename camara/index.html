@@ -25,10 +25,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <!-- Normalize.css (Reset de estilos para padronização em navegadores) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- Normalize.css -->
+    <link rel="stylesheet" href="estilos/normalize.css">
 
-    <!-- Folha de Estilos Própria -->
+    <!-- Folha de Estilos Principal -->
     <link rel="stylesheet" href="estilos/home.css">
     
     <!-- Script Principal -->
@@ -38,7 +38,6 @@
     <!-- Cabeçalho Principal -->
     <header class="site-header">
         <div class="logo-container">
-            <img src="imagens/logo.png" alt="Logo da Câmara de Comércio de São Paulo" class="logo">
             <span class="site-title">Câmara de Comércio de São Paulo</span>
         </div>
         <button id="menuButton" aria-expanded="false" aria-label="Menu de Navegação">☰ Menu</button>
@@ -54,7 +53,7 @@
 
     <!-- Conteúdo Principal -->
     <main>
-        <!-- Seção Hero com Imagem em Tag <img> exigida pela rubrica -->
+        <!-- Seção Hero com Imagem em Tag <img> obrigatória -->
         <section class="hero">
             <img src="imagens/hero.jpg" alt="Empresários reunidos em conferência de negócios" class="hero-image" width="1200" height="600">
             <div class="hero-content">
@@ -92,9 +91,10 @@
         </section>
     </main>
 
-    <!-- Rodapé -->
+    <!-- Rodapé Completo com Nome e Matéria -->
     <footer class="site-footer">
-        <p>&copy; <span id="currentYear"></span> Câmara de Comércio de São Paulo. Todos os direitos reservados.</p>
+        <p>&copy; <span id="currentYear"></span> Câmara de Comércio de São Paulo.</p>
+        <p>Danilo Rafael da Silva Costa | WDD 231</p>
         <p id="lastModified"></p>
     </footer>
 </body>

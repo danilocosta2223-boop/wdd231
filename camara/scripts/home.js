@@ -25,15 +25,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 3. Integração com a API OpenWeather (São Paulo)
-    // Insira a sua chave real entre aspas abaixo para ativar o clima e a previsão
-    const apiKey = "SUA_CHAVE_REAL"; 
+    // Cole sua chave alfanumérica real do OpenWeather entre aspas abaixo:
+    const apiKey = "xxxxxxxxxxxxxxxxxxxxxxxx"; 
     const lat = -23.5505;
     const lon = -46.6333;
     
     const currentWeatherDiv = document.getElementById('current-weather');
     const forecastDiv = document.getElementById('forecast');
 
-    if (currentWeatherDiv && forecastDiv && apiKey !== "SUA_CHAVE_REAL") {
+    if (currentWeatherDiv && forecastDiv && apiKey !== "xxxxxxxxxxxxxxxxxxxxxxxx" && apiKey !== "SUA_CHAVE_REAL") {
         const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=pt_br&appid=${apiKey}`;
         const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&lang=pt_br&appid=${apiKey}`;
 
