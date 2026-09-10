@@ -1,6 +1,91 @@
 /* ==========================================
-   ESTILOS ADICIONAIS PARA CLIMA E SPOTLIGHTS
+   CONFIGURAÇÕES GERAIS E RESET
    ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f4f6f8;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   ESTRUTURA E LAYOUT DA HOME
+   ========================================== */
+header {
+    background-color: #0f172a;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #e2e8f0;
+}
+
+.hero img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 1rem;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* ==========================================
+   SEÇÕES DE SPOTLIGHTS E EVENTOS
+   ========================================== */
+.spotlights, .events-section {
+    background: #fff;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* ==========================================
+   ESTILOS DE CLIMA E PREVISÃO (ATUALIZADO)
+   ========================================== */
+.weather-section {
+    background: #fff;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.weather-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .weather-desc {
     text-transform: capitalize;
 }
@@ -13,52 +98,23 @@
     margin-top: 1rem;
 }
 
-.forecast-day {
+.forecast-card {
     text-align: center;
-}
-
-.current-weather-content {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.2rem;
-}
-
-.weather-icon {
-    vertical-align: middle;
-}
-
-/* Estilos dos cards de Spotlights gerados por JS */
-.spotlight-card {
     background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 6px;
-    padding: 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0.75rem;
+    flex: 1;
+    min-width: 100px;
+}
+
+/* ==========================================
+   RODAPÉ
+   ========================================== */
+footer {
     text-align: center;
-}
-
-.spotlight-img {
-    width: 70px;
-    height: 70px;
-    object-fit: contain;
-    margin-bottom: 0.8rem;
-    background: #fff;
-    padding: 4px;
-    border-radius: 4px;
-}
-
-.spotlight-title {
-    color: #0b2545;
-    font-size: 1.1rem;
-    margin-bottom: 0.4rem;
-}
-
-.spotlight-desc {
-    font-size: 0.9rem;
-    color: #555;
-    margin-bottom: 0.4rem;
-}
-
-.spotlight-contact {
-    font-size: 0.85rem;
+    padding: 1.5rem;
+    background-color: #0f172a;
+    color: #fff;
+    margin-top: 3rem;
 }
