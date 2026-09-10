@@ -1,239 +1,64 @@
 /* ==========================================
-   ESTILOS GERAIS E NORMALIZAÇÃO BÁSICA
+   ESTILOS ADICIONAIS PARA CLIMA E SPOTLIGHTS
    ========================================== */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+.weather-desc {
+    text-transform: capitalize;
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    color: #333333;
-    background-color: #f4f6f8;
-    line-height: 1.6;
-}
-
-/* ==========================================
-   HEADER E NAVEGAÇÃO
-   ========================================== */
-header {
-    background-color: #0b2545;
-    color: #ffffff;
+.forecast-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    flex-wrap: wrap;
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
     gap: 1rem;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 1rem;
 }
 
-.logo {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
+.forecast-day {
+    text-align: center;
 }
 
-.site-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #ffffff;
-}
-
-#menuButton {
-    display: none;
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-size: 1.8rem;
-    cursor: pointer;
-}
-
-nav ul {
-    list-style: none;
+.current-weather-content {
     display: flex;
-    gap: 1.5rem;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
 }
 
-nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+.weather-icon {
+    vertical-align: middle;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
-    color: #8da9c4;
-}
-
-/* ==========================================
-   CONTEÚDO PRINCIPAL (MAIN)
-   ========================================== */
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-}
-
-main h1 {
-    color: #0b2545;
-    text-align: center;
-    margin: 1.5rem 0;
-    font-size: 2rem;
-}
-
-/* Hero Section */
-.hero {
-    margin-bottom: 2rem;
-}
-
-.hero-image-container {
-    position: relative;
+/* Estilos dos cards de Spotlights gerados por JS */
+.spotlight-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.2rem;
     text-align: center;
 }
 
-.hero-image-container img {
-    width: 100%;
-    max-height: 500px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.cta-button {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #134074;
-    color: #ffffff;
-    padding: 0.75rem 2rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #0b2545;
-}
-
-/* Seção de Eventos */
-.events-section {
-    background-color: #ffffff;
-    padding: 2rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.events-section h2 {
-    color: #0b2545;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #8da9c4;
-    padding-bottom: 0.5rem;
-}
-
-.events-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-}
-
-.events-container article {
-    background-color: #f8fafc;
-    border-left: 4px solid #134074;
-    padding: 1rem;
+.spotlight-img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 0.8rem;
+    background: #fff;
+    padding: 4px;
     border-radius: 4px;
 }
 
-/* Seção de Clima */
-.weather-section {
-    background-color: #ffffff;
-    padding: 2rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.weather-section h2 {
+.spotlight-title {
     color: #0b2545;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #8da9c4;
-    padding-bottom: 0.5rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
 }
 
-.weather-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-/* Spotlights (Empresas em Destaque) */
-.spotlights-section {
-    background-color: #ffffff;
-    padding: 2rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.spotlights-section h2 {
-    color: #0b2545;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #8da9c4;
-    padding-bottom: 0.5rem;
-}
-
-.spotlights-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-/* ==========================================
-   FOOTER
-   ========================================== */
-footer {
-    background-color: #0b2545;
-    color: #ffffff;
-    text-align: center;
-    padding: 1.5rem;
-    margin-top: 2rem;
+.spotlight-desc {
     font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.4rem;
 }
 
-footer p {
-    margin: 0.3rem 0;
-}
-
-/* ==========================================
-   RESPONSIVIDADE (Mobile)
-   ========================================== */
-@media (max-width: 768px) {
-    #menuButton {
-        display: block;
-    }
-
-    nav {
-        width: 100%;
-        display: none;
-        margin-top: 1rem;
-    }
-
-    nav.open {
-        display: block;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
+.spotlight-contact {
+    font-size: 0.85rem;
 }
