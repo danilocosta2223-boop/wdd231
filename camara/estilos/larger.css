@@ -3,12 +3,12 @@
    =================================================== */
 
 @media (min-width: 768px) {
-  /* Oculta o botão de menu hambúrguer */
+  /* Esconde o botão de menu hambúrguer */
   #menu-button {
     display: none;
   }
 
-  /* Layout do menu na horizontal */
+  /* Exibe o menu horizontalmente */
   nav ul {
     display: flex;
     flex-direction: row;
@@ -20,7 +20,7 @@
     padding: 1rem 1.5rem;
   }
 
-  /* Header e Hero */
+  /* Ajustes de tipografia */
   .header-text h1 {
     font-size: 1.8rem;
   }
@@ -29,6 +29,7 @@
     font-size: 1rem;
   }
 
+  /* Hero em telas grandes */
   .hero-container {
     position: relative;
   }
@@ -43,7 +44,7 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
 
-  /* Grids de Eventos e Spotlights */
+  /* Grid Layouts */
   .events-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -52,7 +53,6 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* Layout Principal */
   main {
     display: grid;
     grid-template-columns: 2fr 1fr;

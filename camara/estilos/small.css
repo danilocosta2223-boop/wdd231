@@ -57,7 +57,7 @@ header {
   opacity: 0.9;
 }
 
-/* Botão de Menu Hambúrguer */
+/* Botão do Menu Hambúrguer */
 #menu-button {
   font-size: 2rem;
   background: none;
@@ -67,12 +67,13 @@ header {
   padding: 0.5rem;
 }
 
-/* Navegação Mobile (Consolidado) */
+/* Navegação Mobile (Seletor Unificado) */
 nav {
   background-color: var(--secondary-color);
   color: #ffffff;
 }
 
+/* Seletor nav ul Unificado */
 nav ul {
   list-style: none;
   display: none;
@@ -123,7 +124,7 @@ main {
   margin: 0 auto;
 }
 
-/* Seção Hero com CTA */
+/* Hero & CTA */
 .hero-container {
   position: relative;
   margin-bottom: 1.5rem;
