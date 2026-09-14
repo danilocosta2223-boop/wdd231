@@ -2,13 +2,13 @@
    estilos/large.css - Visão Desktop (>= 768px)
    =================================================== */
 
-@media screen and (min-width: 768px) {
-  /* Oculta botão de menu hambúrguer */
+@media (min-width: 768px) {
+  /* Oculta o botão de menu hambúrguer */
   #menu-button {
     display: none;
   }
 
-  /* Exibe menu na horizontal */
+  /* Layout do menu na horizontal */
   nav ul {
     display: flex;
     flex-direction: row;
@@ -20,7 +20,7 @@
     padding: 1rem 1.5rem;
   }
 
-  /* Header com texto maior */
+  /* Header e Hero */
   .header-text h1 {
     font-size: 1.8rem;
   }
@@ -29,7 +29,6 @@
     font-size: 1rem;
   }
 
-  /* Imagem Hero com CTA sobreposto */
   .hero-container {
     position: relative;
   }
@@ -44,7 +43,7 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
 
-  /* Grids para Desktop */
+  /* Grids de Eventos e Spotlights */
   .events-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -53,7 +52,7 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* Layout principal do Main */
+  /* Layout Principal */
   main {
     display: grid;
     grid-template-columns: 2fr 1fr;
