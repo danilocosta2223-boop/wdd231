@@ -4,8 +4,8 @@
 
 :root {
   --primary-color: #1b365d;
-  --secondary-color: #005b5b; /* Escurecido para atingir contraste maior que 4.5:1 */
-  --accent-color: #b71c1c;    /* Tom de destaque escuro para alto contraste */
+  --secondary-color: #005b5b;
+  --accent-color: #b71c1c;
   --bg-color: #f4f6f8;
   --card-bg: #ffffff;
   --text-color: #222222;
@@ -63,7 +63,7 @@ header {
   cursor: pointer;
 }
 
-/* Navegacao e Contraste dos Links */
+/* Navegação e Contraste dos Links */
 nav {
   background-color: var(--secondary-color);
 }
@@ -74,24 +74,29 @@ nav ul {
   flex-direction: column;
 }
 
-nav a {
+/* Seletores genéricos e de alta especificidade sem !important */
+nav ul li a,
+nav ul li a:link,
+nav ul li a:visited {
   display: block;
-  color: #ffffff; /* Texto branco em fundo #005b5b */
+  color: #ffffff;
   text-decoration: none;
   padding: 0.75rem 1rem;
   text-align: center;
   font-weight: bold;
+  background-color: transparent;
 }
 
-nav a:hover {
+nav ul li a:hover,
+nav ul li a:focus {
   background-color: rgba(255, 255, 255, 0.2);
   color: #ffffff;
 }
 
-/* Link Ativo */
-nav a.active {
+/* Link Ativo - Fundo branco e texto escuro */
+nav ul li a.active {
   background-color: #ffffff;
-  color: var(--primary-color);
+  color: #1b365d;
 }
 
 /* Main Content Layout */
@@ -128,8 +133,10 @@ main {
   border-bottom: 2px solid #ffffff;
 }
 
-/* Botao CTA */
-.cta-button {
+/* Botão CTA com Alto Contraste */
+.cta-button,
+.cta-button:link,
+.cta-button:visited {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
@@ -140,12 +147,13 @@ main {
   font-weight: bold;
 }
 
-.cta-button:hover {
+.cta-button:hover,
+.cta-button:focus {
   background-color: #8c0000;
   color: #ffffff;
 }
 
-/* Secoes Padrao e Titulos H2 */
+/* Seções Padrão e Títulos H2 */
 .events-section, .weather-section, .spotlights-section {
   background-color: var(--card-bg);
   padding: 1.25rem;
@@ -153,7 +161,6 @@ main {
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-/* H2 Corrigido em Fundo Claro */
 h2 {
   color: var(--primary-color);
   background-color: transparent;
@@ -162,7 +169,7 @@ h2 {
   padding-bottom: 0.25rem;
 }
 
-/* Cards de Conteudo */
+/* Cards de Conteúdo */
 .weather-card, .event-card, .spotlight-card {
   background-color: #f9f9f9;
   padding: 1rem;
