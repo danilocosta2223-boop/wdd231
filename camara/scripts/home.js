@@ -1,128 +1,128 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // 1. Atualizar o ano atual e a última modificação no rodapé
-    const currentYearSpan = document.getElementById("currentYear");
-    if (currentYearSpan) {
-        currentYearSpan.textContent = new Date().getFullYear();
+// ==========================================
+// 1. Configuração do Rodapé (Datas)
+// ==========================================
+const currentYearEl = document.getElementById("currentyear");
+const lastModifiedEl = document.getElementById("lastModified");
+
+if (currentYearEl) {
+    currentYearEl.textContent = new Date().getFullYear();
+}
+if (lastModifiedEl) {
+    lastModifiedEl.textContent = `Última Modificação: ${document.lastModified}`;
+}
+
+// ==========================================
+// 2. Clima e Previsão de 3 Dias (OpenWeather)
+// ==========================================
+// Substitua o valor entre aspas abaixo pela sua chave de 32 caracteres do OpenWeather:
+const apiKey = 'SUA_CHAVE_REAL_AQUI'; 
+const lat = '-23.5505';
+const lon = '-46.6333';
+
+const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=pt_br&appid=${apiKey}`;
+const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&lang=pt_br&appid=${apiKey}`;
+
+async function fetchWeather() {
+    try {
+        const responseCurrent = await fetch(currentWeatherUrl);
+        if (responseCurrent.ok) {
+            const dataCurrent = await responseCurrent.json();
+            displayCurrentWeather(dataCurrent);
+        }
+
+        const responseForecast = await fetch(forecastUrl);
+        if (responseForecast.ok) {
+            const dataForecast = await responseForecast.json();
+            displayForecast(dataForecast);
+        }
+    } catch (error) {
+        console.error('Erro ao buscar dados do clima:', error);
     }
+}
 
-    const lastModifiedP = document.getElementById("lastModified");
-    if (lastModifiedP) {
-        lastModifiedP.textContent = `Última modificação: ${document.lastModified}`;
+function displayCurrentWeather(data) {
+    const tempElement = document.getElementById('current-temp');
+    const descElement = document.getElementById('weather-desc');
+
+    if (tempElement && descElement) {
+        tempElement.innerHTML = `<strong>${Math.round(data.main.temp)}°C</strong>`;
+        const desc = data.weather[0].description;
+        descElement.textContent = desc.charAt(0).toUpperCase() + desc.slice(1);
     }
+}
 
-    // 2. Configurações da API do OpenWeather (São Paulo - SP)
-    const apiKey = "679f2252c1e406f52e50529d2fba3d52"; // Chave real configurada
-    const city = "Sao Paulo";
-    const units = "metric";
-    const lang = "pt_br";
+function displayForecast(data) {
+    const forecastContainer = document.getElementById('forecast');
+    if (!forecastContainer) return;
 
-    const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&lang=${lang}&appid=${apiKey}`;
-    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${units}&lang=${lang}&appid=${apiKey}`;
+    forecastContainer.innerHTML = '<h3>Previsão para 3 Dias</h3>';
 
-    // Buscar Clima Atual
-    fetch(currentWeatherUrl)
-        .then(response => response.json())
-        .then(data => {
-            const container = document.getElementById("current-weather");
-            if (container && data.cod === 200) {
-                const temp = Math.round(data.main.temp);
-                const desc = data.weather[0].description;
-                const icon = data.weather[0].icon;
-                const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+    // Filtra medições das 12:00 dos próximos 3 dias
+    const dailyForecasts = data.list.filter(item => item.dt_txt.includes('12:00:00')).slice(0, 3);
 
-                container.innerHTML = `
-                    <div class="weather-card">
-                        <img src="${iconUrl}" alt="${desc}">
-                        <div>
-                            <p><strong>${temp}°C</strong></p>
-                            <p class="weather-desc">${desc}</p>
-                        </div>
-                    </div>
-                `;
-            } else if (container) {
-                container.innerHTML = "<p>Não foi possível carregar o clima atual.</p>";
-            }
-        })
-        .catch(error => {
-            console.error("Erro ao buscar clima atual:", error);
-        });
+    dailyForecasts.forEach(day => {
+        const date = new Date(day.dt * 1000);
+        const dayName = date.toLocaleDateString('pt-BR', { weekday: 'short' });
 
-    // Buscar Previsão do Tempo
-    fetch(forecastUrl)
-        .then(response => response.json())
-        .then(data => {
-            const container = document.getElementById("forecast");
-            if (container && data.cod === "200") {
-                const dailyForecasts = data.list.filter(item => item.dt_txt.includes("12:00:00"));
-                
-                let forecastHTML = '<div class="forecast-container">';
-                dailyForecasts.slice(0, 3).forEach(day => {
-                    const date = new Date(day.dt * 1000).toLocaleDateString("pt-BR", { weekday: 'short', day: 'numeric', month: 'numeric' });
-                    const temp = Math.round(day.main.temp);
-                    const desc = day.weather[0].description;
-                    const icon = day.weather[0].icon;
-                    const iconUrl = `https://openweathermap.org/img/wn/${icon}.png`;
+        const forecastCard = document.createElement('div');
+        forecastCard.classList.add('forecast-day');
+        forecastCard.innerHTML = `
+            <p><strong>${dayName.toUpperCase()}</strong>: ${Math.round(day.main.temp)}°C - ${day.weather[0].description}</p>
+        `;
+        forecastContainer.appendChild(forecastCard);
+    });
+}
 
-                    forecastHTML += `
-                        <div class="forecast-card">
-                            <p><strong>${date}</strong></p>
-                            <img src="${iconUrl}" alt="${desc}">
-                            <p>${temp}°C</p>
-                            <p class="weather-desc">${desc}</p>
-                        </div>
-                    `;
-                });
-                forecastHTML += '</div>';
-                container.innerHTML = forecastHTML;
-            } else if (container) {
-                container.innerHTML = "<p>Não foi possível carregar a previsão.</p>";
-            }
-        })
-        .catch(error => {
-            console.error("Erro ao buscar previsão:", error);
-        });
+fetchWeather();
 
-    // 3. Carregar Empresas em Destaque (Spotlights) usando 'membros.json' e compatível com a propriedade 'membership'
-    const spotlightsContainer = document.getElementById("spotlights-container");
-    if (spotlightsContainer) {
-        fetch("data/membros.json")
-            .then(response => {
-                if (!response.ok) throw new Error("Arquivo de membros não encontrado");
-                return response.json();
-            })
-            .then(members => {
-                // Compatibilidade garantida checando tanto 'membership' quanto 'membershipLevel'
-                const spotlights = members.filter(m => (m.membership !== undefined ? m.membership : m.membershipLevel) >= 2);
-                const selected = spotlights.sort(() => 0.5 - Math.random()).slice(0, 2);
+// ==========================================
+// 3. Empresas em Destaque - Spotlights (Gold/Silver)
+// ==========================================
+const membersUrl = 'dados/membros.json';
 
-                let html = '<div class="spotlights-grid">';
-                selected.forEach(company => {
-                    html += `
-                        <div class="spotlight-card">
-                            <img src="imagens/${company.image}" alt="${company.name}">
-                            <h3>${company.name}</h3>
-                            <p>${company.address}</p>
-                            <p>${company.phone}</p>
-                            <a href="${company.website}" target="_blank">Visitar site</a>
-                        </div>
-                    `;
-                });
-                html += '</div>';
-                spotlightsContainer.innerHTML = html;
-            })
-            .catch(() => {
-                spotlightsContainer.innerHTML = `
-                    <div class="spotlight-fallback">
-                        <div class="spotlight-fallback-card">
-                            <h3>Comércio & Tecnologia SP</h3>
-                            <p>Soluções corporativas e inovação para o mercado paulista.</p>
-                        </div>
-                        <div class="spotlight-fallback-card">
-                            <h3>Indústria Paulista S.A.</h3>
-                            <p>Excelência em logística e comércio exterior.</p>
-                        </div>
-                    </div>
-                `;
-            });
+async function fetchSpotlightMembers() {
+    try {
+        const response = await fetch(membersUrl);
+        if (response.ok) {
+            const members = await response.json();
+            displaySpotlights(members);
+        }
+    } catch (error) {
+        console.error('Erro ao buscar membros:', error);
     }
-});
+}
+
+function displaySpotlights(members) {
+    const spotlightsContainer = document.getElementById('spotlights-container');
+    if (!spotlightsContainer) return;
+
+    // Filtra membros qualificados (Ouro e Prata)
+    const qualifiedMembers = members.filter(member => {
+        const nivel = member.nivel || member.membershipLevel;
+        return nivel === 'Ouro' || nivel === 'Prata' || nivel === 2 || nivel === 3 || nivel === 'Gold' || nivel === 'Silver';
+    });
+
+    // Sorteia de 2 a 3 empresas aleatórias
+    const shuffled = qualifiedMembers.sort(() => 0.5 - Math.random());
+    const selectedSpotlights = shuffled.slice(0, 3);
+
+    spotlightsContainer.innerHTML = '';
+
+    selectedSpotlights.forEach(member => {
+        const card = document.createElement('article');
+        card.classList.add('spotlight-card');
+
+        card.innerHTML = `
+            <h3>${member.nome}</h3>
+            <img src="imagens/${member.imagem}" alt="Logo de ${member.nome}" loading="lazy" width="120" height="80">
+            <p><strong>Telefone:</strong> ${member.telefone}</p>
+            <p><strong>Endereço:</strong> ${member.endereco}</p>
+            <p class="membership-badge">Membro ${member.nivel || 'Destaque'}</p>
+            <a href="${member.website}" target="_blank" rel="noopener">Visitar Website</a>
+        `;
+
+        spotlightsContainer.appendChild(card);
+    });
+}
+
+fetchSpotlightMembers();

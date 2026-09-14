@@ -3,81 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Câmara de Comércio de São Paulo | Página Inicial</title>
+    <title>Câmara de Comércio de São Paulo</title>
+    <meta name="description" content="Página Inicial da Câmara de Comércio de São Paulo. Promovendo negócios, networking e desenvolvimento local.">
     
-    <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
-
-    <meta name="description" content="Câmara de Comércio e Indústria de São Paulo - Conectando empresas e impulsionando negócios.">
-    <meta name="author" content="Danilo Rafael da Silva Costa">
-    
-    <meta property="og:title" content="Câmara de Comércio de São Paulo | Página Inicial">
-    <meta property="og:description" content="Acompanhe eventos, informações climáticas e empresas em destaque da Câmara de Comércio de São Paulo.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://danilocosta2223-boop.github.io/wdd231/camara/index.html">
-    <meta property="og:image" content="https://danilocosta2223-boop.github.io/wdd231/camara/imagens/hero.jpg">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    
+    <!-- CSS Corrigidos com suporte a Responsividade (Mobile-First / Desktop) -->
     <link rel="stylesheet" href="estilos/normalize.css">
-    <link rel="stylesheet" href="estilos/home.css">
+    <link rel="stylesheet" href="estilos/small.css">
+    <link rel="stylesheet" href="estilos/large.css" media="(min-width: 600px)">
     
     <script src="scripts/home.js" defer></script>
 </head>
 <body>
-
     <header>
-        <div class="site-title">Câmara de Comércio de São Paulo</div>
+        <div class="logo-container">
+            <!-- Caso não tenha logo.png, o texto do span já garante a identificação da marca -->
+            <span>Câmara de Comércio de São Paulo</span>
+        </div>
         <nav>
-            <a href="index.html" class="active">Início</a>
-            <a href="diretorio.html">Diretório</a>
-            <a href="join.html">Associe-se</a>
-            <a href="contact.html">Contato</a>
+            <ul>
+                <li><a href="index.html" class="active">Início</a></li>
+                <li><a href="diretorio.html">Diretório</a></li>
+                <li><a href="join.html">Associe-se</a></li>
+                <li><a href="contact.html">Contato</a></li>
+            </ul>
         </nav>
     </header>
 
-    <main class="container">
-        
+    <main>
+        <h1>Câmara de Comércio de São Paulo</h1>
+
+        <!-- Hero Section -->
         <section class="hero">
-            <h1>Impulsionando o Desenvolvimento e os Negócios</h1>
-            <p>Unimos forças para fortalecer o comércio e a indústria regional com inovação, parcerias estratégicas e suporte contínuo.</p>
-            <img src="imagens/hero.jpg" alt="Fachada da Câmara de Comércio e ambiente corporativo" class="hero-image">
-        </section>
-
-        <section class="weather-section">
-            <h2>Clima em São Paulo</h2>
-            <div id="current-weather">
-                <p>Carregando clima atual...</p>
-            </div>
-            
-            <h3 class="forecast-title">Previsão para os Próximos Dias</h3>
-            <div id="forecast">
-                <p>Carregando previsão...</p>
+            <img src="imagens/hero.jpg" alt="Vista da cidade de São Paulo" loading="eager">
+            <div class="hero-content">
+                <h2>Conectando empresas e fortalecendo o comércio local</h2>
+                <a href="join.html" class="cta-button">Associe-se Agora</a>
             </div>
         </section>
 
-        <section class="spotlights-section">
+        <!-- Seção de Eventos -->
+        <section class="events">
+            <h2>Eventos Recentes</h2>
+            <article>
+                <h3>Feira Empresarial 2026</h3>
+                <p>O maior evento de networking para pequenas e médias empresas da região.</p>
+            </article>
+            <article>
+                <h3>Palestra: Inovação e Tecnologia</h3>
+                <p>Descubra como aplicar inteligência e automação no seu negócio.</p>
+            </article>
+        </section>
+
+        <!-- Seção do Clima (OpenWeather API) -->
+        <section class="weather">
+            <h2>Clima Atual</h2>
+            <div id="weather-info">
+                <p id="current-temp">Carregando temperatura...</p>
+                <p id="weather-desc">Carregando condições...</p>
+            </div>
+            <div id="forecast"></div>
+        </section>
+
+        <!-- Seção de Empresas em Destaque (Spotlights) -->
+        <section class="spotlights">
             <h2>Empresas em Destaque</h2>
-            <div id="spotlights-container">
-                <p>Carregando destaques...</p>
-            </div>
+            <div id="spotlights-container"></div>
         </section>
-
-        <section class="events-section">
-            <h2>Próximos Eventos</h2>
-            <ul>
-                <li><strong>Encontro de Networking Empresarial:</strong> 15 de Outubro às 19h</li>
-                <li><strong>Palestra sobre Inovação e Tecnologia:</strong> 22 de Outubro às 20h</li>
-            </ul>
-        </section>
-
     </main>
 
     <footer>
-        <p>&copy; <span id="currentYear"></span> Câmara de Comércio e Indústria de São Paulo</p>
+        <p>&copy; <span id="currentyear"></span> Câmara de Comércio de São Paulo | WDD231</p>
         <p id="lastModified"></p>
     </footer>
-
 </body>
 </html>
