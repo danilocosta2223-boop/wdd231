@@ -1,14 +1,14 @@
-/* ==========================================
-   Estilos Base e Mobile (small.css)
-   ========================================== */
+/* ===================================================
+   estilos/small.css - Visão Mobile First (< 768px)
+   =================================================== */
 
 :root {
-  --primary-color: #1b365d;
-  --secondary-color: #005b5b;
-  --accent-color: #b71c1c;
-  --bg-color: #f4f6f8;
-  --card-bg: #ffffff;
-  --text-color: #222222;
+  --primary-color: #003366;
+  --secondary-color: #0066cc;
+  --accent-color: #ff9900;
+  --background-light: #f4f6f9;
+  --text-dark: #222222;
+  --white: #ffffff;
   --font-family: 'Roboto', sans-serif;
 }
 
@@ -20,19 +20,19 @@
 
 body {
   font-family: var(--font-family);
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  color: var(--text-dark);
+  background-color: var(--background-light);
   line-height: 1.6;
 }
 
 /* Header */
 header {
   background-color: var(--primary-color);
-  color: #ffffff;
-  padding: 1rem;
+  color: var(--white);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem;
 }
 
 .logo-container {
@@ -43,75 +43,74 @@ header {
 
 .logo-container img {
   border-radius: 8px;
+  object-fit: cover;
 }
 
 .header-text h1 {
-  font-size: 1.4rem;
-  color: #ffffff;
+  font-size: 1.2rem;
+  margin: 0;
 }
 
 .header-text p {
-  font-size: 0.85rem;
-  color: #f0f0f0;
+  font-size: 0.8rem;
+  margin: 0;
+  opacity: 0.9;
 }
 
+/* Botão de Menu Hambúrguer */
 #menu-button {
+  font-size: 2rem;
   background: none;
   border: none;
-  color: #ffffff;
-  font-size: 2rem;
+  color: var(--white);
   cursor: pointer;
+  padding: 0.5rem;
 }
 
-/* Navegação e Contraste dos Links */
+/* Navegação Mobile */
 nav {
   background-color: var(--secondary-color);
 }
 
 nav ul {
   list-style: none;
-  display: flex;
+  display: none;
   flex-direction: column;
 }
 
-/* Seletores genéricos e de alta especificidade sem !important */
-nav ul li a,
-nav ul li a:link,
-nav ul li a:visited {
+nav ul.open {
+  display: flex;
+}
+
+nav ul li a {
   display: block;
-  color: #ffffff;
+  color: var(--white);
   text-decoration: none;
   padding: 0.75rem 1rem;
   text-align: center;
   font-weight: bold;
-  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 nav ul li a:hover,
-nav ul li a:focus {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
-}
-
-/* Link Ativo - Fundo branco e texto escuro */
 nav ul li a.active {
-  background-color: #ffffff;
-  color: #1b365d;
+  background-color: var(--primary-color);
+  color: var(--accent-color);
 }
 
-/* Main Content Layout */
+/* Conteúdo Principal */
 main {
   padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Hero Section */
+/* Seção Hero com CTA */
 .hero-container {
   position: relative;
-  overflow: hidden;
+  margin-bottom: 1.5rem;
   border-radius: 8px;
+  overflow: hidden;
 }
 
 .hero-container img {
@@ -122,86 +121,148 @@ main {
 }
 
 .hero-cta {
-  background-color: rgba(27, 54, 93, 0.95);
-  color: #ffffff;
+  background-color: rgba(0, 51, 102, 0.85);
+  color: var(--white);
   padding: 1.5rem;
   text-align: center;
 }
 
 .hero-cta h2 {
-  color: #ffffff;
-  border-bottom: 2px solid #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Botão CTA com Alto Contraste */
-.cta-button,
-.cta-button:link,
-.cta-button:visited {
+.hero-cta p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.cta-button {
   display: inline-block;
-  margin-top: 1rem;
+  background-color: var(--accent-color);
+  color: var(--text-dark);
   padding: 0.75rem 1.5rem;
-  background-color: #bf360c;
-  color: #ffffff;
+  font-weight: bold;
   text-decoration: none;
   border-radius: 4px;
-  font-weight: bold;
 }
 
-.cta-button:hover,
-.cta-button:focus {
-  background-color: #8c0000;
-  color: #ffffff;
+.cta-button:hover {
+  background-color: #e68a00;
 }
 
-/* Seções Padrão e Títulos H2 */
-.events-section, .weather-section, .spotlights-section {
-  background-color: var(--card-bg);
-  padding: 1.25rem;
+/* Seções Gerais */
+.events-section,
+.weather-section,
+.spotlights-section {
+  background-color: var(--white);
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 h2 {
   color: var(--primary-color);
-  background-color: transparent;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.3rem;
   margin-bottom: 1rem;
-  border-bottom: 2px solid var(--secondary-color);
-  padding-bottom: 0.25rem;
+  font-size: 1.3rem;
 }
 
-/* Cards de Conteúdo */
-.weather-card, .event-card, .spotlight-card {
-  background-color: #f9f9f9;
-  padding: 1rem;
-  border-radius: 6px;
-  margin-bottom: 0.75rem;
-  border-left: 4px solid var(--secondary-color);
-}
-
-.spotlights-grid {
-  display: flex;
-  flex-direction: column;
+/* Eventos */
+.events-grid {
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1rem;
 }
 
-.spotlight-card img {
-  max-width: 100%;
-  height: auto;
-  margin: 0.5rem 0;
+.event-card {
+  background-color: var(--background-light);
+  padding: 1rem;
+  border-left: 4px solid var(--secondary-color);
+  border-radius: 4px;
 }
 
-/* Footer */
+.event-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+/* Clima */
+.weather-card {
+  margin-bottom: 1rem;
+}
+
+.forecast-container {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.forecast-day {
+  background-color: var(--background-light);
+  padding: 0.5rem;
+  border-radius: 4px;
+  text-align: center;
+  flex: 1;
+}
+
+/* Spotlights */
+.spotlights-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.spotlight-card {
+  background-color: var(--background-light);
+  padding: 1rem;
+  border-radius: 6px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+}
+
+.spotlight-card img {
+  border-radius: 50%;
+  margin: 0.5rem 0;
+  object-fit: cover;
+}
+
+.spotlight-card h3 {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.spotlight-card a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--secondary-color);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.spotlight-card a:hover {
+  text-decoration: underline;
+}
+
+/* Rodapé */
 footer {
   background-color: var(--primary-color);
-  color: #ffffff;
-  text-align: center;
+  color: var(--white);
   padding: 1.5rem 1rem;
+  text-align: center;
   margin-top: 2rem;
+}
+
+.footer-info {
+  margin-bottom: 1rem;
   font-size: 0.9rem;
 }
 
 .footer-bottom {
-  margin-top: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-  padding-top: 0.5rem;
+  padding-top: 1rem;
+  font-size: 0.8rem;
 }
