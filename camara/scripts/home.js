@@ -14,8 +14,7 @@ if (lastModifiedEl) {
 // ==========================================
 // 2. Clima e Previsão de 3 Dias (OpenWeather)
 // ==========================================
-// Substitua o valor entre aspas abaixo pela sua chave de 32 caracteres do OpenWeather:
-const apiKey = 'SUA_CHAVE_REAL_AQUI'; 
+const apiKey = 'SUA_CHAVE_REAL_AQUI'; // Insira sua chave de 32 caracteres do OpenWeather
 const lat = '-23.5505';
 const lon = '-46.6333';
 

@@ -3,77 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Câmara de Comércio de São Paulo</title>
     <meta name="description" content="Página Inicial da Câmara de Comércio de São Paulo. Promovendo negócios, networking e desenvolvimento local.">
-    
-    <!-- CSS Corrigidos com suporte a Responsividade (Mobile-First / Desktop) -->
+    <meta name="author" content="Danilo Rafael da Silva Costa">
+
+    <!-- Favicon -->
+    <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Câmara de Comércio de São Paulo">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://danilocosta2223-boop.github.io/wdd231/camara/imagens/hero.jpg">
+    <meta property="og:url" content="https://danilocosta2223-boop.github.io/wdd231/camara/index.html">
+    <meta property="og:description" content="Promovendo negócios, networking e desenvolvimento local na cidade de São Paulo.">
+
+    <!-- Google Fonts Preconnect & Stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos CSS -->
     <link rel="stylesheet" href="estilos/normalize.css">
     <link rel="stylesheet" href="estilos/small.css">
-    <link rel="stylesheet" href="estilos/large.css" media="(min-width: 600px)">
-    
+    <link rel="stylesheet" href="estilos/large.css">
+
+    <!-- JavaScript Externo -->
     <script src="scripts/home.js" defer></script>
 </head>
 <body>
+
     <header>
         <div class="logo-container">
-            <!-- Caso não tenha logo.png, o texto do span já garante a identificação da marca -->
-            <span>Câmara de Comércio de São Paulo</span>
+            <img src="imagens/logo.png" alt="Logotipo da Câmara de Comércio de São Paulo" width="80" height="80">
+            <div class="header-text">
+                <h1>Câmara de Comércio de São Paulo</h1>
+                <p>Unindo negócios, fortalecendo a comunidade</p>
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Início</a></li>
-                <li><a href="diretorio.html">Diretório</a></li>
-                <li><a href="join.html">Associe-se</a></li>
-                <li><a href="contact.html">Contato</a></li>
-            </ul>
-        </nav>
+        <button id="menu-button" aria-label="Abrir Menu de Navegação">&#9776;</button>
     </header>
 
-    <main>
-        <h1>Câmara de Comércio de São Paulo</h1>
+    <nav>
+        <ul id="primary-nav">
+            <li><a href="index.html" class="active">Início</a></li>
+            <li><a href="diretorio.html">Diretório</a></li>
+            <li><a href="join.html">Associe-se</a></li>
+            <li><a href="contact.html">Contato</a></li>
+        </ul>
+    </nav>
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <img src="imagens/hero.jpg" alt="Vista da cidade de São Paulo" loading="eager">
-            <div class="hero-content">
-                <h2>Conectando empresas e fortalecendo o comércio local</h2>
+    <main>
+        <!-- Imagem Principal (Hero Image) com Call to Action -->
+        <section class="hero-container">
+            <img src="imagens/hero.jpg" alt="Vista da cidade de São Paulo" width="1200" height="500">
+            <div class="hero-cta">
+                <h2>Aumente a Visibilidade da Sua Empresa</h2>
+                <p>Junte-se à nossa rede de parceiros e impulsione seus negócios em São Paulo.</p>
                 <a href="join.html" class="cta-button">Associe-se Agora</a>
             </div>
         </section>
 
-        <!-- Seção de Eventos -->
-        <section class="events">
-            <h2>Eventos Recentes</h2>
-            <article>
-                <h3>Feira Empresarial 2026</h3>
-                <p>O maior evento de networking para pequenas e médias empresas da região.</p>
-            </article>
-            <article>
-                <h3>Palestra: Inovação e Tecnologia</h3>
-                <p>Descubra como aplicar inteligência e automação no seu negócio.</p>
-            </article>
+        <!-- Seção de Eventos Atuais -->
+        <section class="events-section">
+            <h2>Próximos Eventos</h2>
+            <div class="events-grid">
+                <article class="event-card">
+                    <h3>Feira de Negócios SP 2026</h3>
+                    <p><strong>Data:</strong> 25 de Outubro de 2026</p>
+                    <p><strong>Horário:</strong> 14:00 às 20:00</p>
+                    <p><strong>Local:</strong> Centro de Convenções Anhembi</p>
+                    <p>Networking direto com mais de 50 empresas locais.</p>
+                </article>
+                <article class="event-card">
+                    <h3>Workshop: Marketing Digital para PMEs</h3>
+                    <p><strong>Data:</strong> 12 de Novembro de 2026</p>
+                    <p><strong>Horário:</strong> 09:00 às 12:00</p>
+                    <p><strong>Local:</strong> Auditório da Câmara de Comércio</p>
+                    <p>Aprenda estratégias de crescimento e presença online.</p>
+                </article>
+            </div>
         </section>
 
-        <!-- Seção do Clima (OpenWeather API) -->
-        <section class="weather">
-            <h2>Clima Atual</h2>
-            <div id="weather-info">
-                <p id="current-temp">Carregando temperatura...</p>
-                <p id="weather-desc">Carregando condições...</p>
+        <!-- Seção de Tempo / Clima (OpenWeather) -->
+        <section class="weather-section">
+            <h2>Clima em São Paulo</h2>
+            <div class="weather-card">
+                <p><strong>Temperatura Atual:</strong> <span id="current-temp">--°C</span></p>
+                <p><strong>Condição:</strong> <span id="weather-desc">Carregando...</span></p>
             </div>
-            <div id="forecast"></div>
+            <div id="forecast" class="forecast-container">
+                <!-- A previsão de 3 dias é renderizada dinamicamente pelo scripts/home.js -->
+            </div>
         </section>
 
         <!-- Seção de Empresas em Destaque (Spotlights) -->
-        <section class="spotlights">
+        <section class="spotlights-section">
             <h2>Empresas em Destaque</h2>
-            <div id="spotlights-container"></div>
+            <div id="spotlights-container" class="spotlights-grid">
+                <!-- Cartões sorteados de membros Ouro/Prata via JS -->
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="currentyear"></span> Câmara de Comércio de São Paulo | WDD231</p>
-        <p id="lastModified"></p>
+        <div class="footer-info">
+            <p><strong>Câmara de Comércio de São Paulo</strong></p>
+            <p>Rua Boa Vista, 100 - Centro, São Paulo - SP</p>
+            <p>contato@camarasp.org.br | (11) 3000-0000</p>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentyear"></span> Câmara de Comércio de São Paulo | Danilo Costa | WDD231</p>
+            <p id="lastModified"></p>
+        </div>
     </footer>
+
 </body>
 </html>
