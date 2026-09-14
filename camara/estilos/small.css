@@ -98,7 +98,7 @@ nav ul li a:focus {
   color: var(--accent-color);
 }
 
-/* Correção de Contraste do Item Ativo no Menu */
+/* Correção de Contraste do Item Ativo no Menu (WCAG AA/AAA) */
 nav ul li a.active {
   background-color: #ff9900;
   color: #000000;
