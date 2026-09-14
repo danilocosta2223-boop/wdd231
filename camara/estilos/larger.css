@@ -12,7 +12,7 @@
     justify-content: center;
   }
 
-  nav a {
+  nav ul li a {
     padding: 1rem 2rem;
   }
 
