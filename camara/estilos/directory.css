@@ -1,4 +1,6 @@
-/* Apenas as regras específicas do diretório (Normalize e Home já vêm do HTML) */
+/* ==========================================================================
+   Configurações Gerais do Diretório da Câmara de Comércio
+   ========================================================================== */
 
 .directory-header {
     display: flex;
@@ -7,7 +9,7 @@
     flex-wrap: wrap;
     gap: 1rem;
     background-color: #ffffff;
-    padding: 2rem;
+    padding: 1.5rem 2rem;
     border-radius: 8px;
     margin-bottom: 2rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -32,7 +34,7 @@
     font-weight: bold;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .view-btn.active,
@@ -48,7 +50,10 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* Grid View */
+/* ==========================================================================
+   Modo Grade (.grid-view)
+   ========================================================================== */
+
 .grid-view {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -64,7 +69,13 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grid-view .member-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .grid-view .member-card img {
@@ -78,7 +89,33 @@
     border: 1px solid #ddd;
 }
 
-/* List View */
+.grid-view .member-card h3 {
+    margin: 0.5rem 0;
+    color: #0b2545;
+}
+
+.grid-view .member-card p {
+    margin: 0.25rem 0;
+    color: #4a5568;
+    font-size: 0.95rem;
+}
+
+.grid-view .member-card a {
+    margin-top: 0.5rem;
+    color: #134074;
+    text-decoration: none;
+    font-weight: bold;
+    word-break: break-all;
+}
+
+.grid-view .member-card a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Modo Lista (.list-view)
+   ========================================================================== */
+
 .list-view {
     display: flex;
     flex-direction: column;
@@ -89,40 +126,72 @@
     background: #f8fafc;
     border: 1px solid #e2e8f0;
     border-radius: 6px;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     text-align: left;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .list-view .member-card img {
     width: 50px;
     height: 50px;
     object-fit: contain;
-    margin-bottom: 0;
     background: #ffffff;
     padding: 0.2rem;
     border-radius: 4px;
+    border: 1px solid #ddd;
 }
 
-.list-view .member-info {
-    flex: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+.list-view .member-card h3 {
+    margin: 0;
+    color: #0b2545;
+    flex: 1.5;
 }
+
+.list-view .member-card p {
+    margin: 0;
+    color: #4a5568;
+    font-size: 0.9rem;
+    flex: 1;
+}
+
+.list-view .member-card a {
+    color: #134074;
+    text-decoration: none;
+    font-weight: bold;
+    flex: 1.5;
+    text-align: right;
+    word-break: break-all;
+}
+
+.list-view .member-card a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Responsividade Mobile (Telas pequenas)
+   ========================================================================== */
 
 @media (max-width: 768px) {
+    .directory-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     .list-view .member-card {
         flex-direction: column;
         text-align: center;
+        gap: 0.5rem;
     }
-    .list-view .member-info {
-        flex-direction: column;
+
+    .list-view .member-card h3,
+    .list-view .member-card p,
+    .list-view .member-card a {
+        text-align: center;
+        flex: none;
+        width: 100%;
     }
 }
