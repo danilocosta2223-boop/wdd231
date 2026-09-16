@@ -3,74 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câmara de Comércio de São Paulo | Diretório de Membros</title>
     
-    <meta name="description" content="Diretório oficial das empresas associadas à Câmara de Comércio de São Paulo com informações de contato, endereço e nível de associação.">
+    <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Diretório de empresas associadas à Câmara de Comércio e Indústria de São Paulo.">
     <meta name="author" content="Danilo Rafael da Silva Costa">
     
-    <title>Diretório de Empresas | Câmara de Comércio de São Paulo</title>
-    
-    <meta property="og:title" content="Diretório de Empresas | Câmara de Comércio de São Paulo">
-    <meta property="og:description" content="Consulte o diretório de empresas associadas à Câmara de Comércio de São Paulo.">
-    <meta property="og:image" content="https://danilocosta2223-boop.github.io/wdd231/camara/imagens/social.jpg">
-    <meta property="og:url" content="https://danilocosta2223-boop.github.io/wdd231/camara/diretorio.html">
+    <meta property="og:title" content="Câmara de Comércio de São Paulo | Diretório">
+    <meta property="og:description" content="Consulte o diretório completo de empresas associadas à Câmara de Comércio de São Paulo.">
     <meta property="og:type" content="website">
-
-    <!-- Favicon -->
-    <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
-
-    <!-- Google Fonts -->
+    <meta property="og:url" content="https://danilocosta2223-boop.github.io/wdd231/camara/directory.html">
+    <meta property="og:image" content="https://danilocosta2223-boop.github.io/wdd231/camara/imagens/hero.jpg">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <!-- Arquivos CSS (2 esperados pela auditoria) -->
+    
     <link rel="stylesheet" href="estilos/normalize.css">
     <link rel="stylesheet" href="estilos/directory.css">
     
-    <!-- Script do Diretório -->
     <script src="scripts/directory.js" defer></script>
 </head>
 <body>
-    <!-- Cabeçalho Principal -->
-    <header class="site-header">
-        <div class="logo-container">
-            <span class="site-title">Câmara de Comércio de São Paulo</span>
-        </div>
-        <button id="menuButton" aria-expanded="false" aria-label="Menu de Navegação">☰ Menu</button>
-        <nav id="navMenu" class="nav-menu">
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="diretorio.html" class="active">Diretório</a></li>
-                <li><a href="join.html">Associe-se</a></li>
-                <li><a href="contact.html">Contato</a></li>
-            </ul>
+
+    <header>
+        <div class="site-title">Câmara de Comércio de São Paulo</div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="directory.html" class="active">Diretório</a>
+            <a href="join.html">Associe-se</a>
+            <a href="contact.html">Contato</a>
         </nav>
     </header>
 
-    <!-- Conteúdo Principal -->
-    <main>
-        <section class="directory-hero">
-            <h1>Diretório de Empresas Associadas</h1>
-            <p>Conheça as empresas que fazem parte da nossa rede de negócios em São Paulo.</p>
-        </section>
+    <main class="container">
+        <h1>Diretório de Membros</h1>
+        
+        <div class="view-toggle">
+            <button id="grid" class="active">Grade</button>
+            <button id="list">Lista</button>
+        </div>
 
-        <!-- Controles de Visualização (Grade / Lista) -->
-        <section class="directory-controls">
-            <button id="grid" class="view-btn active" aria-label="Visualização em Grade">Grade</button>
-            <button id="list" class="view-btn" aria-label="Visualização em Lista">Lista</button>
-        </section>
-
-        <!-- Container onde o JavaScript injetará os membros -->
-        <section id="directory-container" class="directory-grid">
-            <p>Carregando diretório de empresas...</p>
-        </section>
+        <!-- Container onde o JavaScript injeta os cartões (essencial para a auditoria) -->
+        <div id="members-container" class="grid">
+            <!-- Os cartões dos membros serão gerados dinamicamente via JS -->
+        </div>
     </main>
 
-    <!-- Rodapé Completo com Nome e Matéria -->
-    <footer class="site-footer">
-        <p>&copy; <span id="currentYear"></span> Câmara de Comércio de São Paulo.</p>
-        <p>Danilo Rafael da Silva Costa | WDD 231</p>
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Câmara de Comércio e Indústria de São Paulo</p>
         <p id="lastModified"></p>
     </footer>
+
 </body>
 </html>

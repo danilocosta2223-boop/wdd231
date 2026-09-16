@@ -3,86 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Página inicial do curso WDD231 - Desenvolvido por Danilo Rafael da Silva Costa">
+    <title>Câmara de Comércio de São Paulo | Página Inicial</title>
+    
+    <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
+
+    <meta name="description" content="Câmara de Comércio e Indústria de São Paulo - Conectando empresas e impulsionando negócios.">
     <meta name="author" content="Danilo Rafael da Silva Costa">
-    <meta name="robots" content="index, follow">
     
-    <title>WDD231 | Danilo Costa</title>
+    <meta property="og:title" content="Câmara de Comércio de São Paulo | Página Inicial">
+    <meta property="og:description" content="Acompanhe eventos, informações climáticas e empresas em destaque da Câmara de Comércio de São Paulo.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://danilocosta2223-boop.github.io/wdd231/camara/index.html">
+    <meta property="og:image" content="https://danilocosta2223-boop.github.io/wdd231/camara/imagens/hero.jpg">
     
-    <!-- Links para Fontes e Estilos na pasta estilos/ -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="estilos/normalize.css">
-    <link rel="stylesheet" href="estilos/small.css">
-    <link rel="stylesheet" href="estilos/larger.css">
+    <link rel="stylesheet" href="estilos/home.css">
     
-    <!-- Scripts JavaScript na pasta scripts/ -->
-    <script src="scripts/navigation.js" defer></script>
-    <script src="scripts/dates.js" defer></script>
-    <script src="scripts/courses.js" defer></script>
+    <script src="scripts/home.js" defer></script>
 </head>
 <body>
 
     <header>
-        <div class="logo-area">
-            <img src="imagens/logo.svg" alt="Logo do site WDD231">
-            <span>Danilo Costa</span>
-        </div>
-        
-        <button id="menuButton" aria-label="Abrir Menu">☰</button>
-        
-        <nav id="navMenu">
-            <a href="index.html" class="active">Home</a>
-            <a href="camara.html">Projeto Câmara</a>
-            <a href="projeto.html">Projeto Final</a>
+        <div class="site-title">Câmara de Comércio de São Paulo</div>
+        <nav>
+            <a href="index.html" class="active">Início</a>
+            <a href="directory.html">Diretório</a>
+            <a href="join.html">Associe-se</a>
+            <a href="contact.html">Contato</a>
         </nav>
     </header>
 
-    <main>
-        <h1>Home</h1>
+    <main class="container">
         
-        <section>
-            <h2>Sobre Mim</h2>
-            <p>
-                Sou estudante da FIAP, formado em Administração, com MBA em Gestão de Projetos e experiência em coordenação administrativa, gestão operacional e tecnologia.
-            </p>
+        <section class="hero">
+            <h1>Impulsionando o Desenvolvimento e os Negócios</h1>
+            <p>Unimos forças para fortalecer o comércio e a indústria regional com inovação, parcerias estratégicas e suporte contínuo.</p>
+            <img src="imagens/hero.jpg" alt="Fachada da Câmara de Comércio e ambiente corporativo" class="hero-image">
         </section>
-        
-        <section>
-            <h2>Foto de Perfil</h2>
-            <img src="imagens/profile.jpg" alt="Foto de perfil de Danilo Rafael da Silva Costa" class="profile">
-        </section>
-        
-        <section class="courses-section">
-            <h2>Certificados e Cursos</h2>
-            
-            <div class="filters" role="group" aria-label="Filtros de Cursos">
-                <button id="all" type="button">Todos</button>
-                <button id="wdd" type="button">WDD</button>
-                <button id="cse" type="button">CSE</button>
+
+        <section class="weather-section">
+            <h2>Clima em São Paulo</h2>
+            <div id="current-weather">
+                <p>Carregando clima atual...</p>
             </div>
             
-            <!-- Container onde a lista de cursos dinâmica será injetada via JS -->
-            <div id="courseContainer"></div>
-            
-            <!-- Parágrafo do cálculo de créditos com reduce() -->
-            <p id="credits"></p>
+            <h3 class="forecast-title">Previsão para os Próximos Dias</h3>
+            <div id="forecast">
+                <p>Carregando previsão...</p>
+            </div>
         </section>
+
+        <section class="spotlights-section">
+            <h2>Empresas em Destaque</h2>
+            <div id="spotlights-container">
+                <p>Carregando destaques...</p>
+            </div>
+        </section>
+
+        <section class="events-section">
+            <h2>Próximos Eventos</h2>
+            <ul>
+                <li><strong>Encontro de Networking Empresarial:</strong> 15 de Outubro às 19h</li>
+                <li><strong>Palestra sobre Inovação e Tecnologia:</strong> 22 de Outubro às 20h</li>
+            </ul>
+        </section>
+
     </main>
 
     <footer>
-        <div class="social">
-            <a href="https://github.com/danilocosta2223-boop" target="_blank" rel="noopener">GitHub</a> | 
-            <a href="https://www.linkedin.com/in/danilocosta2223/" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-        
-        <p>
-            &copy; <span id="currentYear"></span> 
-            Danilo Rafael da Silva Costa | São Paulo - Brasil
-        </p>
-        
+        <p>&copy; <span id="currentYear"></span> Câmara de Comércio e Indústria de São Paulo</p>
         <p id="lastModified"></p>
     </footer>
 
