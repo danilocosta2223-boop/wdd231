@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre a Câmara | Câmara de Comércio de São Paulo</title>
+    <meta name="description" content="Conheça mais sobre a Câmara de Comércio de São Paulo, dados demográficos e pontos de interesse da nossa região.">
+    <meta name="author" content="Danilo Rafael da Silva Costa">
+    <link rel="icon" href="imagens/favicon.ico">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sobre a Câmara | Câmara de Comércio de São Paulo">
+    <meta property="og:description" content="Descubra as riquezas, cultura e infraestrutura de negócios em São Paulo.">
+    <meta property="og:image" content="https://danilocosta2223-boop.github.io/wdd231/camara/imagens/hero.jpg">
+    <meta property="og:url" content="https://danilocosta2223-boop.github.io/wdd231/camara/sobre.html">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="estilos/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos/pequeno.css">
+    <link rel="stylesheet" href="estilos/grande.css" media="(min-width: 768px)">
+
+    <!-- Script JS como Módulo -->
+    <script type="module" src="scripts/sobre.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo-box">
+            <img src="imagens/logo.png" alt="Logotipo da Câmara de Comércio de São Paulo">
+            <span>Câmara de Comércio de São Paulo</span>
+        </div>
+        <button id="menu-button" aria-label="Menu de navegação">☰</button>
+        <nav class="navigation">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="diretorio.html">Diretório</a></li>
+                <li><a href="associacao.html">Junte-se a Nós</a></li>
+                <li><a href="sobre.html" class="active">Sobre a Câmara</a></li>
+                <li><a href="contact.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="about-main">
+        <h1>Sobre a Câmara de Comércio de São Paulo</h1>
+        
+        <!-- Área para a mensagem do localStorage -->
+        <section id="visitor-message" class="visitor-banner">
+            <!-- Injetado dinamicamente via JS -->
+        </section>
+
+        <section class="about-intro">
+            <h2>Nossa Região e Potencial</h2>
+            <p>São Paulo é o principal polo econômico, financeiro e cultural da América Latina. Nossa Câmara de Comércio atua fortalecendo parcerias estratégicas, apoiando empreendedores e promovendo o desenvolvimento sustentável da região.</p>
+        </section>
+
+        <!-- Seção de Cartões gerados por JSON com Grid Nomeado -->
+        <section class="cards-grid-container" id="cards-container">
+            <!-- O JavaScript irá inserir dinamicamente os 8 cartões aqui -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Câmara de Comércio de São Paulo | Danilo Rafael da Silva Costa</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
