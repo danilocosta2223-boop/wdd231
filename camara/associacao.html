@@ -43,7 +43,7 @@
     </header>
 
     <main class="association-main">
-        <h1>Formulário de Associação</h1>
+        <h1>Associe-se à Câmara de Comércio de São Paulo</h1>
         
         <div class="association-container">
             <!-- Formulário -->
@@ -58,7 +58,7 @@
                 </label>
 
                 <label>Cargo na Organização *
-                    <input type="text" name="cargo" title="Digite seu cargo (mínimo de 7 letras/hifens/espaços)" autocomplete="organization-title" pattern="[A-Za-z\s-]{7,}" placeholder="Ex: Diretor Executivo" required>
+                    <input type="text" name="cargo" title="Digite seu cargo (mínimo de 7 letras/hifens/espaços)" autocomplete="organization-title" pattern="[A-Za-zÀ-ÿ\s-]{7,}" placeholder="Ex: Diretor Executivo" required>
                 </label>
 
                 <label>E-mail *
@@ -74,12 +74,12 @@
                 </label>
 
                 <label>Nível de Associação *
-                    <select name="membership" required title="Selecione o nível de associação desejado">
-                        <option value="" disabled selected>Selecione um nível...</option>
-                        <option value="np">Associação NP (Sem fins lucrativos - Gratuito)</option>
-                        <option value="bronze">Associação Bronze</option>
-                        <option value="silver">Associação Prata</option>
-                        <option value="gold">Associação Ouro</option>
+                    <select name="membershipLevel" required title="Selecione o nível de associação desejado">
+                        <option value="">Selecione um nível...</option>
+                        <option value="np">NP Membership</option>
+                        <option value="bronze">Bronze Membership</option>
+                        <option value="silver">Silver Membership</option>
+                        <option value="gold">Gold Membership</option>
                     </select>
                 </label>
 
