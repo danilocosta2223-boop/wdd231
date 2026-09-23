@@ -1,6 +1,7 @@
 import { locais } from "../data/locais.mjs";
 
 document.addEventListener("DOMContentLoaded", () => {
+    // 1. Renderizar os 8 cartões dinamicamente com as classes de grid-area (card1 até card8)
     const container = document.querySelector("#cards-container");
     if (container) {
         container.innerHTML = locais.map((local, index) => `
@@ -16,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         `).join("");
     }
 
-    // Lógica do localStorage para visitas
+    // 2. Lógica do localStorage para a mensagem de boas-vindas / visitas
     const visitorMessage = document.querySelector("#visitor-message");
     if (visitorMessage) {
         const lastVisit = localStorage.getItem("lastVisit-camara");
@@ -36,10 +37,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 visitorMessage.textContent = `Seu último acesso foi há ${diffDays} dias.`;
             }
         }
+
+        // Atualizar o registro com a visita atual
         localStorage.setItem("lastVisit-camara", now);
     }
 
-    // Menu responsivo
+    // 3. Menu responsivo (Wayfinding / Menu Mobile)
     const menuButton = document.querySelector("#menu-button");
     const navigation = document.querySelector(".navigation");
 
@@ -50,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Rodapé dinâmico
     const currentYearSpan = document.querySelector("#currentYear");
     if (currentYearSpan) currentYearSpan.textContent = new Date().getFullYear();
 
