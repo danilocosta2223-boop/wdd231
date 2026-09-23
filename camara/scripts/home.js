@@ -1,128 +1,124 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Atualizar o ano atual e a última modificação no rodapé
-    const currentYearSpan = document.getElementById("currentYear");
-    if (currentYearSpan) {
-        currentYearSpan.textContent = new Date().getFullYear();
-    }
+    // 1. Destaques de Empresas (Spotlights)
+    const spotlightsContainer = document.querySelector("#spotlights-grid");
 
-    const lastModifiedP = document.getElementById("lastModified");
-    if (lastModifiedP) {
-        lastModifiedP.textContent = `Última modificação: ${document.lastModified}`;
-    }
-
-    // 2. Configurações da API do OpenWeather (São Paulo - SP)
-    const apiKey = "679f2252c1e406f52e50529d2fba3d52"; // Chave real configurada
-    const city = "Sao Paulo";
-    const units = "metric";
-    const lang = "pt_br";
-
-    const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&lang=${lang}&appid=${apiKey}`;
-    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${units}&lang=${lang}&appid=${apiKey}`;
-
-    // Buscar Clima Atual
-    fetch(currentWeatherUrl)
-        .then(response => response.json())
-        .then(data => {
-            const container = document.getElementById("current-weather");
-            if (container && data.cod === 200) {
-                const temp = Math.round(data.main.temp);
-                const desc = data.weather[0].description;
-                const icon = data.weather[0].icon;
-                const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
-
-                container.innerHTML = `
-                    <div class="weather-card">
-                        <img src="${iconUrl}" alt="${desc}">
-                        <div>
-                            <p><strong>${temp}°C</strong></p>
-                            <p class="weather-desc">${desc}</p>
-                        </div>
-                    </div>
-                `;
-            } else if (container) {
-                container.innerHTML = "<p>Não foi possível carregar o clima atual.</p>";
+    const getSpotlights = async () => {
+        try {
+            const response = await fetch("./dados/membros.json");
+            
+            if (!response.ok) {
+                throw new Error("Erro ao carregar membros.json");
             }
-        })
-        .catch(error => {
-            console.error("Erro ao buscar clima atual:", error);
-        });
 
-    // Buscar Previsão do Tempo
-    fetch(forecastUrl)
-        .then(response => response.json())
-        .then(data => {
-            const container = document.getElementById("forecast");
-            if (container && data.cod === "200") {
-                const dailyForecasts = data.list.filter(item => item.dt_txt.includes("12:00:00"));
-                
-                let forecastHTML = '<div class="forecast-container">';
-                dailyForecasts.slice(0, 3).forEach(day => {
-                    const date = new Date(day.dt * 1000).toLocaleDateString("pt-BR", { weekday: 'short', day: 'numeric', month: 'numeric' });
-                    const temp = Math.round(day.main.temp);
-                    const desc = day.weather[0].description;
-                    const icon = day.weather[0].icon;
-                    const iconUrl = `https://openweathermap.org/img/wn/${icon}.png`;
+            const members = await response.json();
 
-                    forecastHTML += `
-                        <div class="forecast-card">
-                            <p><strong>${date}</strong></p>
-                            <img src="${iconUrl}" alt="${desc}">
-                            <p>${temp}°C</p>
-                            <p class="weather-desc">${desc}</p>
-                        </div>
-                    `;
-                });
-                forecastHTML += '</div>';
-                container.innerHTML = forecastHTML;
-            } else if (container) {
-                container.innerHTML = "<p>Não foi possível carregar a previsão.</p>";
-            }
-        })
-        .catch(error => {
-            console.error("Erro ao buscar previsão:", error);
-        });
+            // Filtra membros com nível 2 ou superior (Prata/Ouro) usando o valor numérico
+            const premiumMembers = members.filter(member => member.nivel >= 2);
 
-    // 3. Carregar Empresas em Destaque (Spotlights) usando 'membros.json' e compatível com a propriedade 'membership'
-    const spotlightsContainer = document.getElementById("spotlights-container");
-    if (spotlightsContainer) {
-        fetch("data/membros.json")
-            .then(response => {
-                if (!response.ok) throw new Error("Arquivo de membros não encontrado");
-                return response.json();
-            })
-            .then(members => {
-                // Compatibilidade garantida checando tanto 'membership' quanto 'membershipLevel'
-                const spotlights = members.filter(m => (m.membership !== undefined ? m.membership : m.membershipLevel) >= 2);
-                const selected = spotlights.sort(() => 0.5 - Math.random()).slice(0, 2);
+            // Embaralha aleatoriamente e pega 3 empresas
+            const shuffled = premiumMembers.sort(() => 0.5 - Math.random());
+            const spotlight = shuffled.slice(0, 3);
 
-                let html = '<div class="spotlights-grid">';
-                selected.forEach(company => {
-                    html += `
+            if (spotlightsContainer) {
+                spotlightsContainer.innerHTML = "";
+                spotlight.forEach(member => {
+                    spotlightsContainer.innerHTML += `
                         <div class="spotlight-card">
-                            <img src="imagens/${company.image}" alt="${company.name}">
-                            <h3>${company.name}</h3>
-                            <p>${company.address}</p>
-                            <p>${company.phone}</p>
-                            <a href="${company.website}" target="_blank">Visitar site</a>
+                            <img src="imagens/${member.imagem}" alt="Logo de ${member.nome}" loading="lazy">
+                            <h3>${member.nome}</h3>
+                            <p><strong>Telefone:</strong> ${member.telefone}</p>
+                            <p><strong>Endereço:</strong> ${member.endereco}</p>
+                            <p><strong>Nível:</strong> Nível ${member.nivel}</p>
+                            <a href="${member.website}" target="_blank" rel="noopener noreferrer" class="cta-button">Visitar Website</a>
                         </div>
                     `;
                 });
-                html += '</div>';
-                spotlightsContainer.innerHTML = html;
-            })
-            .catch(() => {
-                spotlightsContainer.innerHTML = `
-                    <div class="spotlight-fallback">
-                        <div class="spotlight-fallback-card">
-                            <h3>Comércio & Tecnologia SP</h3>
-                            <p>Soluções corporativas e inovação para o mercado paulista.</p>
-                        </div>
-                        <div class="spotlight-fallback-card">
-                            <h3>Indústria Paulista S.A.</h3>
-                            <p>Excelência em logística e comércio exterior.</p>
+            }
+        } catch (error) {
+            console.error("Erro ao carregar empresas em destaque:", error);
+        }
+    };
+
+    getSpotlights();
+
+    // 2. Seção de Clima (OpenWeatherMap)
+    const apiKey = "c33276537c3584e0315c1e9508d810f2"; 
+    const lat = "-23.5505"; // Coordenadas de São Paulo
+    const lon = "-46.6333";
+    
+    const weatherCard = document.querySelector("#weather-card");
+    const forecastContainer = document.querySelector("#forecast-container");
+
+    const getWeather = async () => {
+        try {
+            // URL para o clima atual
+            const currentUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=pt_br&appid=${apiKey}`;
+            const currentResponse = await fetch(currentUrl);
+            
+            if (!currentResponse.ok) throw new Error("Erro ao buscar dados de clima atual");
+            const currentData = await currentResponse.json();
+
+            const temp = Math.round(currentData.main.temp);
+            const description = currentData.weather[0].description;
+            const capitalizedDesc = description.charAt(0).toUpperCase() + description.slice(1);
+            const icon = currentData.weather[0].icon;
+
+            if (weatherCard) {
+                weatherCard.innerHTML = `
+                    <div class="current-weather">
+                        <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${description}">
+                        <div>
+                            <h3>${temp}°C</h3>
+                            <p>${capitalizedDesc}</p>
                         </div>
                     </div>
                 `;
-            });
-    }
+            }
+
+            // URL para a previsão de 5 dias / 3 horas (extraindo os 3 dias)
+            const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&lang=pt_br&appid=${apiKey}`;
+            const forecastResponse = await fetch(forecastUrl);
+            
+            if (!forecastResponse.ok) throw new Error("Erro ao buscar dados de previsão");
+            const forecastData = await forecastResponse.json();
+
+            // Filtra os dados para pegar uma medição por dia (às 12:00) pegando os próximos 3 dias
+            const dailyForecasts = forecastData.list.filter(item => item.dt_txt.includes("12:00:00")).slice(0, 3);
+
+            if (forecastContainer) {
+                forecastContainer.innerHTML = "<h4>Previsão para os Próximos Dias</h4>";
+                
+                dailyForecasts.forEach(dayData => {
+                    const date = new Date(dayData.dt * 1000);
+                    const dayName = date.toLocaleDateString("pt-BR", { weekday: 'short' });
+                    const dayTemp = Math.round(dayData.main.temp);
+                    const dayDesc = dayData.weather[0].description;
+                    const dayIcon = dayData.weather[0].icon;
+
+                    forecastContainer.innerHTML += `
+                        <div class="forecast-day">
+                            <p><strong>${dayName}</strong></p>
+                            <img src="https://openweathermap.org/img/wn/${dayIcon}.png" alt="${dayDesc}">
+                            <p>${dayTemp}°C</p>
+                        </div>
+                    `;
+                });
+            }
+
+        } catch (error) {
+            console.error("Erro ao carregar o clima:", error);
+            if (weatherCard) {
+                weatherCard.innerHTML = `<p style="color: #d9534f;">Não foi possível carregar as informações do clima. Verifique a chave da API.</p>`;
+            }
+        }
+    };
+
+    getWeather();
+
+    // 3. Rodapé dinâmico
+    const currentYearSpan = document.querySelector("#currentYear");
+    if (currentYearSpan) currentYearSpan.textContent = new Date().getFullYear();
+
+    const lastModifiedSpan = document.querySelector("#lastModified");
+    if (lastModifiedSpan) lastModifiedSpan.textContent = `Última Modificação: ${document.lastModified}`;
 });
