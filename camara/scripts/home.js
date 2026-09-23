@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const getSpotlights = async () => {
         try {
             const response = await fetch("./dados/membros.json");
-            
+
             if (!response.ok) {
                 throw new Error("Erro ao carregar membros.json");
             }
@@ -45,17 +45,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const apiKey = "c33276537c3584e0315c1e9508d810f2"; 
     const lat = "-23.5505"; // Coordenadas de São Paulo
     const lon = "-46.6333";
-    
+
     const weatherCard = document.querySelector("#weather-card");
     const forecastContainer = document.querySelector("#forecast-container");
 
     const getWeather = async () => {
         try {
-            // URL para o clima atual
+            // URLs com o & puro (sem entidades HTML)
             const currentUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=pt_br&appid=${apiKey}`;
+            console.log("Current URL:", currentUrl);
+
             const currentResponse = await fetch(currentUrl);
-            
-            if (!currentResponse.ok) throw new Error("Erro ao buscar dados de clima atual");
+            console.log("Current Status:", currentResponse.status);
+
+            if (!currentResponse.ok) throw new Error(`Erro ${currentResponse.status} ao buscar dados de clima atual`);
             const currentData = await currentResponse.json();
 
             const temp = Math.round(currentData.main.temp);
@@ -75,11 +78,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 `;
             }
 
-            // URL para a previsão de 5 dias / 3 horas (extraindo os 3 dias)
             const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&lang=pt_br&appid=${apiKey}`;
+            console.log("Forecast URL:", forecastUrl);
+
             const forecastResponse = await fetch(forecastUrl);
-            
-            if (!forecastResponse.ok) throw new Error("Erro ao buscar dados de previsão");
+            console.log("Forecast Status:", forecastResponse.status);
+
+            if (!forecastResponse.ok) throw new Error(`Erro ${forecastResponse.status} ao buscar dados de previsão`);
             const forecastData = await forecastResponse.json();
 
             // Filtra os dados para pegar uma medição por dia (às 12:00) pegando os próximos 3 dias
@@ -87,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (forecastContainer) {
                 forecastContainer.innerHTML = "<h4>Previsão para os Próximos Dias</h4>";
-                
+
                 dailyForecasts.forEach(dayData => {
                     const date = new Date(dayData.dt * 1000);
                     const dayName = date.toLocaleDateString("pt-BR", { weekday: 'short' });
@@ -108,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
             console.error("Erro ao carregar o clima:", error);
             if (weatherCard) {
-                weatherCard.innerHTML = `<p style="color: #d9534f;">Não foi possível carregar as informações do clima. Verifique a chave da API.</p>`;
+                weatherCard.innerHTML = `<p style="color: #d9534f;">Não foi possível carregar as informações do clima (${error.message}).</p>`;
             }
         }
     };
