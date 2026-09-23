@@ -42,8 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
     getSpotlights();
 
     // 2. Seção de Clima (OpenWeatherMap)
-    const apiKey = "a8201b9b0b6c9d2d22678318510882d0"; // Nova chave atualizada
-    const lat = "-23.5505"; // Coordenadas de São Paulo
+    const apiKey = "a8201b9b0b6c9d2d22678318510882d0";
+    const lat = "-23.5505";
     const lon = "-46.6333";
 
     const weatherCard = document.querySelector("#weather-card");
@@ -51,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const getWeather = async () => {
         try {
-            // URL para o clima atual com o & puro
             const currentUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=pt_br&appid=${apiKey}`;
             console.log("Current URL:", currentUrl);
 
@@ -78,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 `;
             }
 
-            // URL para a previsão de 5 dias / 3 horas com o & puro
             const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&lang=pt_br&appid=${apiKey}`;
             console.log("Forecast URL:", forecastUrl);
 
@@ -114,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
             console.error("Erro ao carregar o clima:", error);
             if (weatherCard) {
-                weatherCard.innerHTML = `<p style="color: #d9534f;">Não foi possível carregar as informações do clima. Verifique a chave da API.</p>`;
+                weatherCard.innerHTML = `<p style="color: #d9534f;">Não foi possível carregar as informações do clima (${error.message}).</p>`;
             }
         }
     };
