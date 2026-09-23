@@ -17,29 +17,36 @@ export const locais = [
         nome: "Mercado Municipal de São Paulo",
         endereco: "R. da Cantareira, 306 - Centro Histórico, São Paulo - SP",
         descricao: "Conhecido como Mercadão, destaca-se pela arquitetura imponente, vitrais históricos e pelo famoso sanduíche de mortadela.",
-        imagem: "imagens/mercadao.webp",
+        imagem: "imagens/mercado.webp",
         alt: "Fachada e vitrais do Mercado Municipal de São Paulo"
     },
     {
-        nome: "Museu de Arte de São Paulo (MASP)",
-        endereco: "Av. Paulista, 1578 - Bela Vista, São Paulo - SP",
-        descricao: "Um dos museus mais importantes do país, mundialmente reconhecido por sua arquitetura icônica projetada por Lina Bo Bardi.",
-        imagem: "imagens/masp.webp",
-        alt: "Estrutura suspensa do MASP na Avenida Paulista"
+        nome: "Farol Santander",
+        endereco: "R. João Brícola, 24 - Centro Histórico, São Paulo - SP",
+        descricao: "Importante centro cultural e de empreendedorismo localizado em um dos prédios mais icônicos do centro de São Paulo.",
+        imagem: "imagens/farol.webp",
+        alt: "Edifício do Farol Santander no centro de São Paulo"
     },
     {
-        nome: "Parque Villa-Lobos",
-        endereco: "Av. Prof. Fonseca Rodrigues, 2002 - Alto de Pinheiros, São Paulo - SP",
-        descricao: "Espaço verde moderno na zona oeste, ideal para práticas esportivas, ciclovias, orquidário e eventos ao ar livre.",
-        imagem: "imagens/villalobos.webp",
-        alt: "Área verde e pista de caminhada do Parque Villa-Lobos"
+        nome: "Estádio do Pacaembu",
+        endereco: "Praça Charles Miller, s/n - Pacaembu, São Paulo - SP",
+        descricao: "Templo histórico do esporte brasileiro e sede do Museu do Futebol, marcando gerações de fãs de futebol.",
+        imagem: "imagens/pacaembu.webp",
+        alt: "Fachada histórica do Estádio do Pacaembu"
     },
     {
-        nome: "Estação da Luz",
-        endereco: "Praça da Luz, 1 - Centro Histórico, São Paulo - SP",
-        descricao: "Marco arquitetônico do século XIX e importante entroncado ferroviário que abriga também o Museu da Língua Portuguesa.",
-        imagem: "imagens/luz.webp",
-        alt: "Arquitetura e torre de relógio da Estação da Luz"
+        nome: "Pinacoteca de São Paulo",
+        endereco: "Praça da Luz, 2 - Luz, São Paulo - SP",
+        descricao: "O museu de arte mais antigo da cidade, abrigando um vasto acervo de arte brasileira em um edifício neoclássico de tijolos vistos.",
+        imagem: "imagens/pinacoteca.webp",
+        alt: "Fachada da Pinacoteca de São Paulo"
+    },
+    {
+        nome: "Catedral da Sé",
+        endereco: "Praça da Sé - Centro Histórico, São Paulo - SP",
+        descricao: "Uma das maiores igrejas neogóticas do mundo, marco zero e ponto turístico central da capital paulista.",
+        imagem: "imagens/se.webp",
+        alt: "Arquitetura imponente da Catedral da Sé em São Paulo"
     },
     {
         nome: "Bairro da Liberdade",
@@ -47,12 +54,5 @@ export const locais = [
         descricao: "O reduto da comunidade japonesa em São Paulo, famoso por sua culinária típica, comércio tradicional e luminárias caracteristicas.",
         imagem: "imagens/liberdade.webp",
         alt: "Ruas tradicionais do bairro da Liberdade com lanternas orientais"
-    },
-    {
-        nome: "Pátio do Colégio",
-        endereco: "Largo Pátio do Colégio, 158 - Centro Histórico, São Paulo - SP",
-        descricao: "Local de fundação da cidade de São Paulo em 1554, marcando o berço histórico e jesuítico da capital paulista.",
-        imagem: "imagens/patiocolegio.webp",
-        alt: "Construção histórica do Pátio do Colégio em São Paulo"
     }
 ];
