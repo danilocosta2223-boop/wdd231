@@ -290,3 +290,220 @@ nav a.active,
 .hero-cta .cta-button {
     color: #ffffff !important;
 }
+
+/* ==========================================
+   VARIÁVEIS E CONFIGURAÇÕES GERAIS
+   ========================================== */
+:root {
+    --primary-color: #003366;
+    --secondary-color: #f4f6f8;
+    --accent-color: #a94442;
+    --text-color: #333333;
+    --font-stack: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--font-stack);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+/* ==========================================
+   CABEÇALHO E NAVEGAÇÃO MOBILE
+   ========================================== */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-container img {
+    border-radius: 50%;
+}
+
+.header-text h1 {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.header-text p {
+    font-size: 0.75rem;
+    margin: 0;
+    opacity: 0.8;
+}
+
+#menu-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+nav {
+    background-color: #002244;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 500;
+}
+
+/* ==========================================
+   CONTEÚDO PRINCIPAL (MAIN)
+   ========================================== */
+main {
+    padding: 1rem;
+}
+
+.hero-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+}
+
+.hero-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-cta {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    background-color: rgba(0, 51, 102, 0.9);
+    color: white;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.hero-cta h2,
+.hero-cta p {
+    margin-top: 0;
+}
+
+.hero-cta h2 {
+    font-size: 1.2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #ffcc00;
+    color: #000000; /* Fundo amarelo exige texto preto para contraste ideal */
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+}
+
+/* Seções */
+section {
+    background-color: var(--secondary-color);
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+}
+
+section h2 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.4rem;
+    margin-top: 0;
+}
+
+.event-card, .weather-card, .spotlights-grid article {
+    background: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* ==========================================
+   RODAPÉ
+   ========================================== */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0.4rem 0;
+}
+
+/* ==========================================
+   CORREÇÃO DEFINITIVA DE CONTRASTE (WCAG AA)
+   Fundo escuro = Texto branco (#ffffff)
+   ========================================== */
+
+header,
+header * {
+    color: #ffffff !important;
+}
+
+nav,
+nav *,
+nav a,
+nav a:link,
+nav a:visited,
+nav a:hover,
+nav a:focus {
+    color: #ffffff !important;
+}
+
+/* Item ativo (fundo vermelho escuro #a94442) -> Texto branco */
+nav a.active,
+.active {
+    color: #ffffff !important;
+}
+
+/* Caixa Hero (fundo azul escuro rgba(0, 51, 102, 0.9)) -> Texto branco */
+.hero-cta,
+.hero-cta *,
+.hero-cta h2,
+.hero-cta p,
+.hero-cta a {
+    color: #ffffff !important;
+}
+
+/* Botão com fundo amarelo (#ffcc00) mantém texto preto */
+.cta-button {
+    background-color: #ffcc00 !important;
+    color: #000000 !important;
+}
