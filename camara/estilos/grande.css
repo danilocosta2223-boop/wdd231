@@ -1,57 +1,36 @@
 /* ==========================================
-   ESTILOS PARA ECRÃS GRANDES (DESKTOP)
-   ================================---------- */
-@media screen and (min-width: 768px) {
+   CONFIGURAÇÕES PARA TELAS GRANDES (GRANDE.CSS)
+   ========================================== */
 
-    /* Alinha o menu horizontalmente no topo */
-    nav ul {
-        flex-direction: row;
-        justify-content: center;
-    }
+/* Ajustes gerais de layout para desktop (se aplicável ao seu projeto) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    nav ul li a {
-        border-bottom: none;
-        border-right: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 1rem 1.5rem;
-    }
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
 
-    nav ul li:last-child a {
-        border-right: none;
-    }
+/* ==========================================
+   CORREÇÃO DE CONTRASTE NO GRANDE.CSS
+   ========================================== */
+nav,
+nav ul,
+nav li,
+nav a,
+nav a.active,
+nav a:hover,
+.hero-cta,
+.hero-cta *,
+.active {
+    color: #ffffff !important;
+}
 
-    /* Transforma o conteúdo principal numa grelha (Grid) de 3 colunas */
-    main {
-        max-width: 1200px;
-        margin: 2rem auto;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
-        padding: 0 1rem;
-    }
-
-    /* A imagem Hero ocupa toda a largura superior da grelha */
-    .hero-container {
-        grid-column: 1 / -1;
-    }
-
-    /* Distribui as seções lado a lado */
-    .events-section {
-        grid-column: span 1;
-    }
-
-    .weather-section {
-        grid-column: span 1;
-    }
-
-    .spotlights-section {
-        grid-column: span 1;
-    }
-
-    /* Ajuste da caixa de chamada sobre o Hero para desktops */
-    .hero-cta {
-        max-width: 450px;
-        bottom: 30px;
-        left: 30px;
-        padding: 1.5rem;
-    }
+nav a.active,
+nav a:hover {
+    background-color: #a94442;
 }
