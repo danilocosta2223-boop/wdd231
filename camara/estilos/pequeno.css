@@ -263,3 +263,30 @@ nav a.active {
 #menu-button {
     color: #ffffff !important;
 }
+
+/* ==========================================
+   CORREÇÃO DEFINITIVA DE CONTRASTE WCAG AA
+   ========================================== */
+
+/* Garante texto branco em toda a navegação e menu */
+nav,
+nav *,
+nav a,
+nav a:link,
+nav a:visited,
+nav a:hover,
+nav a:focus,
+nav a.active,
+#menu-button {
+    color: #ffffff !important;
+}
+
+/* Garante texto branco em todos os elementos da caixa Hero (incluindo links e botões internos) */
+.hero-cta,
+.hero-cta *,
+.hero-cta h2,
+.hero-cta p,
+.hero-cta a,
+.hero-cta .cta-button {
+    color: #ffffff !important;
+}
