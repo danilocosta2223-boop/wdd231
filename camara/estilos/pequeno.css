@@ -4,7 +4,7 @@
 :root {
     --primary-color: #003366;
     --secondary-color: #f4f6f8;
-    --accent-color: #a94442; /* Vermelho escuro ajustado para atender contraste 4.5:1 */
+    --accent-color: #a94442; /* Vermelho escuro para atender o contraste */
     --text-color: #333333;
     --font-stack: 'Roboto', sans-serif;
 }
@@ -20,7 +20,7 @@ body {
 
 /* ==========================================
    CABEÇALHO E NAVEGAÇÃO MOBILE
-   ================================---------- */
+   ========================================== */
 header {
     background-color: var(--primary-color);
     color: white;
@@ -73,16 +73,9 @@ nav ul {
     flex-direction: column;
 }
 
-/* Força todo o texto e links dentro da navegação a ficarem brancos (contraste alto) */
-nav, 
-nav ul, 
-nav li, 
-nav a {
-    color: #ffffff !important;
-}
-
 nav ul li a {
     display: block;
+    color: white !important;
     padding: 0.8rem 1rem;
     text-decoration: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -92,20 +85,20 @@ nav ul li a {
 nav ul li a.active, 
 nav ul li a:hover {
     background-color: var(--accent-color);
-    color: #ffffff !important;
+    color: white !important;
 }
 
 /* ==========================================
    CONTEÚDO PRINCIPAL (MAIN)
-   ================================---------- */
+   ========================================== */
 main {
     padding: 1rem;
 }
 
+/* Correção para evitar distorção da imagem Hero mantendo a proporção */
 .hero-container {
     position: relative;
     width: 100%;
-    max-height: 450px;
     overflow: hidden;
     border-radius: 6px;
     margin-bottom: 1.5rem;
@@ -113,8 +106,7 @@ main {
 
 .hero-container img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     display: block;
 }
 
@@ -131,7 +123,7 @@ main {
 
 .hero-cta h2,
 .hero-cta p {
-    color: white;
+    color: white !important;
     margin-top: 0;
 }
 
@@ -176,8 +168,19 @@ section h2 {
 }
 
 /* ==========================================
+   REGRAS GLOBAIS DE GARANTIA DE CONTRASTE
+   ========================================== */
+nav a,
+.hero-cta,
+.hero-cta h2,
+.hero-cta p,
+.active {
+    color: white !important;
+}
+
+/* ==========================================
    RODAPÉ
-   ================================---------- */
+   ========================================== */
 footer {
     background-color: var(--primary-color);
     color: white;
