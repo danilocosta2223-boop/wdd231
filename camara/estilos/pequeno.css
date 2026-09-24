@@ -1,6 +1,6 @@
 /* ==========================================
    VARIÁVEIS E CONFIGURAÇÕES GERAIS
-   ================================---------- */
+   ========================================== */
 :root {
     --primary-color: #003366;
     --secondary-color: #f4f6f8;
@@ -20,7 +20,7 @@ body {
 
 /* ==========================================
    CABEÇALHO E NAVEGAÇÃO MOBILE
-   ================================---------- */
+   ========================================== */
 header {
     background-color: var(--primary-color);
     color: white;
@@ -28,6 +28,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .logo-container {
@@ -61,6 +62,7 @@ header {
 
 nav {
     background-color: #002244;
+    width: 100%;
 }
 
 nav ul {
@@ -87,25 +89,26 @@ nav ul li a:hover {
 
 /* ==========================================
    CONTEÚDO PRINCIPAL (MAIN)
-   ================================---------- */
+   ========================================== */
 main {
     padding: 1rem;
 }
 
-/* Proteção contra distorção da Imagem Hero */
+/* Correção para evitar a distorção da imagem Hero */
 .hero-container {
     position: relative;
     width: 100%;
-    margin-bottom: 1.5rem;
+    max-height: 450px; /* Limita a altura máxima para não ocupar o ecrã todo */
     overflow: hidden;
     border-radius: 6px;
+    margin-bottom: 1.5rem;
 }
 
 .hero-container img {
     width: 100%;
-    height: auto; /* Mantém a proporção natural sem esticar */
+    height: 100%;
+    object-fit: cover; /* Recorta a imagem proporcionalmente sem esticar */
     display: block;
-    object-fit: cover;
 }
 
 .hero-cta {
@@ -152,7 +155,7 @@ section h2 {
     margin-top: 0;
 }
 
-.event-card {
+.event-card, .weather-card, .spotlights-grid article {
     background: white;
     padding: 1rem;
     margin-bottom: 1rem;
@@ -160,13 +163,9 @@ section h2 {
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.event-card:last-child {
-    margin-bottom: 0;
-}
-
 /* ==========================================
    RODAPÉ
-   ================================---------- */
+   ========================================== */
 footer {
     background-color: var(--primary-color);
     color: white;
