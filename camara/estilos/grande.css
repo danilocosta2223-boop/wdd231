@@ -1,22 +1,31 @@
 /* ==========================================
-   CONFIGURAÇÕES PARA TELAS GRANDES (GRANDE.CSS)
+   ESTILOS PARA TELAS GRANDES (DESKTOP)
    ========================================== */
 
-/* Ajustes gerais de layout para desktop (se aplicável ao seu projeto) */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+@media screen and (min-width: 768px) {
 
-nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    /* Layout do cabeçalho em linha para desktop */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Menu horizontal em telas grandes */
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    nav ul li a {
+        padding: 1rem 1.5rem;
+        border-bottom: none;
+    }
 }
 
 /* ==========================================
-   CORREÇÃO DE CONTRASTE NO GRANDE.CSS
+   BLINDAGEM DE CONTRASTE (GLOBAL / DESKTOP)
    ========================================== */
 nav,
 nav ul,
@@ -32,5 +41,5 @@ nav a:hover,
 
 nav a.active,
 nav a:hover {
-    background-color: #a94442;
+    background-color: var(--accent-color, #a94442);
 }
