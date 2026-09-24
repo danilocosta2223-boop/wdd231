@@ -1,0 +1,43 @@
+/* Hero com CTA sobre a imagem */
+.hero {
+    position: relative;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.cta-button {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: #0b5ed7;
+    color: white;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+/* Layout Responsivo - Mobile First */
+.events,
+.weather,
+.spotlights {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Layout Responsivo - Desktop (768px ou mais) */
+@media screen and (min-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .hero {
+        grid-column: 1 / 4;
+    }
+}

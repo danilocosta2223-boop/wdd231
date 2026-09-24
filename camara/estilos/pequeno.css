@@ -1,91 +1,46 @@
-/* ===================================================
-   Adições para a Página Sobre a Câmara (sobre.html)
-   =================================================== */
-
-/* Banner de Visita (localStorage) */
-.visitor-banner {
-  background-color: var(--accent-color);
-  color: var(--text-dark);
-  text-align: center;
-  padding: 1rem;
-  font-weight: bold;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
+/* --- Correção da Imagem Hero (Sem Distorção) --- */
+.hero-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    border-radius: 6px;
 }
 
-/* Layout para telas pequenas (Mobile) com Grid de Áreas Nomeadas */
-.cards-grid-container {
-  display: grid;
-  grid-template-areas:
-      "card1"
-      "card2"
-      "card3"
-      "card4"
-      "card5"
-      "card6"
-      "card7"
-      "card8";
-  gap: 1.5rem;
+.hero-container img {
+    width: 100%;
+    height: auto; /* Mantém a proporção natural da imagem */
+    display: block;
+    object-fit: cover;
 }
 
-/* Estilo individual de cada Cartão de Interesse */
-.interest-card {
-  background-color: var(--white);
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
+.hero-cta {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 51, 102, 0.85);
+    padding: 1rem;
+    border-radius: 6px;
 }
 
-.interest-card h2 {
-  font-size: 1.2rem;
-  padding: 1rem;
-  margin: 0;
-  border-bottom: none;
-  background-color: var(--primary-color);
-  color: var(--white);
+/* --- Estilização da Seção de Eventos --- */
+.events-section {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 6px;
+    border: 1px solid #ddd;
 }
 
-.interest-card figure {
-  margin: 0;
-  width: 100%;
+.events-section h2 {
+    margin-top: 0;
+    color: #003366;
 }
 
-.interest-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
+.events-section article {
+    margin-bottom: 1rem;
 }
 
-.interest-card address {
-  font-style: normal;
-  padding: 1rem 1rem 0;
-  font-weight: bold;
-  font-size: 0.9rem;
-  color: var(--secondary-color);
+.events-section article:last-child {
+    margin-bottom: 0;
 }
-
-.interest-card p {
-  padding: 0.5rem 1rem 1rem;
-  flex-grow: 1; /* Faz o botão ficar no fundo se o texto for curto */
-}
-
-.interest-card button {
-  margin: 0 1rem 1rem;
-  align-self: flex-start;
-  cursor: pointer;
-  border: none;
-}
-
-/* Associação das áreas nomeadas (Mobile) */
-.card1 { grid-area: card1; }
-.card2 { grid-area: card2; }
-.card3 { grid-area: card3; }
-.card4 { grid-area: card4; }
-.card5 { grid-area: card5; }
-.card6 { grid-area: card6; }
-.card7 { grid-area: card7; }
-.card8 { grid-area: card8; }
