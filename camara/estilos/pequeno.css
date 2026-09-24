@@ -4,7 +4,7 @@
 :root {
     --primary-color: #003366;
     --secondary-color: #f4f6f8;
-    --accent-color: #a94442; /* Vermelho mais escuro ajustado para atender contraste 4.5:1 */
+    --accent-color: #a94442; /* Vermelho escuro ajustado para atender contraste 4.5:1 */
     --text-color: #333333;
     --font-stack: 'Roboto', sans-serif;
 }
@@ -20,7 +20,7 @@ body {
 
 /* ==========================================
    CABEÇALHO E NAVEGAÇÃO MOBILE
-   ========================================== */
+   ================================---------- */
 header {
     background-color: var(--primary-color);
     color: white;
@@ -73,26 +73,31 @@ nav ul {
     flex-direction: column;
 }
 
-/* Correção 1: Força os links do menu para branco garantindo contraste sobre #002244 */
+/* Força todo o texto e links dentro da navegação a ficarem brancos (contraste alto) */
+nav, 
+nav ul, 
+nav li, 
+nav a {
+    color: #ffffff !important;
+}
+
 nav ul li a {
     display: block;
-    color: white;
     padding: 0.8rem 1rem;
     text-decoration: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     font-weight: 500;
 }
 
-/* Correção 2: Utiliza a nova cor --accent-color com contraste adequado */
 nav ul li a.active, 
 nav ul li a:hover {
     background-color: var(--accent-color);
-    color: white;
+    color: #ffffff !important;
 }
 
 /* ==========================================
    CONTEÚDO PRINCIPAL (MAIN)
-   ========================================== */
+   ================================---------- */
 main {
     padding: 1rem;
 }
@@ -113,7 +118,6 @@ main {
     display: block;
 }
 
-/* Correção 3: Força todo o texto dentro do banner hero para branco */
 .hero-cta {
     position: absolute;
     bottom: 15px;
@@ -173,7 +177,7 @@ section h2 {
 
 /* ==========================================
    RODAPÉ
-   ========================================== */
+   ================================---------- */
 footer {
     background-color: var(--primary-color);
     color: white;
