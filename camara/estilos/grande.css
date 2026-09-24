@@ -43,3 +43,28 @@ nav a.active,
 nav a:hover {
     background-color: var(--accent-color, #a94442);
 }
+
+/* ==========================================
+   CORREÇÃO DE CONTRASTE PARA TELAS GRANDES (MEDIA QUERY)
+   ========================================== */
+@media screen and (min-width: 768px) {
+    /* Força texto branco em todo o cabeçalho e navegação desktop */
+    header,
+    header *,
+    nav,
+    nav *,
+    nav a,
+    nav a:link,
+    nav a:visited,
+    nav a:hover,
+    nav a:focus,
+    nav a.active,
+    #menu-button,
+    .hero-cta,
+    .hero-cta *,
+    .hero-cta h2,
+    .hero-cta p,
+    .hero-cta a {
+        color: #ffffff !important;
+    }
+}
