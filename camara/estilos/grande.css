@@ -1,20 +1,57 @@
+/* ==========================================
+   ESTILOS PARA ECRÃS GRANDES (DESKTOP)
+   ================================---------- */
 @media screen and (min-width: 768px) {
+
+    /* Alinha o menu horizontalmente no topo */
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    nav ul li a {
+        border-bottom: none;
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 1rem 1.5rem;
+    }
+
+    nav ul li:last-child a {
+        border-right: none;
+    }
+
+    /* Transforma o conteúdo principal numa grelha (Grid) de 3 colunas */
     main {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 1.5rem;
         max-width: 1200px;
-        margin: 0 auto;
-        padding: 1rem;
+        margin: 2rem auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        padding: 0 1rem;
     }
 
+    /* A imagem Hero ocupa toda a largura superior da grelha */
     .hero-container {
-        grid-column: 1 / 4; /* O hero ocupa toda a largura superior */
+        grid-column: 1 / -1;
     }
 
-    .events-section,
-    .weather-section,
+    /* Distribui as seções lado a lado */
+    .events-section {
+        grid-column: span 1;
+    }
+
+    .weather-section {
+        grid-column: span 1;
+    }
+
     .spotlights-section {
         grid-column: span 1;
+    }
+
+    /* Ajuste da caixa de chamada sobre o Hero para desktops */
+    .hero-cta {
+        max-width: 450px;
+        bottom: 30px;
+        left: 30px;
+        padding: 1.5rem;
     }
 }
