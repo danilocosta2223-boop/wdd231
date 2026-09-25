@@ -507,3 +507,21 @@ nav a.active,
     background-color: #ffcc00 !important;
     color: #000000 !important;
 }
+
+/* Requisito de Flexbox Explicito para Validação */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #003366;
+  color: white;
+}
+
+.header-container nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
