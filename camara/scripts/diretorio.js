@@ -1,81 +1,48 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const membersContainer = document.getElementById("members");
-    const gridBtn = document.getElementById("gridBtn");
-    const listBtn = document.getElementById("listBtn");
+async function getMembersData() {
+  try {
+    const response = await fetch("dados/membros.json");
 
-    async function getMembersData() {
-        try {
-            const response = await fetch("dados/membros.json");
-
-            if (!response.ok) {
-                throw new Error("Erro ao carregar o arquivo de membros.");
-            }
-
-            const data = await response.json();
-
-            const membersList = Array.isArray(data) ? data : data.membros;
-
-            displayMembers(membersList);
-
-        } catch (error) {
-            console.error("Erro na busca de membros:", error);
-
-            if (membersContainer) {
-                membersContainer.innerHTML =
-                    "<p>Não foi possível carregar o diretório de membros no momento.</p>";
-            }
-        }
+    if (!response.ok) {
+      throw new Error(`Erro ao carregar o JSON: ${response.status}`);
     }
 
-    function displayMembers(members) {
+    const data = await response.json();
 
-        if (!membersContainer || !Array.isArray(members)) return;
+    const membersList = Array.isArray(data) ? data : (data.membros || []);
 
-        membersContainer.innerHTML = "";
+    console.log("Conteúdo de membersList:", membersList);
 
-        members.forEach((member) => {
+    displayMembers(membersList);
 
-            const card = document.createElement("section");
-            card.classList.add("member-card");
+  } catch (error) {
+    console.error("Erro na requisição dos membros:", error);
+  }
+}
 
-            const levelText =
-                member.nivel === 3
-                    ? "Ouro"
-                    : member.nivel === 2
-                    ? "Prata"
-                    : "Associado";
+function displayMembers(members) {
+  const cardsContainer = document.querySelector("#members");
 
-            card.innerHTML = `
-                imagens/${member.imagem}
-                <h3>${member.nome}</h3>
-                <p class="address">${member.endereco}</p>
-                <p class="phone">${member.telefone}</p>
-                <p class="level"><strong>Nível:</strong> ${levelText}</p>
-                ${member.site}Visitar Website</a>
-            `;
+  if (!cardsContainer) {
+    console.error("Elemento #members não foi encontrado no HTML!");
+    return;
+  }
 
-            membersContainer.appendChild(card);
-        });
-    }
+  cardsContainer.innerHTML = "";
 
-    if (gridBtn && listBtn && membersContainer) {
+  members.forEach((empresa) => {
+    const card = document.createElement("section");
+    card.classList.add("card");
 
-        gridBtn.addEventListener("click", () => {
-            membersContainer.classList.add("grid-view");
-            membersContainer.classList.remove("list-view");
+    card.innerHTML = `
+      <img src="imagens/${empresa.imagem}" alt="${empresa.nome}">
+      <h3>${empresa.nome}</h3>
+      <p>${empresa.endereco}</p>
+      <p>${empresa.telefone}</p>
+      <a href="${empresa.site}" target="_blank" rel="noopener noreferrer">Visitar site</a>
+    `;
 
-            gridBtn.classList.add("active");
-            listBtn.classList.remove("active");
-        });
+    cardsContainer.appendChild(card);
+  });
+}
 
-        listBtn.addEventListener("click", () => {
-            membersContainer.classList.add("list-view");
-            membersContainer.classList.remove("grid-view");
-
-            listBtn.classList.add("active");
-            gridBtn.classList.remove("active");
-        });
-    }
-
-    getMembersData();
-});
+getMembersData();
