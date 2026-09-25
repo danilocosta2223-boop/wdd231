@@ -1,64 +1,69 @@
-async function getMembersData() {
-  try {
-    const response = await fetch("dados/membros.json");
+document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.getElementById('menu-button');
+    const navMenu = document.getElementById('animate-menu');
+    const directoryContainer = document.getElementById('directory-container');
+    const gridViewBtn = document.getElementById('grid-view');
+    const listViewBtn = document.getElementById('list-view');
 
-    if (!response.ok) {
-      throw new Error(`Erro ao carregar o JSON: ${response.status}`);
+    // Menu Responsivo Mobile
+    if (menuButton && navMenu) {
+        menuButton.addEventListener('click', () => {
+            navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
+        });
     }
 
-    const data = await response.json();
-    const membersList = Array.isArray(data) ? data : (data.membros || []);
+    // Carregar dados do ficheiro JSON de membros
+    async function loadMembers() {
+        try {
+            const response = await fetch('dados/membros.json');
+            const members = await response.json();
+            displayMembers(members);
+        } catch (error) {
+            console.error('Erro ao carregar o diretório de membros:', error);
+            if (directoryContainer) {
+                directoryContainer.innerHTML = '<p>Não foi possível carregar os dados dos membros no momento.</p>';
+            }
+        }
+    }
 
-    console.log("Conteúdo de membersList:", membersList);
-    displayMembers(membersList);
+    function displayMembers(members) {
+        if (!directoryContainer) return;
+        directoryContainer.innerHTML = '';
 
-  } catch (error) {
-    console.error("Erro na requisição dos membros:", error);
-  }
-}
+        members.forEach(member => {
+            const card = document.createElement('article');
+            card.classList.add('member-card');
 
-function displayMembers(members) {
-  const cardsContainer = document.querySelector("#members");
+            card.innerHTML = `
+                <img src="${member.imagem}" alt="Logótipo de ${member.nome}" width="100" height="100" loading="lazy">
+                <div>
+                    <h3>${member.nome}</h3>
+                    <p class="member-level">${member.nivel}</p>
+                    <p>${member.endereco}</p>
+                    <p>${member.telefone}</p>
+                    <a href="${member.website}" target="_blank" rel="noopener noreferrer">Visitar Website</a>
+                </div>
+            `;
+            directoryContainer.appendChild(card);
+        });
+    }
 
-  if (!cardsContainer) {
-    console.error("Elemento #members não foi encontrado no HTML!");
-    return;
-  }
+    // Alternar entre visualização de grelha e lista
+    if (gridViewBtn && listViewBtn && directoryContainer) {
+        gridViewBtn.addEventListener('click', () => {
+            directoryContainer.classList.add('grid');
+            directoryContainer.classList.remove('list');
+            gridViewBtn.classList.add('active');
+            listViewBtn.classList.remove('active');
+        });
 
-  cardsContainer.innerHTML = "";
+        listViewBtn.addEventListener('click', () => {
+            directoryContainer.classList.add('list');
+            directoryContainer.classList.remove('grid');
+            listViewBtn.classList.add('active');
+            gridViewBtn.classList.remove('active');
+        });
+    }
 
-  members.forEach((empresa) => {
-    const card = document.createElement("section");
-    card.classList.add("card");
-
-    card.innerHTML = `
-      <img src="imagens/${empresa.imagem}" alt="${empresa.nome}" loading="lazy">
-      <h3>${empresa.nome}</h3>
-      <p>${empresa.endereco}</p>
-      <p>${empresa.telefone}</p>
-      <a href="${empresa.site}" target="_blank" rel="noopener noreferrer">Visitar site</a>
-    `;
-
-    cardsContainer.appendChild(card);
-  });
-}
-
-// Alternância de visualização entre Grade e Lista
-const gridBtn = document.querySelector("#gridBtn");
-const listBtn = document.querySelector("#listBtn");
-const membersContainer = document.querySelector("#members");
-
-if (gridBtn && listBtn && membersContainer) {
-  gridBtn.addEventListener("click", () => {
-    membersContainer.classList.add("grid-view");
-    membersContainer.classList.remove("list-view");
-  });
-
-  listBtn.addEventListener("click", () => {
-    membersContainer.classList.add("list-view");
-    membersContainer.classList.remove("grid-view");
-  });
-}
-
-// Inicializa a chamada assíncrona
-getMembersData();
+    loadMembers();
+});
