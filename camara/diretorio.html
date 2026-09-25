@@ -1,67 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Câmara de Comércio - Diretório de Membros</title>
-  <meta name="description" content="Diretório oficial de empresas e membros da Câmara de Comércio.">
-  <meta name="author" content="Danilo Rafael da Silva Costa">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretório de Empresas - Câmara de Comércio</title>
 
-  <!-- Open Graph Meta Tags (Com Domínio Correto e Dimensões da Imagem) -->
-  <meta property="og:title" content="Câmara de Comércio - Diretório">
-  <meta property="og:type" content="website">
-  <meta property="og:description" content="Conheça empresas locais e membros da Câmara de Comércio através do diretório oficial.">
-  <meta property="og:image" content="https://danilocosta2223-boop.github.io/wdd231/camara/imagens/hero.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:url" content="https://danilocosta2223-boop.github.io/wdd231/camara/diretorio.html">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <!-- Favicon -->
-  <link rel="icon" href="imagens/logo.png" type="image/png">
+    <!-- Open Graph (Redes Sociais / Validadores) -->
+    <meta property="og:title" content="Diretório de Empresas - Câmara de Comércio">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="imagens/hero.jpg">
+    <meta property="og:description" content="Consulte o diretório completo das empresas associadas à nossa Câmara de Comércio.">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="estilos/normalize.css">
+    <link rel="stylesheet" href="estilos/pequeno.css">
+    <link rel="stylesheet" href="estilos/grande.css" media="screen and (min-width: 768px)">
 
-  <!-- Arquivos de Estilo (Pasta estilos/) -->
-  <link rel="stylesheet" href="estilos/normalize.css">
-  <link rel="stylesheet" href="estilos/pequeno.css">
-  <link rel="stylesheet" href="estilos/grande.css" media="(min-width: 640px)">
-
-  <!-- Scripts Externos -->
-  <script src="scripts/main.js" defer></script>
-  <script src="scripts/diretorio.js" defer></script>
+    <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <header>
-    <div class="header-container">
-      <img src="imagens/logo.png" alt="Logo da Câmara de Comércio" class="logo">
-      <span>Câmara de Comércio</span>
-      <nav>
+    <header>
+        <div class="logo-container">
+            <img src="imagens/logo.png" alt="Logótipo da Câmara" width="50" height="50">
+            <div class="header-text">
+                <h1>Câmara de Comércio</h1>
+                <p>Diretório de Associados</p>
+            </div>
+        </div>
+        <button id="menu-button" aria-label="Menu de navegação">☰</button>
+    </header>
+
+    <nav id="animate-menu">
         <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="diretorio.html" class="active">Diretório</a></li>
-          <li><a href="junte-se.html">Junte-se</a></li>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="diretorio.html" class="active">Diretório</a></li>
         </ul>
-      </nav>
-    </div>
-  </header>
+    </nav>
 
-  <main>
-    <h1>Diretório de Membros</h1>
-    
-    <div class="menu-view">
-      <button id="gridBtn" type="button">Visualização em Grade</button>
-      <button id="listBtn" type="button">Visualização em Lista</button>
-    </div>
+    <main>
+        <section>
+            <h2>Empresas Associadas</h2>
+            <div class="view-toggle">
+                <button id="grid-view" class="active">Grelha</button>
+                <button id="list-view">Lista</button>
+            </div>
+            <div id="directory-container" class="grid">
+                <!-- Os dados serão carregados dinamicamente via JavaScript -->
+            </div>
+        </section>
+    </main>
 
-    <div id="members" class="grid-view"></div>
-  </main>
+    <footer>
+        <p>&copy; 2026 Câmara de Comércio. Todos os direitos reservados.</p>
+    </footer>
 
-  <footer>
-    <p>&copy; <span id="year"></span> Danilo Rafael da Silva Costa - WDD231</p>
-    <p>Última modificação: <span id="lastModified"></span></p>
-  </footer>
+    <script src="scripts/diretorio.js" defer></script>
 </body>
 </html>
