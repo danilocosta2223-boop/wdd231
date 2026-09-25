@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretório de Membros - Câmara de Comércio</title>
+    <meta name="description" content="Diretório oficial de empresas e membros da Câmara de Comércio. Conecte-se com comércios e serviços locais.">
+    <meta name="author" content="Danilo Costa">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Câmara de Comércio - Diretório de Membros">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://danilorafael.github.io/wdd231/camara/imagens/hero.jpg">
+    <meta property="og:url" content="https://danilorafael.github.io/wdd231/camara/diretorio.html">
+    <meta property="og:description" content="Conecte-se com as principais empresas e comércios locais através da Câmara de Comércio.">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Favicon -->
+    <link rel="icon" href="imagens/logo.png" type="image/png">
+
+    <!-- Estilos (Metodologia Mobile-First) -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/telas-pequenas.css">
+    <link rel="stylesheet" href="styles/telas-grandes.css" media="screen and (min-width: 38rem)">
+
+    <!-- Scripts -->
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/diretorio.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <img src="imagens/logo.png" alt="Logo da Câmara de Comércio" class="logo" width="80" height="80">
+            </a>
+            <div class="header-title">
+                <h1>Câmara de Comércio</h1>
+                <p class="tagline">Fortalecendo o Comércio Local</p>
+            </div>
+            <button id="menuBtn" aria-label="Abrir Menu de Navegação">☰</button>
+        </div>
+        <nav id="primaryNav">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="diretorio.html" class="active">Diretório</a></li>
+                <li><a href="descubra.html">Descubra</a></li>
+                <li><a href="junte-se.html">Junte-se a Nós</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="directory-header">
+            <h2>Diretório de Membros</h2>
+            <div class="view-buttons">
+                <button id="gridBtn" class="active" aria-label="Visualização em Grade">▦ Grade</button>
+                <button id="listBtn" aria-label="Visualização em Lista">▤ Lista</button>
+            </div>
+        </div>
+
+        <div id="members" class="grid-view">
+            <!-- Conteúdo injetado via diretorio.js -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <div class="footer-contact">
+                <p><strong>Câmara de Comércio Local</strong></p>
+                <p>Av. Principal, 1000 - Centro</p>
+                <p>contato@camaradecomercio.org.br</p>
+                <p>(11) 4004-0000</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> Câmara de Comércio | Danilo Costa | WDD231</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+
+</body>
+</html>

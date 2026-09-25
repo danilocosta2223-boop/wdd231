@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial - Câmara de Comércio</title>
+    <meta name="description" content="Página oficial da Câmara de Comércio. Promovendo o desenvolvimento econômico e o comércio local.">
+    <meta name="author" content="Danilo Costa">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Câmara de Comércio - Página Inicial">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://danilorafael.github.io/wdd231/camara/imagens/hero.jpg">
+    <meta property="og:url" content="https://danilorafael.github.io/wdd231/camara/index.html">
+    <meta property="og:description" content="Promovendo o desenvolvimento econômico e fortalecendo o comércio local.">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Favicon -->
+    <link rel="icon" href="imagens/logo.png" type="image/png">
+
+    <!-- Estilos (Metodologia Mobile-First) -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/telas-pequenas.css">
+    <link rel="stylesheet" href="styles/telas-grandes.css" media="screen and (min-width: 38rem)">
+
+    <!-- Scripts -->
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <img src="imagens/logo.png" alt="Logo da Câmara de Comércio" class="logo" width="80" height="80">
+            </a>
+            <div class="header-title">
+                <h1>Câmara de Comércio</h1>
+                <p class="tagline">Fortalecendo o Comércio Local</p>
+            </div>
+            <button id="menuBtn" aria-label="Abrir Menu de Navegação">☰</button>
+        </div>
+        <nav id="primaryNav">
+            <ul>
+                <li><a href="index.html" class="active">Início</a></li>
+                <li><a href="diretorio.html">Diretório</a></li>
+                <li><a href="descubra.html">Descubra</a></li>
+                <li><a href="junte-se.html">Junte-se a Nós</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="imagens/hero.jpg" alt="Visão geral da cidade e comércio local" width="1200" height="400">
+            <div class="hero-callout">
+                <h2>Bem-vindo à Câmara de Comércio</h2>
+                <p>Conectando empresas, impulsionando negócios e fortalecendo nossa comunidade.</p>
+                <a href="junte-se.html" class="cta-button">Associe-se Hoje</a>
+            </div>
+        </section>
+
+        <div class="home-grid">
+            <section class="card events">
+                <h2>Próximos Eventos</h2>
+                <ul>
+                    <li><strong>Encontro de Feira de Negócios:</strong> 15 de Outubro</li>
+                    <li><strong>Workshop de Inovação Digital:</strong> 22 de Outubro</li>
+                    <li><strong>Café com Empresários:</strong> 05 de Novembro</li>
+                </ul>
+            </section>
+
+            <section class="card weather">
+                <h2>Previsão do Tempo</h2>
+                <div id="weather-info">
+                    <p class="temp">24°C</p>
+                    <p class="condition">Ensolarado</p>
+                    <p>Umidade: 60%</p>
+                </div>
+            </section>
+
+            <section class="card spotlight">
+                <h2>Empresas em Destaque</h2>
+                <div id="spotlight-container">
+                    <!-- Membros Ouro/Prata em destaque serão inseridos aqui futuramente -->
+                    <p>Conheça os membros associados em nosso diretório completo.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <div class="footer-contact">
+                <p><strong>Câmara de Comércio Local</strong></p>
+                <p>Av. Principal, 1000 - Centro</p>
+                <p>contato@camaradecomercio.org.br</p>
+                <p>(11) 4004-0000</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> Câmara de Comércio | Danilo Costa | WDD231</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+
+</body>
+</html>
