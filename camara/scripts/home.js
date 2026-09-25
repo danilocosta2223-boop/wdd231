@@ -21,11 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const response = await fetch(weatherUrl);
             if (!response.ok) {
-                throw new Error('Falha ao obter dados meteorológicos');
+                throw new Error(`Erro HTTP: ${response.status}`);
             }
             const data = await response.json();
 
-            // Arredondar a temperatura para inteiro para melhor visualização
             const temp = Math.round(data.main.temp);
             const description = data.weather[0].description;
             const capitalizedDesc = description.charAt(0).toUpperCase() + description.slice(1);
