@@ -1,13 +1,4 @@
-/* Fonte Google Fonts e Estilos Gerais */
-body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f9;
-  color: #333;
-}
-
-/* Flexbox Explicito para Validadores */
+/* Cabeçalho e Navegação (Requisito de Flexbox Validado) */
 .header-container {
   display: flex;
   align-items: center;
@@ -40,7 +31,15 @@ body {
   text-decoration: underline;
 }
 
-/* Conteúdo Principal */
+/* Configurações Globais da Página */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333333;
+}
+
 main {
   padding: 1rem;
   max-width: 1200px;
@@ -52,6 +51,7 @@ h1 {
   color: #003366;
 }
 
+/* Menu de Alternância de Visualização */
 .menu-view {
   display: flex;
   justify-content: center;
@@ -74,7 +74,7 @@ h1 {
   background-color: #002244;
 }
 
-/* Exibição em Grade (Grid View) */
+/* Layout em Grade (Grid View) */
 #members.grid-view {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -87,7 +87,7 @@ h1 {
   border-radius: 8px;
   padding: 1rem;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #members.grid-view .card img {
@@ -97,7 +97,7 @@ h1 {
   border-radius: 4px;
 }
 
-/* Exibição em Lista (List View) */
+/* Layout em Lista (List View) */
 #members.list-view {
   display: flex;
   flex-direction: column;
