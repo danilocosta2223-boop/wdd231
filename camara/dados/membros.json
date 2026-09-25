@@ -1,65 +1,58 @@
 [
   {
-    "name": "Tech Solutions SP",
-    "address": "Av. Paulista, 1000, São Paulo - SP",
-    "phone": "(11) 3333-1111",
-    "website": "https://www.techsolutions.com.br",
-    "image": "imagens/empresa1.jpg",
-    "membership": 3,
-    "description": "Empresa especializada em desenvolvimento de software."
+    "nome": "TechSoluções SP",
+    "endereco": "Av. Paulista, 1000 - Bela Vista, São Paulo - SP",
+    "telefone": "(11) 3000-0001",
+    "site": "https://example.com/techsolucoes",
+    "imagem": "empresa1.jpg",
+    "nivel": "Ouro"
   },
   {
-    "name": "Mercado Central Paulista",
-    "address": "Rua da Consolação, 200, São Paulo - SP",
-    "phone": "(11) 3333-2222",
-    "website": "https://www.mercadocentral.com.br",
-    "image": "imagens/empresa2.jpg",
-    "membership": 2,
-    "description": "Comércio e distribuição de produtos alimentícios."
+    "nome": "Café & Aroma",
+    "endereco": "Rua Augusta, 450 - Consolação, São Paulo - SP",
+    "telefone": "(11) 3000-0002",
+    "site": "https://example.com/cafearoma",
+    "imagem": "empresa2.jpg",
+    "nivel": "Prata"
   },
   {
-    "name": "Restaurante Sabor Paulista",
-    "address": "Av. Brigadeiro Faria Lima, 300, São Paulo - SP",
-    "phone": "(11) 3333-3333",
-    "website": "https://www.saborpaulista.com.br",
-    "image": "imagens/empresa3.jpg",
-    "membership": 1,
-    "description": "Restaurante especializado em culinária brasileira."
+    "nome": "Logística Express",
+    "endereco": "Rua Direita, 200 - Centro, São Paulo - SP",
+    "telefone": "(11) 3000-0003",
+    "site": "https://example.com/logisticaexpress",
+    "imagem": "empresa3.jpg",
+    "nivel": "Membro"
   },
   {
-    "name": "Indústria Nova Era",
-    "address": "Rua Industrial, 450, São Paulo - SP",
-    "phone": "(11) 3333-4444",
-    "website": "https://www.novaera.com.br",
-    "image": "imagens/empresa4.jpg",
-    "membership": 3,
-    "description": "Produção de equipamentos industriais."
+    "nome": "Inova Marketing",
+    "endereco": "Alameda Santos, 850 - Cerqueira César, São Paulo - SP",
+    "telefone": "(11) 3000-0004",
+    "site": "https://example.com/inovamarketing",
+    "imagem": "empresa4.jpg",
+    "nivel": "Ouro"
   },
   {
-    "name": "Logística Express",
-    "address": "Rodovia Anhanguera, Km 18, São Paulo - SP",
-    "phone": "(11) 3333-5555",
-    "website": "https://www.logisticaexpress.com.br",
-    "image": "imagens/empresa5.jpg",
-    "membership": 2,
-    "description": "Transporte e distribuição nacional."
+    "nome": "Mercado & Cia",
+    "endereco": "Rua Silva Bueno, 1200 - Ipiranga, São Paulo - SP",
+    "telefone": "(11) 3000-0005",
+    "site": "https://example.com/mercadocia",
+    "imagem": "empresa5.jpg",
+    "nivel": "Prata"
   },
   {
-    "name": "Consultoria Alpha",
-    "address": "Rua Augusta, 800, São Paulo - SP",
-    "phone": "(11) 3333-6666",
-    "website": "https://www.consultoriaalpha.com.br",
-    "image": "imagens/empresa6.jpg",
-    "membership": 1,
-    "description": "Consultoria empresarial e financeira."
+    "nome": "Consultoria Alfa",
+    "endereco": "Rua Funchal, 500 - Vila Olímpia, São Paulo - SP",
+    "telefone": "(11) 3000-0006",
+    "site": "https://example.com/consultoriaalfa",
+    "imagem": "empresa6.jpg",
+    "nivel": "Membro"
   },
   {
-    "name": "Serviços Premium",
-    "address": "Av. Rebouças, 1500, São Paulo - SP",
-    "phone": "(11) 3333-7777",
-    "website": "https://www.servicospremium.com.br",
-    "image": "imagens/empresa7.jpg",
-    "membership": 3,
-    "description": "Prestação de serviços corporativos."
+    "nome": "Sabor & Arte Restaurante",
+    "endereco": "Rua dos Pinheiros, 310 - Pinheiros, São Paulo - SP",
+    "telefone": "(11) 3000-0007",
+    "site": "https://example.com/saborarte",
+    "imagem": "empresa7.jpg",
+    "nivel": "Ouro"
   }
 ]
