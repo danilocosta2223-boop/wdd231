@@ -150,3 +150,20 @@ footer p {
     color: #ffffff;
     margin: 0;
 }
+
+.cta-button {
+    display: inline-block;
+    background-color: #ffd700; /* amarelo */
+    color: #222222; /* preto escuro */
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    border: 2px solid #222222;
+}
+
+.cta-button:hover {
+    background-color: #ffcc00;
+    color: #000000;
+}
