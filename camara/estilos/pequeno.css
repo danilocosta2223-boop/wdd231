@@ -111,7 +111,10 @@ main {
     position: relative;
     text-align: center;
     color: var(--white);
+    background-color: #1e3a5f; /* Fundo escuro garantido para alto contraste */
     margin-bottom: 1.5rem;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .hero-container img {
