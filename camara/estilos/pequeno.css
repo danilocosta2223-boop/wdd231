@@ -186,3 +186,17 @@ footer p {
     color: var(--white);
     margin: 0;
 }
+
+/* ==========================================
+   6. Correção Preventiva de Contraste
+   ========================================== */
+
+main,
+section,
+.card,
+.member-card,
+.event-card,
+.event-card p,
+.member-card p {
+    color: #222222;
+}
