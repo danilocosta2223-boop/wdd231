@@ -11,13 +11,16 @@
     --white: #ffffff;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     color: var(--text-color);
     background-color: var(--bg-light);
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 /* ==========================================
@@ -164,7 +167,7 @@ main {
     border-radius: 8px;
     padding: 1rem;
     margin-bottom: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* ==========================================
@@ -182,35 +185,4 @@ footer {
 footer p {
     color: var(--white);
     margin: 0;
-}
-
-/* ==========================================
-   Correções Finais de Contraste e Acessibilidade
-   ========================================== */
-
-/* 1. Garante texto branco nos blocos de cabeçalho, navegação e rodapé */
-header,
-header *,
-nav,
-nav a,
-footer,
-footer p {
-    color: #ffffff;
-}
-
-/* Exceção necessária para o link ativo/hover do menu (texto escuro sobre fundo amarelo) */
-nav ul li a:hover,
-nav ul li a.active {
-    color: #222222 !important;
-    background-color: var(--accent-color);
-}
-
-/* 2. Garante texto escuro em áreas de fundo claro (cards, seções e conteúdo principal) */
-main,
-section,
-.card,
-.member-card,
-.event-card {
-    color: #222222;
-    background-color: var(--white); /* Assegura o fundo branco nos cards se necessário */
 }
