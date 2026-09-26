@@ -85,8 +85,12 @@ nav ul li a {
     display: block;
     padding: 1rem;
     text-decoration: none;
-    color: var(--white);
+    color: #ffffff;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav ul li a:visited {
+    color: #ffffff;
 }
 
 nav ul li a:hover,
@@ -188,15 +192,19 @@ footer p {
 }
 
 /* ==========================================
-   6. Correção Preventiva de Contraste
+   6. Correção Preventiva Global de Contraste
    ========================================== */
 
 main,
 section,
+article,
 .card,
 .member-card,
 .event-card,
 .event-card p,
-.member-card p {
+.member-card p,
+h1,
+h2,
+h3 {
     color: #222222;
 }
