@@ -183,3 +183,34 @@ footer p {
     color: var(--white);
     margin: 0;
 }
+
+/* ==========================================
+   Correções Finais de Contraste e Acessibilidade
+   ========================================== */
+
+/* 1. Garante texto branco nos blocos de cabeçalho, navegação e rodapé */
+header,
+header *,
+nav,
+nav a,
+footer,
+footer p {
+    color: #ffffff;
+}
+
+/* Exceção necessária para o link ativo/hover do menu (texto escuro sobre fundo amarelo) */
+nav ul li a:hover,
+nav ul li a.active {
+    color: #222222 !important;
+    background-color: var(--accent-color);
+}
+
+/* 2. Garante texto escuro em áreas de fundo claro (cards, seções e conteúdo principal) */
+main,
+section,
+.card,
+.member-card,
+.event-card {
+    color: #222222;
+    background-color: var(--white); /* Assegura o fundo branco nos cards se necessário */
+}
