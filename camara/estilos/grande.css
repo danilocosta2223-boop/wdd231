@@ -1,52 +1,58 @@
 /* ==========================================
-   ESTILOS PARA TELAS GRANDES (DESKTOP)
+   Estilos para Desktop (A partir de 768px)
    ========================================== */
 
 @media screen and (min-width: 768px) {
 
-    /* Layout do cabeçalho em linha para desktop */
+    /* Layout do Cabeçalho */
     header {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 1.5rem 2rem;
     }
 
-    /* Menu horizontal em telas grandes */
+    /* Exibição e Alinhamento do Menu Horizontal */
+    nav {
+        display: block; /* Garante que o menu apareça em telas grandes */
+        background-color: transparent; /* Deixa o fundo integrado ou conforme desejado */
+    }
+
     nav ul {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
+        gap: 1rem;
     }
 
     nav ul li a {
-        padding: 1rem 1.5rem;
+        padding: 0.5rem 1rem;
         border-bottom: none;
+        border-radius: 4px;
     }
-}
 
-/* ==========================================
-   BLINDAGEM DE CONTRASTE WCAG AA (GRANDE.CSS)
-   Garantiu texto branco em fundos escuros
-   ========================================== */
-header,
-header *,
-nav,
-nav *,
-nav a,
-nav a:link,
-nav a:visited,
-nav a:focus,
-.active,
-.hero-cta,
-.hero-cta *,
-.hero-cta h2,
-.hero-cta p,
-.hero-cta a {
-    color: #ffffff !important;
-}
+    /* Manutenção correta do estado ativo e hover sem precisar de !important */
+    nav a.active,
+    nav a:hover {
+        background-color: var(--accent-color);
+        color: var(--text-color);
+    }
 
-nav a.active,
-nav a:hover {
-    background-color: var(--accent-color, #a94442) !important;
-    color: #ffffff !important;
+    /* Ajustes estruturais da seção Hero e Conteúdo Principal para Desktop */
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .hero-container {
+        margin-bottom: 2rem;
+    }
+
+    .hero-cta {
+        width: 50%;
+        bottom: 2rem;
+        left: 3rem;
+        transform: none;
+    }
 }
