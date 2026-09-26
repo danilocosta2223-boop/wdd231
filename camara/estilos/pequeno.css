@@ -133,11 +133,12 @@ main {
 }
 
 .hero-cta h2,
-.hero-cta p {
+.hero-cta p,
+.hero-cta span {
     color: var(--white);
 }
 
-.hero-cta a {
+.hero-cta a.cta-button {
     color: var(--text-color);
 }
 
@@ -192,19 +193,14 @@ footer p {
 }
 
 /* ==========================================
-   6. Correção Preventiva Global de Contraste
+   6. Correção Específica de Contraste para Cards
    ========================================== */
 
-main,
-section,
-article,
 .card,
 .member-card,
 .event-card,
-.event-card p,
+.card p,
 .member-card p,
-h1,
-h2,
-h3 {
+.event-card p {
     color: #222222;
 }
