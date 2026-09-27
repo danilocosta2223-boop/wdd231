@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Associe-se à Câmara de Comércio</title>
+    <link rel="stylesheet" href="estilos/normalize.css">
+    <link rel="stylesheet" href="estilos/pequeno.css">
+    <link rel="stylesheet" href="estilos/grande.css" media="(min-width: 768px)">
+</head>
+<body>
+    <header>
+        <!-- Seu cabeçalho padrão -->
+    </header>
+    
+    <nav>
+        <!-- Sua navegação padrão -->
+    </nav>
+
+    <main>
+        <h1>Associe-se à Câmara de Comércio</h1>
+        
+        <div class="container-principal">
+            <!-- Formulário de Associação -->
+            <form method="get" action="agradecimento.html">
+                
+                <label>Nome do Candidato:
+                    <input type="text" name="nome" title="Digite seu nome" autocomplete="given-name" required>
+                </label>
+
+                <label>Sobrenome do Candidato:
+                    <input type="text" name="sobrenome" title="Digite seu sobrenome" autocomplete="family-name" required>
+                </label>
+
+                <label>Cargo na Organização:
+                    <input type="text" name="cargo" title="Informe seu cargo (mínimo 7 letras, apenas letras, hífens e espaços)" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}" required>
+                </label>
+
+                <label>E-mail:
+                    <input type="email" name="email" title="Digite seu e-mail válido" autocomplete="email" placeholder="exemplo@email.com" required>
+                </label>
+
+                <label>Número de Celular:
+                    <input type="tel" name="telefone" title="Digite seu número de telefone com DDD" autocomplete="tel" required>
+                </label>
+
+                <label>Nome da Empresa/Organização:
+                    <input type="text" name="organizacao" title="Digite o nome da organização" autocomplete="organization" required>
+                </label>
+
+                <label>Nível de Associação:
+                    <select name="nivel" required>
+                        <option value="" disabled selected>Selecione um nível</option>
+                        <option value="np">Associação NP (Sem fins lucrativos - Sem taxa)</option>
+                        <option value="bronze">Associação Bronze</option>
+                        <option value="silver">Associação Prata</option>
+                        <option value="gold">Associação Ouro</option>
+                    </select>
+                </label>
+
+                <label>Descrição da Atividade/Organização:
+                    <textarea name="descricao" title="Descreva brevemente sua atividade"></textarea>
+                </label>
+
+                <!-- Campo oculto para registro de data e hora -->
+                <input type="hidden" name="timestamp" id="timestamp">
+
+                <button type="submit">Enviar Pedido de Associação</button>
+            </form>
+
+            <!-- Cartões dos Níveis de Associação -->
+            <aside class="cartoes-niveis">
+                <div class="cartao">
+                    <h3>Associação NP</h3>
+                    <button type="button" id="np-btn">Ver Benefícios</button>
+                </div>
+                <div class="cartao">
+                    <h3>Associação Bronze</h3>
+                    <button type="button" id="bronze-btn">Ver Benefícios</button>
+                </div>
+                <div class="cartao">
+                    <h3>Associação Prata</h3>
+                    <button type="button" id="silver-btn">Ver Benefícios</button>
+                </div>
+                <div class="cartao">
+                    <h3>Associação Ouro</h3>
+                    <button type="button" id="gold-btn">Ver Benefícios</button>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Modais HTML -->
+        <dialog id="modal-np"><p>Benefícios da Associação NP: Gratuito para ONGs, acesso a reuniões gerais.</p><button onclick="this.closest('dialog').close()">Fechar</button></dialog>
+        <dialog id="modal-bronze"><p>Benefícios Bronze: Descontos em eventos e treinamentos básicos.</p><button onclick="this.closest('dialog').close()">Fechar</button></dialog>
+        <dialog id="modal-silver"><p>Benefícios Prata: Destaque moderado no site e eventos especiais.</p><button onclick="this.closest('dialog').close()">Fechar</button></dialog>
+        <dialog id="modal-gold"><p>Benefícios Ouro: Prioridade máxima, publicidade na página inicial e acesso total.</p><button onclick="this.closest('dialog').close()">Fechar</button></dialog>
+    </main>
+
+    <footer>
+        <!-- Seu rodapé padrão -->
+    </footer>
+
+    <!-- Script Externo -->
+    <script src="scripts/associacao.js"></script>
+</body>
+</html>
