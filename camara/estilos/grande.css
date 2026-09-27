@@ -202,15 +202,11 @@ nav a:visited {
     color: #ffffff;
 }
 
-main,
-section,
-article,
 .card,
 .member-card,
 .event-card,
-h1,
-h2,
-h3,
-p {
+.card p,
+.member-card p,
+.event-card p {
     color: #222222;
 }
