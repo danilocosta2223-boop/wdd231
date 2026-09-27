@@ -4,17 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Associe-se à Câmara de Comércio</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Associe-se à Câmara de Comércio e tenha acesso a eventos, treinamentos, networking e oportunidades de crescimento empresarial.">
+    <meta name="author" content="Danilo Rafael da Silva Costa">
+    <link rel="icon" href="imagens/favicon.ico">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Associe-se à Câmara de Comércio">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://danilocosta2223-boop.github.io/wdd231/camara/associacao.html">
+    <meta property="og:image" content="https://danilocosta2223-boop.github.io/wdd231/camara/imagens/hero.jpg">
+    <meta property="og:description" content="Associe-se à Câmara de Comércio e aproveite benefícios exclusivos para sua empresa.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
     <link rel="stylesheet" href="estilos/normalize.css">
     <link rel="stylesheet" href="estilos/pequeno.css">
     <link rel="stylesheet" href="estilos/grande.css" media="(min-width: 768px)">
+
+    <!-- JavaScript com defer -->
+    <script src="scripts/associacao.js" defer></script>
 </head>
 <body>
     <header>
-        <!-- Seu cabeçalho padrão -->
+        <!-- INSIRA O CÓDIGO REAL DO SEU HEADER AQUI -->
     </header>
     
     <nav>
-        <!-- Sua navegação padrão -->
+        <!-- INSIRA O CÓDIGO REAL DA SUA NAV AQUI -->
     </nav>
 
     <main>
@@ -32,8 +54,9 @@
                     <input type="text" name="sobrenome" title="Digite seu sobrenome" autocomplete="family-name" required>
                 </label>
 
+                <!-- Pattern atualizado para aceitar acentos -->
                 <label>Cargo na Organização:
-                    <input type="text" name="cargo" title="Informe seu cargo (mínimo 7 letras, apenas letras, hífens e espaços)" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}" required>
+                    <input type="text" name="cargo" title="Informe seu cargo (mínimo 7 letras, aceita acentos, hífens e espaços)" autocomplete="organization-title" pattern="[A-Za-zÀ-ÿ\s\-]{7,}" required>
                 </label>
 
                 <label>E-mail:
@@ -49,12 +72,12 @@
                 </label>
 
                 <label>Nível de Associação:
-                    <select name="nivel" required>
+                    <select id="membership" name="membership" required>
                         <option value="" disabled selected>Selecione um nível</option>
-                        <option value="np">Associação NP (Sem fins lucrativos - Sem taxa)</option>
-                        <option value="bronze">Associação Bronze</option>
-                        <option value="silver">Associação Prata</option>
-                        <option value="gold">Associação Ouro</option>
+                        <option value="np">NP Membership</option>
+                        <option value="bronze">Bronze Membership</option>
+                        <option value="silver">Silver Membership</option>
+                        <option value="gold">Gold Membership</option>
                     </select>
                 </label>
 
@@ -89,18 +112,27 @@
             </aside>
         </div>
 
-        <!-- Modais HTML -->
-        <dialog id="modal-np"><p>Benefícios da Associação NP: Gratuito para ONGs, acesso a reuniões gerais.</p><button onclick="this.closest('dialog').close()">Fechar</button></dialog>
-        <dialog id="modal-bronze"><p>Benefícios Bronze: Descontos em eventos e treinamentos básicos.</p><button onclick="this.closest('dialog').close()">Fechar</button></dialog>
-        <dialog id="modal-silver"><p>Benefícios Prata: Destaque moderado no site e eventos especiais.</p><button onclick="this.closest('dialog').close()">Fechar</button></dialog>
-        <dialog id="modal-gold"><p>Benefícios Ouro: Prioridade máxima, publicidade na página inicial e acesso total.</p><button onclick="this.closest('dialog').close()">Fechar</button></dialog>
+        <!-- Modais -->
+        <dialog id="modal-np">
+            <p>Benefícios da Associação NP: Gratuito para ONGs, acesso a reuniões gerais.</p>
+            <button type="button" class="close-modal">Fechar</button>
+        </dialog>
+        <dialog id="modal-bronze">
+            <p>Benefícios Bronze: Descontos em eventos e treinamentos básicos.</p>
+            <button type="button" class="close-modal">Fechar</button>
+        </dialog>
+        <dialog id="modal-silver">
+            <p>Benefícios Prata: Destaque moderado no site e eventos especiais.</p>
+            <button type="button" class="close-modal">Fechar</button>
+        </dialog>
+        <dialog id="modal-gold">
+            <p>Benefícios Ouro: Prioridade máxima, publicidade na página inicial e acesso total.</p>
+            <button type="button" class="close-modal">Fechar</button>
+        </dialog>
     </main>
 
     <footer>
-        <!-- Seu rodapé padrão -->
+        <!-- INSIRA O CÓDIGO REAL DO SEU FOOTER AQUI -->
     </footer>
-
-    <!-- Script Externo -->
-    <script src="scripts/associacao.js"></script>
 </body>
 </html>

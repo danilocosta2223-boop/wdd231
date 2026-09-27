@@ -1,44 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-    // Timestamp
-    const timestamp = document.getElementById("timestamp");
-
-    if (timestamp) {
-        timestamp.value = new Date().toISOString();
+    const timestampField = document.getElementById('timestamp');
+    if (timestampField) {
+        timestampField.value = new Date().toISOString();
     }
 
-    // Modais
-    const npBtn = document.getElementById("np-btn");
-    const bronzeBtn = document.getElementById("bronze-btn");
-    const silverBtn = document.getElementById("silver-btn");
-    const goldBtn = document.getElementById("gold-btn");
+    const modaisConfig = [
+        { btnId: 'np-btn', modalId: 'modal-np' },
+        { btnId: 'bronze-btn', modalId: 'modal-bronze' },
+        { btnId: 'silver-btn', modalId: 'modal-silver' },
+        { btnId: 'gold-btn', modalId: 'modal-gold' }
+    ];
 
-    const modalNp = document.getElementById("modal-np");
-    const modalBronze = document.getElementById("modal-bronze");
-    const modalSilver = document.getElementById("modal-silver");
-    const modalGold = document.getElementById("modal-gold");
+    modaisConfig.forEach(item => {
+        const btn = document.getElementById(item.btnId);
+        const modal = document.getElementById(item.modalId);
+        if (btn && modal) {
+            btn.addEventListener('click', () => {
+                modal.showModal();
+            });
+        }
+    });
 
-    if (npBtn) {
-        npBtn.addEventListener("click", () => {
-            modalNp.showModal();
+    const closeButtons = document.querySelectorAll('.close-modal');
+    closeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const dialog = button.closest('dialog');
+            if (dialog) {
+                dialog.close();
+            }
         });
-    }
-
-    if (bronzeBtn) {
-        bronzeBtn.addEventListener("click", () => {
-            modalBronze.showModal();
-        });
-    }
-
-    if (silverBtn) {
-        silverBtn.addEventListener("click", () => {
-            modalSilver.showModal();
-        });
-    }
-
-    if (goldBtn) {
-        goldBtn.addEventListener("click", () => {
-            modalGold.showModal();
-        });
-    }
+    });
 });
