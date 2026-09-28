@@ -3,18 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obrigado pela Inscrição</title>
+    <title>Obrigado por se Associar - Câmara de Comércio</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Obrigado por se associar à Câmara de Comércio. Seu pedido foi recebido com sucesso.">
+    <meta name="author" content="Danilo Rafael da Silva Costa">
+    <link rel="icon" href="imagens/favicon.ico">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Obrigado por se associar à Câmara de Comércio">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://danilocosta2223-boop.github.io/wdd231/camara/agradecimento.html">
+    <meta property="og:image" content="https://danilocosta2223-boop.github.io/wdd231/camara/imagens/hero.jpg">
+    <meta property="og:description" content="Página de confirmação do pedido de associação à Câmara de Comércio.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
     <link rel="stylesheet" href="estilos/normalize.css">
     <link rel="stylesheet" href="estilos/pequeno.css">
     <link rel="stylesheet" href="estilos/grande.css" media="(min-width: 768px)">
+
+    <!-- Script no Head -->
+    <script src="scripts/agradecimento.js" defer></script>
 </head>
 <body>
     <header>
-        <!-- Cole aqui o conteúdo real do seu <header> padrão -->
+        <img src="imagens/logo.png" alt="Logo da Câmara de Comércio">
+        <p>Câmara de Comércio</p>
     </header>
 
     <nav>
-        <!-- Cole aqui o conteúdo real da sua <nav> padrão -->
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="diretorio.html">Diretório</a></li>
+            <li><a href="associacao.html" class="active">Associe-se</a></li>
+        </ul>
     </nav>
 
     <main>
@@ -22,15 +49,13 @@
         <p>Recebemos o seu pedido com sucesso. Abaixo estão os dados registrados:</p>
         
         <div id="resultados-formulario">
-            <!-- Os dados do formulário serão injetados aqui pelo JavaScript -->
+            <!-- Os dados enviados via método GET serão injetados aqui pelo JavaScript -->
         </div>
     </main>
 
     <footer>
-        <!-- Cole aqui o conteúdo real do seu <footer> padrão -->
+        <p>&copy; 2026 Câmara de Comércio. Todos os direitos reservados.</p>
+        <p>Danilo Rafael da Silva Costa</p>
     </footer>
-
-    <!-- Script externo com o atributo defer -->
-    <script src="scripts/agradecimento.js" defer></script>
 </body>
 </html>
