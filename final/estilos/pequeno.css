@@ -1,4 +1,83 @@
-/* Classe padrão para acessibilidade (Screen Readers) */
+:root {
+    --primary-color: #0f4c81;
+    --secondary-color: #2c7da0;
+    --accent-color: #2a9d8f;
+    --bg-light: #f5f7fa;
+    --white: #ffffff;
+    --text-color: #222222;
+}
+
+/* Resets e Configurações Mobile-First */
+body {
+    font-family: Roboto, sans-serif;
+    margin: 0;
+    background: var(--bg-light);
+    color: var(--text-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+header {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.container-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.card-pilar, 
+.card-equipamento {
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.hero-imagem img {
+    border-radius: 8px;
+}
+
+.btn-primario,
+.btn-secundario {
+    display: inline-block;
+    padding: .7rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    margin-top: 0.5rem;
+}
+
+.btn-primario {
+    background: var(--accent-color);
+}
+
+.btn-secundario {
+    background: var(--secondary-color);
+}
+
+.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -6,7 +85,7 @@
     padding: 0;
     margin: -1px;
     overflow: hidden;
-    clip: rect(0, 0, 0, 0);
+    clip: rect(0,0,0,0);
     white-space: nowrap;
     border: 0;
 }

@@ -1,7 +1,84 @@
-/* Regras para telas grandes (Desktop) */
+@media (min-width: 768px) {
+    /* Header Desktop */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 2rem;
+    }
 
-.imagem-modal {
-    border-radius: 4px;
-    margin-bottom: 1rem;
-    height: auto;
+    nav ul {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    /* Página Inicial (Index): Seção Hero em Grid */
+    .secao-hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+        padding: 2rem 0;
+    }
+
+    .hero-conteudo {
+        text-align: left;
+    }
+
+    /* Seção de Pilares em 3 colunas */
+    .grid-pilares {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    /* Página de Equipamentos: Grid Dinâmico */
+    .grid-equipamentos {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .card-equipamento {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        margin-bottom: 0;
+    }
+
+    .card-equipamento:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .img-equipamento {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .info-equipamento {
+        padding: 1.5rem;
+    }
+
+    /* Rodapé Desktop com Flex-Wrap */
+    footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 2rem;
+        font-size: 0.95rem;
+    }
 }
