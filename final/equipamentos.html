@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipamentos - Gestão de Manutenção Hospitalar</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Catálogo e monitoramento de equipamentos médicos e de infraestrutura hospitalar.">
+    <meta name="author" content="Danilo Rafael da Silva Costa">
+    <link rel="icon" href="imagens/favicon.ico">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Equipamentos Hospitalares Monitorados">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://danilocosta2223-boop.github.io/wdd231/final/equipamentos.html">
+    <meta property="og:image" content="https://danilocosta2223-boop.github.io/wdd231/final/imagens/hero.jpg">
+    <meta property="og:description" content="Catálogo de equipamentos hospitalares com monitoramento de status, fabricante e localização.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="estilos/normalize.css">
+    <link rel="stylesheet" href="estilos/pequeno.css">
+    <link rel="stylesheet" href="estilos/grande.css" media="(min-width: 768px)">
+
+    <!-- Script como Módulo -->
+    <script type="module" src="scripts/equipamentos.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="imagens/logo.png" alt="Logo de Gestão Hospitalar">
+            <p>Manutenção Hospitalar</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="equipamentos.html" class="active">Equipamentos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="secao-topo">
+            <h1>Parque de Equipamentos Monitorados</h1>
+            <p>Consulte o status operacional, setor e fabricante de cada ativo crítico da instituição.</p>
+            
+            <!-- Filtro interativo -->
+            <div class="filtro-container">
+                <label for="filtro-setor">Filtrar por Setor:</label>
+                <select id="filtro-setor">
+                    <option value="todos">Todos os Setores</option>
+                    <option value="Imagem">Imagem</option>
+                    <option value="Pronto Socorro">Pronto Socorro</option>
+                    <option value="UTI">UTI</option>
+                    <option value="Cardiologia">Cardiologia</option>
+                    <option value="Enfermaria">Enfermaria</option>
+                    <option value="Central de Material">Central de Material</option>
+                    <option value="Infraestrutura">Infraestrutura</option>
+                    <option value="Engenharia Clínica">Engenharia Clínica</option>
+                    <option value="Endoscopia">Endoscopia</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Container onde o JavaScript injetará os 15 cartões via Fetch API -->
+        <section id="lista-equipamentos" class="grid-equipamentos">
+            <h2 class="visually-hidden">Lista de Equipamentos</h2>
+            <!-- Os cards gerados dinamicamente via JS ficam aqui após o título acessível -->
+        </section>
+    </main>
+
+    <!-- Modal Nativo (<dialog>) para exibição de detalhes -->
+    <dialog id="modal-detalhes" class="modal-equipamento">
+        <div id="modal-conteudo">
+            <!-- Conteúdo injetado via JavaScript -->
+        </div>
+        <button id="fechar-modal" class="btn-fechar">Fechar</button>
+    </dialog>
+
+    <footer>
+        <p>&copy; 2026 Gestão de Manutenção Hospitalar. Todos os direitos reservados.</p>
+        <p>Danilo Rafael da Silva Costa</p>
+        <p><a href="atribuicoes.html">Atribuições e Fontes</a></p>
+    </footer>
+</body>
+</html>

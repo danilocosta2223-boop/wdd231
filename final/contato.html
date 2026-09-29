@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato e Solicitação - Gestão de Manutenção Hospitalar</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Página de contato e abertura de chamados de manutenção para equipamentos hospitalares.">
+    <meta name="author" content="Danilo Rafael da Silva Costa">
+    <link rel="icon" href="imagens/favicon.ico">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contato - Gestão de Manutenção Hospitalar">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://danilocosta2223-boop.github.io/wdd231/final/contato.html">
+    <meta property="og:image" content="https://danilocosta2223-boop.github.io/wdd231/final/imagens/hero.jpg">
+    <meta property="og:description" content="Entre em contato com a Engenharia Clínica para abertura de chamados e suporte a equipamentos médicos.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="estilos/normalize.css">
+    <link rel="stylesheet" href="estilos/pequeno.css">
+    <link rel="stylesheet" href="estilos/grande.css" media="(min-width: 768px)">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="imagens/logo.png" alt="Logo de Gestão Hospitalar">
+            <p>Manutenção Hospitalar</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="equipamentos.html">Equipamentos</a></li>
+                <li><a href="contato.html" class="active">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-principal">
+        <section class="secao-contato">
+            <h2 class="visually-hidden">Formulário de Contato</h2>
+            <h1>Abrir Chamado Técnico / Contato</h1>
+            <p>Preencha o formulário abaixo para solicitar suporte da Engenharia Clínica ou relatar ocorrências com equipamentos.</p>
+
+            <form action="obrigado.html" method="get" class="formulario-contato">
+                <div class="grupo-campo">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Ex: Danilo">
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="email">E-mail Institucional:</label>
+                    <input type="email" id="email" name="email" required placeholder="Ex: teste@email.com">
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="equipamento">Equipamento Relacionado:</label>
+                    <input type="text" id="equipamento" name="equipamento" required placeholder="Ex: Tomógrafo">
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="mensagem">Descrição / Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Ex: Equipamento parado"></textarea>
+                </div>
+
+                <button type="submit" class="btn-enviar">Enviar Solicitação</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Gestão de Manutenção Hospitalar. Todos os direitos reservados.</p>
+        <p>Danilo Rafael da Silva Costa</p>
+        <p><a href="atribuicoes.html">Atribuições e Fontes</a></p>
+    </footer>
+</body>
+</html>

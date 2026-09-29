@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitação Enviada - Gestão de Manutenção Hospitalar</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Confirmação de envio de chamado técnico para a Engenharia Clínica.">
+    <meta name="author" content="Danilo Rafael da Silva Costa">
+    <link rel="icon" href="imagens/favicon.ico">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Solicitação Enviada - Gestão de Manutenção Hospitalar">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://danilocosta2223-boop.github.io/wdd231/final/obrigado.html">
+    <meta property="og:image" content="https://danilocosta2223-boop.github.io/wdd231/final/imagens/hero.jpg">
+    <meta property="og:description" content="Confira os dados enviados no seu chamado técnico de manutenção hospitalar.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="estilos/normalize.css">
+    <link rel="stylesheet" href="estilos/pequeno.css">
+    <link rel="stylesheet" href="estilos/grande.css" media="(min-width: 768px)">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="imagens/logo.png" alt="Logo de Gestão Hospitalar">
+            <p>Manutenção Hospitalar</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="equipamentos.html">Equipamentos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-principal">
+        <section class="secao-obrigado">
+            <h2 class="visually-hidden">Resultado da Solicitação</h2>
+            <h1>Solicitação Enviada com Sucesso!</h1>
+            <p>Agradecemos o seu contato. Abaixo estão os detalhes do seu chamado registrado:</p>
+            
+            <div id="resultados-chamado" class="card-resultado">
+                <!-- O JavaScript vai injetar os dados aqui dinamicamente -->
+            </div>
+
+            <a href="index.html" class="btn-voltar">Voltar para a Página Inicial</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Gestão de Manutenção Hospitalar. Todos os direitos reservados.</p>
+        <p>Danilo Rafael da Silva Costa</p>
+        <p><a href="atribuicoes.html">Atribuições e Fontes</a></p>
+    </footer>
+
+    <script src="scripts/obrigado.js" defer></script>
+</body>
+</html>

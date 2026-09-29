@@ -1,0 +1,122 @@
+[
+  {
+    "nome": "Tomógrafo",
+    "setor": "Imagem",
+    "fabricante": "GE",
+    "status": "Operacional",
+    "imagem": "imagens/tomografo.webp",
+    "descricao": "Equipamento de tomografia computadorizada de alta resolucao para diagnostico por imagem."
+  },
+  {
+    "nome": "Ressonância Magnética",
+    "setor": "Imagem",
+    "fabricante": "Siemens",
+    "status": "Operacional",
+    "imagem": "imagens/ressonancia.webp",
+    "descricao": "Sistema de imagem por ressonancia magnetica para exames detalhados de tecidos moles."
+  },
+  {
+    "nome": "Ultrassom",
+    "setor": "Imagem",
+    "fabricante": "Philips",
+    "status": "Em Manutenção",
+    "imagem": "imagens/ultrassom.webp",
+    "descricao": "Aparelho de ultrassonografia portatil com transdutores multifuncionais."
+  },
+  {
+    "nome": "Raio-X Digital",
+    "setor": "Imagem",
+    "fabricante": "Shimadzu",
+    "status": "Operacional",
+    "imagem": "imagens/raiox.webp",
+    "descricao": "Equipamento radiografico digital de alta velocidade e baixa dose de radiacao."
+  },
+  {
+    "nome": "Mamógrafo",
+    "setor": "Imagem",
+    "fabricante": "Hologic",
+    "status": "Operacional",
+    "imagem": "imagens/mamografo.webp",
+    "descricao": "Sistema avancado para rastreamento e diagnostico mamografico digital."
+  },
+  {
+    "nome": "Desfibrilador",
+    "setor": "Pronto Socorro",
+    "fabricante": "Zoll",
+    "status": "Operacional",
+    "imagem": "imagens/desfibrilador.webp",
+    "descricao": "Desfibrilador externo automatico e manual com monitor cardiaco integrado."
+  },
+  {
+    "nome": "Ventilador Pulmonar",
+    "setor": "UTI",
+    "fabricante": "Mindray",
+    "status": "Operacional",
+    "imagem": "imagens/ventilador.webp",
+    "descricao": "Ventilador mecanico invasivo e nao invasivo para suporte respiratorio avancado."
+  },
+  {
+    "nome": "Monitor Multiparamétrico",
+    "setor": "UTI",
+    "fabricante": "Mindray",
+    "status": "Operacional",
+    "imagem": "imagens/monitor.webp",
+    "descricao": "Monitor de sinais vitais que acompanha ECG, SpO2, NIBP e temperatura."
+  },
+  {
+    "nome": "Eletrocardiógrafo",
+    "setor": "Cardiologia",
+    "fabricante": "Schiller",
+    "status": "Operacional",
+    "imagem": "imagens/eletrocardiografo.webp",
+    "descricao": "Aparelho de ECG de 12 canais com interpretacao automatica."
+  },
+  {
+    "nome": "Bomba de Infusão",
+    "setor": "Enfermaria",
+    "fabricante": "B. Braun",
+    "status": "Em Manutenção",
+    "imagem": "imagens/bomba-infusao.webp",
+    "descricao": "Bomba de infusao volumetrica para administracao controlada de medicamentos."
+  },
+  {
+    "nome": "Autoclave",
+    "setor": "Central de Material",
+    "fabricante": "Steris",
+    "status": "Operacional",
+    "imagem": "imagens/autoclave.webp",
+    "descricao": "Esterilizador a vapor de alta capacidade para instrumental cirurgico."
+  },
+  {
+    "nome": "Central de Gases Medicinais",
+    "setor": "Infraestrutura",
+    "fabricante": "White Martins",
+    "status": "Operacional",
+    "imagem": "imagens/central-gases.webp",
+    "descricao": "Sistema centralizado de fornecimento de oxigenio, vacuo e ar comprimido."
+  },
+  {
+    "nome": "Gerador Hospitalar",
+    "setor": "Infraestrutura",
+    "fabricante": "Cummins",
+    "status": "Operacional",
+    "imagem": "imagens/gerador.webp",
+    "descricao": "Grupo gerador diesel de emergencia para suporte eletrico ininterrupto."
+  },
+  {
+    "nome": "Nobreak Hospitalar",
+    "setor": "Engenharia Clínica",
+    "fabricante": "Eaton",
+    "status": "Operacional",
+    "imagem": "imagens/nobreak.webp",
+    "descricao": "Sistema UPS de alta potencia para estabilizacao e autonomia de equipamentos criticos."
+  },
+  {
+    "nome": "Endoscópio",
+    "setor": "Endoscopia",
+    "fabricante": "Olympus",
+    "status": "Operacional",
+    "imagem": "imagens/endoscopio.webp",
+    "descricao": "Videoendoscopio flexivel de alta definicao para exames diagnosticos e terapeuticos."
+  }
+]
