@@ -27,8 +27,8 @@
     <link rel="stylesheet" href="estilos/pequeno.css">
     <link rel="stylesheet" href="estilos/grande.css" media="(min-width: 768px)">
 
-    <!-- Script como Módulo -->
-    <script type="module" src="scripts/sobre.js" defer></script>
+    <!-- Script como Módulo (correto, sem defer) -->
+    <script type="module" src="scripts/sobre.js"></script>
 </head>
 <body>
     <header>
@@ -48,11 +48,15 @@
     <main>
         <h1>Sobre Nossa Câmara</h1>
         
-        <!-- Área de mensagem dinâmica via localStorage -->
-        <section id="mensagem-visita" class="cartao-mensagem"></section>
+        <!-- Área de mensagem dinâmica via localStorage com cabeçalho acessível -->
+        <section id="mensagem-visita" class="cartao-mensagem">
+            <h2 class="visually-hidden">Informações da Visita</h2>
+        </section>
         
-        <!-- Container onde o JS vai injetar os 8 cartões -->
-        <section id="cards-locais"></section>
+        <!-- Container onde o JS vai injetar os 8 cartões com cabeçalho acessível -->
+        <section id="cards-locais">
+            <h2 class="visually-hidden">Pontos de Interesse</h2>
+        </section>
     </main>
 
     <footer>
