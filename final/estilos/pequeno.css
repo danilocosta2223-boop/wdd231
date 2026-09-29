@@ -94,3 +94,23 @@ footer a {
     overflow: hidden;
     clip: rect(0,0,0,0);
 }
+
+.btn-primario,
+.btn-secundario {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.btn-primario {
+    background: #2a9d8f;
+}
+
+.btn-secundario {
+    background: #0f4c81;
+}
