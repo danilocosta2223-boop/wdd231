@@ -366,3 +366,73 @@ button:hover {
         filter: brightness(1.05);
     }
 }
+
+/* Container Principal e Seções (Princípios de Web Design) */
+.container-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+section {
+    margin: 2rem 0;
+}
+
+/* Estilização e Transições dos Cards (Pilares e Equipamentos) */
+.card-pilar,
+.card-equipamento {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição exigida */
+}
+
+.card-pilar:hover,
+.card-equipamento:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Transições nos Botões */
+.btn-primario,
+.btn-secundario,
+.btn-enviar {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-primario:hover,
+.btn-secundario:hover,
+.btn-enviar:hover {
+    transform: scale(1.05);
+}
+
+/* Organização do Formulário de Contato */
+.grupo-campo {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Destaque de Navegação (Wayfinding) */
+nav ul li a.active {
+    color: #ffd54f;
+    font-weight: bold;
+    border-bottom: 2px solid #ffd54f;
+    padding-bottom: 2px;
+}
