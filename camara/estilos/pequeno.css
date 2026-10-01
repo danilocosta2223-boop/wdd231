@@ -1,18 +1,24 @@
 /* ==========================================
-   1. Reset & Configurações Globais
+   1. Variáveis e Configurações Globais
    ========================================== */
 
 :root {
-    --primary-color: #1e3a5f;   /* Azul elegante */
-    --secondary-color: #2c4c73; /* Azul médio */
-    --accent-color: #ffd54f;    /* Amarelo dourado */
-    --text-color: #222222;      /* Preto suave */
-    --bg-light: #f5f7fa;        /* Fundo claro */
+    --primary-color: #1e3a5f;
+    --secondary-color: #2c4c73;
+    --accent-color: #ffd54f;
+    --text-color: #222222;
+    --bg-light: #f5f7fa;
     --white: #ffffff;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -24,7 +30,7 @@ body {
 }
 
 /* ==========================================
-   2. Cabeçalho e Navegação
+   2. Header e Navegação
    ========================================== */
 
 header {
@@ -70,7 +76,11 @@ header {
 
 nav {
     background-color: var(--secondary-color);
-    display: none; /* Controlado via JS em mobile */
+    display: none;
+}
+
+nav.open {
+    display: block;
 }
 
 nav ul {
@@ -93,25 +103,45 @@ nav ul li a:visited {
     color: #ffffff;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
+nav ul li a:hover {
     background-color: var(--accent-color);
     color: var(--text-color);
 }
 
+nav ul li a.active {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    font-weight: bold;
+    border-bottom: 2px solid var(--text-color);
+}
+
 /* ==========================================
-   3. Conteúdo Principal e Hero Section
+   3. Layout e Estrutura Principal
    ========================================== */
 
 main {
     padding: 1rem;
 }
 
+.container-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    box-sizing: border-box;
+}
+
+section {
+    margin: 2rem 0;
+}
+
 .hero-container {
     position: relative;
     text-align: center;
     color: var(--white);
-    background-color: #1e3a5f; /* Fundo escuro garantido para alto contraste */
+    background-color: #1e3a5f;
     margin-bottom: 1.5rem;
     border-radius: 8px;
     overflow: hidden;
@@ -145,7 +175,10 @@ main {
     color: var(--text-color);
 }
 
-/* Botão CTA com cor de texto garantida no hover */
+/* ==========================================
+   4. Botões
+   ========================================== */
+
 .cta-button {
     display: inline-block;
     background-color: var(--accent-color);
@@ -163,98 +196,6 @@ main {
     color: #222222;
 }
 
-/* ==========================================
-   4. Cards e Blocos de Conteúdo
-   ========================================== */
-
-.event-card,
-.member-card,
-.card {
-    background-color: var(--white);
-    color: var(--text-color);
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* ==========================================
-   5. Rodapé
-   ========================================== */
-
-footer {
-    background-color: var(--primary-color);
-    color: var(--white);
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-}
-
-footer p {
-    color: var(--white);
-    margin: 0;
-}
-
-/* ==========================================
-   6. Correção Específica de Contraste para Cards
-   ========================================== */
-
-.card,
-.member-card,
-.event-card,
-.card p,
-.member-card p,
-.event-card p {
-    color: #222222;
-}
-
-/* ==========================================
-   S04 - Página Associe-se (Adições)
-   ========================================== */
-
-.container-principal {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-form label {
-    display: flex;
-    flex-direction: column;
-    font-weight: bold;
-}
-
-form input,
-form select,
-form textarea {
-    width: 100%;
-    max-width: 500px;
-    padding: 0.5rem;
-    box-sizing: border-box;
-}
-
-.cartao {
-    background: var(--white);
-    padding: 1rem;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border: 1px solid #ccc;
-}
-
-dialog {
-    padding: 1rem;
-    border-radius: 8px;
-    border: none;
-    max-width: 400px;
-}
-
 button {
     padding: 0.75rem;
     border: none;
@@ -268,48 +209,236 @@ button:hover {
     background: var(--secondary-color);
 }
 
-/* Estilos base dos cartões */
-.card-local {
-    background: var(--white);
-    padding: 1rem;
+.btn-primario,
+.btn-secundario,
+.btn-enviar {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-primario:hover,
+.btn-secundario:hover,
+.btn-enviar:hover {
+    transform: scale(1.05);
+}
+
+/* ==========================================
+   5. Cards e Componentes
+   ========================================== */
+
+.card,
+.member-card,
+.event-card {
+    background-color: var(--white);
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,.1);
-    border: 1px solid #ccc;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover,
+.member-card:hover,
+.event-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cartao {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.cartao-mensagem {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 6px;
+    background-color: var(--bg-light);
+    border-left: 4px solid var(--primary-color);
+}
+
+.card-local {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.card-local:hover {
+    transform: translateY(-3px);
 }
 
 .card-local img {
     width: 100%;
     height: auto;
+    display: block;
     border-radius: 4px;
 }
 
-.cartao-mensagem {
+.card-pilar,
+.card-equipamento {
     background: var(--white);
-    padding: 1rem;
-    margin-bottom: 1.5rem;
     border-radius: 8px;
-    font-weight: bold;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.weather-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     text-align: center;
+}
+
+.weather-temp {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.weather-description {
+    text-transform: capitalize;
+    color: var(--text-color);
+}
+
+/* ==========================================
+   6. Formulários e Dialog
+   ========================================== */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
     border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: var(--white);
+    color: var(--text-color);
+    transition: border-color 0.3s ease,
+                box-shadow 0.3s ease;
 }
 
-/* Classe para ocultar visualmente os títulos das seções (Acessibilidade) */
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.15);
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 0;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 0.5rem;
+}
+
+dialog {
+    border: none;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/* ==========================================
+   7. Tabelas
+   ========================================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: var(--white);
+    border-radius: 8px;
     overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* 1. Telas Pequenas (Layout padrão / Mobile) */
+th,
+td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: bold;
+}
+
+tbody tr:hover {
+    background-color: var(--bg-light);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* ==========================================
+   8. Animações
+   ========================================== */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes modalAparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animação usada pelos cards carregados dinamicamente */
+.card-animado {
+    animation: aparecer 0.6s ease;
+}
+
+/* ==========================================
+   9. Grid de Locais
+   ========================================== */
+
 #cards-locais {
     display: grid;
     gap: 1rem;
@@ -333,11 +462,102 @@ button:hover {
 .card-local:nth-child(7) { grid-area: g; }
 .card-local:nth-child(8) { grid-area: h; }
 
-/* 2. Telas Médias (Tablets / 641px a 1024px) */
-@media (min-width: 641px) and (max-width: 1024px) {
+/* ==========================================
+   10. Acessibilidade
+   ========================================== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ==========================================
+   11. Footer
+   ========================================== */
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+footer p {
+    color: var(--white);
+    margin: 0.5rem 0;
+}
+
+footer a {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #ffca28;
+}
+
+footer a:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* ==========================================
+   12. Responsividade
+   ========================================== */
+
+/* Tablets (min-width: 641px) */
+@media (min-width: 641px) {
+    #menu-button {
+        display: none;
+    }
+
+    nav {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    nav ul li a {
+        border-bottom: none;
+        padding: 0.75rem 1.25rem;
+    }
+
+    nav ul li a.active {
+        border-bottom: 3px solid var(--accent-color);
+    }
+
     #cards-locais {
-        display: grid;
-        gap: 1rem;
         grid-template-areas:
             "a b"
             "c d"
@@ -346,11 +566,13 @@ button:hover {
     }
 }
 
-/* 3. Telas Grandes (Desktops / 1025px ou mais) + Efeito Hover restrito */
+/* Desktops (min-width: 1025px) */
 @media (min-width: 1025px) {
+    .container-principal {
+        padding: 2rem;
+    }
+
     #cards-locais {
-        display: grid;
-        gap: 1.5rem;
         grid-template-areas:
             "a b c"
             "d e f"
@@ -358,81 +580,12 @@ button:hover {
     }
 
     .card-local img {
-        transition: transform 0.3s ease, filter 0.3s ease;
+        transition: transform 0.3s ease,
+                    filter 0.3s ease;
     }
 
     .card-local img:hover {
         transform: scale(1.03);
         filter: brightness(1.05);
     }
-}
-
-/* Container Principal e Seções (Princípios de Web Design) */
-.container-principal {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-    box-sizing: border-box;
-}
-
-section {
-    margin: 2rem 0;
-}
-
-/* Estilização e Transições dos Cards (Pilares e Equipamentos) */
-.card-pilar,
-.card-equipamento {
-    background: #ffffff;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição exigida */
-}
-
-.card-pilar:hover,
-.card-equipamento:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* Transições nos Botões */
-.btn-primario,
-.btn-secundario,
-.btn-enviar {
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.btn-primario:hover,
-.btn-secundario:hover,
-.btn-enviar:hover {
-    transform: scale(1.05);
-}
-
-/* Organização do Formulário de Contato */
-.grupo-campo {
-    margin-bottom: 1rem;
-}
-
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-}
-
-input,
-textarea,
-select {
-    width: 100%;
-    padding: 0.75rem;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-/* Destaque de Navegação (Wayfinding) */
-nav ul li a.active {
-    color: #ffd54f;
-    font-weight: bold;
-    border-bottom: 2px solid #ffd54f;
-    padding-bottom: 2px;
 }
