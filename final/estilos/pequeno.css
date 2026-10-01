@@ -114,3 +114,31 @@ footer a {
 .btn-secundario {
     background: #0f4c81;
 }
+
+/* Estilo do Botão Primário com alto contraste e acessibilidade */
+.btn-primario {
+    display: inline-block;
+    background-color: #004B87; /* Azul corporativo escuro de alto contraste */
+    color: #FFFFFF;            /* Texto branco puro */
+    font-weight: 700;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    border: 2px solid transparent;
+}
+
+/* Estado de Hover (Passar o mouse) */
+.btn-primario:hover {
+    background-color: #00335B; /* Tom ainda mais escuro para feedback visual */
+    color: #FFFFFF;
+}
+
+/* Estado de Foco (Acessibilidade via Teclado) */
+.btn-primario:focus {
+    outline: 3px solid #FFBF47; /* Contorno amarelo de alta visibilidade */
+    outline-offset: 2px;
+    background-color: #00335B;
+    color: #FFFFFF;
+}
