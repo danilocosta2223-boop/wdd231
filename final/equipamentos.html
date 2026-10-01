@@ -23,11 +23,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Estilos -->
-    <link rel="stylesheet" href="estilos/normalize.css">
     <link rel="stylesheet" href="estilos/pequeno.css">
     <link rel="stylesheet" href="estilos/grande.css" media="(min-width: 768px)">
 
-    <!-- Script como Módulo -->
+    <!-- Scripts Externos -->
+    <script src="scripts/main.js" defer></script>
     <script type="module" src="scripts/equipamentos.js"></script>
 </head>
 <body>
@@ -68,7 +68,7 @@
             </div>
         </section>
 
-        <!-- Container onde o JavaScript injetará os 15 cartões via Fetch API -->
+        <!-- Container onde o JavaScript injetará os cartões via Fetch API -->
         <section id="lista-equipamentos" class="grid-equipamentos">
             <h2 class="visually-hidden">Lista de Equipamentos</h2>
             <!-- Os cards gerados dinamicamente via JS ficam aqui após o título acessível -->
