@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Menu Mobile com suporte correto a aria-expanded (booleano convertido para string)
+    // 1. Menu Mobile com suporte a aria-expanded (booleano convertido para string)
     const menuButton = document.getElementById('menu-button');
     const navMenu = document.getElementById('animate-menu');
     
