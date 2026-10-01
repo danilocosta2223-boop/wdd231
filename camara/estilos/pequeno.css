@@ -52,17 +52,17 @@ header {
     border-radius: 4px;
 }
 
-.header-text h1,
-.header-text p {
+/* Proteção de contraste e layout para o título do site no header */
+.site-title {
     color: var(--white);
+    font-size: 1.25rem;
+    font-weight: bold;
     margin: 0;
 }
 
-.header-text h1 {
-    font-size: 1.25rem;
-}
-
 .header-text p {
+    color: var(--white);
+    margin: 0;
     font-size: 0.85rem;
 }
 
@@ -74,8 +74,10 @@ header {
     cursor: pointer;
 }
 
+/* Força a cor branca para qualquer texto herdado dentro do menu */
 nav {
     background-color: var(--secondary-color);
+    color: var(--white);
     display: none;
 }
 
@@ -95,22 +97,22 @@ nav ul li a {
     display: block;
     padding: 1rem;
     text-decoration: none;
-    color: #ffffff;
+    color: var(--white);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 nav ul li a:visited {
-    color: #ffffff;
+    color: var(--white);
 }
 
-nav ul li a:hover {
+/* Regras combinadas para hover e active, evitando repetição */
+nav ul li a:hover,
+nav ul li a.active {
     background-color: var(--accent-color);
     color: var(--text-color);
 }
 
 nav ul li a.active {
-    background-color: var(--accent-color);
-    color: var(--text-color);
     font-weight: bold;
     border-bottom: 2px solid var(--text-color);
 }
