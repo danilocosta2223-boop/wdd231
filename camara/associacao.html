@@ -11,7 +11,7 @@
     <link rel="icon" href="imagens/favicon.ico">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Associe-se à Câmara de Comércio">
+    <meta property="og:title" content="Associe-se à Câmara de Comércio e Amplie Sua Rede de Negócios">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://danilocosta2223-boop.github.io/wdd231/camara/associacao.html">
     <meta property="og:image" content="https://danilocosta2223-boop.github.io/wdd231/camara/imagens/hero.jpg">
@@ -25,18 +25,29 @@
     <!-- Estilos -->
     <link rel="stylesheet" href="estilos/normalize.css">
     <link rel="stylesheet" href="estilos/pequeno.css">
-    <link rel="stylesheet" href="estilos/grande.css" media="(min-width: 768px)">
+    <link rel="stylesheet" href="estilos/grande.css">
 
     <!-- JavaScript com defer -->
     <script src="scripts/associacao.js" defer></script>
 </head>
 <body>
     <header>
-        <!-- INSIRA O CÓDIGO REAL DO SEU HEADER AQUI -->
+        <div class="logo-container">
+            <img src="imagens/logo.png" alt="Logotipo da Câmara de Comércio" width="50" height="50">
+            <div class="header-text">
+                <p class="site-title">Câmara de Comércio</p>
+                <p>Desenvolvimento e Parcerias</p>
+            </div>
+        </div>
+        <button id="menu-button" aria-label="Abrir menu de navegação" aria-controls="animate-menu" aria-expanded="false">☰</button>
     </header>
     
-    <nav>
-        <!-- INSIRA O CÓDIGO REAL DA SUA NAV AQUI -->
+    <nav id="animate-menu" aria-label="Navegação principal">
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="diretorio.html">Diretório</a></li>
+            <li><a href="associacao.html" class="active">Associe-se</a></li>
+        </ul>
     </nav>
 
     <main>
@@ -46,31 +57,38 @@
             <!-- Formulário de Associação -->
             <form method="get" action="agradecimento.html">
                 
-                <label>Nome do Candidato:
-                    <input type="text" name="nome" title="Digite seu nome" autocomplete="given-name" required>
-                </label>
+                <div>
+                    <label for="nome">Nome do Candidato:</label>
+                    <input type="text" id="nome" name="nome" title="Digite seu nome" autocomplete="given-name" required>
+                </div>
 
-                <label>Sobrenome do Candidato:
-                    <input type="text" name="sobrenome" title="Digite seu sobrenome" autocomplete="family-name" required>
-                </label>
+                <div>
+                    <label for="sobrenome">Sobrenome do Candidato:</label>
+                    <input type="text" id="sobrenome" name="sobrenome" title="Digite seu sobrenome" autocomplete="family-name" required>
+                </div>
 
-                <label>Cargo na Organização:
-                    <input type="text" name="cargo" title="Informe seu cargo (mínimo 7 letras, aceita acentos, hífens e espaços)" autocomplete="organization-title" pattern="[A-Za-zÀ-ÿ\s\-]{7,}" required>
-                </label>
+                <div>
+                    <label for="cargo">Cargo na Organização:</label>
+                    <input type="text" id="cargo" name="cargo" title="Informe seu cargo (mínimo 7 letras, aceita acentos, hífens e espaços)" autocomplete="organization-title" pattern="[A-Za-zÀ-ÿ\s\-]{7,}" required>
+                </div>
 
-                <label>E-mail:
-                    <input type="email" name="email" title="Digite seu e-mail válido" autocomplete="email" placeholder="exemplo@email.com" required>
-                </label>
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" title="Digite seu e-mail válido" autocomplete="email" placeholder="exemplo@email.com" required>
+                </div>
 
-                <label>Número de Celular:
-                    <input type="tel" name="telefone" title="Digite seu número de telefone com DDD" autocomplete="tel" required>
-                </label>
+                <div>
+                    <label for="telefone">Número de Celular:</label>
+                    <input type="tel" id="telefone" name="telefone" title="Digite seu número de telefone com DDD" autocomplete="tel" required>
+                </div>
 
-                <label>Nome da Empresa/Organização:
-                    <input type="text" name="organizacao" title="Digite o nome da organização" autocomplete="organization" required>
-                </label>
+                <div>
+                    <label for="organizacao">Nome da Empresa/Organização:</label>
+                    <input type="text" id="organizacao" name="organizacao" title="Digite o nome da organização" autocomplete="organization" required>
+                </div>
 
-                <label>Nível de Associação:
+                <div>
+                    <label for="membership">Nível de Associação:</label>
                     <select id="membership" name="membership" required>
                         <option value="" disabled selected>Selecione um nível</option>
                         <option value="np">NP Membership</option>
@@ -78,11 +96,12 @@
                         <option value="silver">Silver Membership</option>
                         <option value="gold">Gold Membership</option>
                     </select>
-                </label>
+                </div>
 
-                <label>Descrição da Atividade/Organização:
-                    <textarea name="descricao" title="Descreva brevemente sua atividade"></textarea>
-                </label>
+                <div>
+                    <label for="descricao">Descrição da Atividade/Organização:</label>
+                    <textarea id="descricao" name="descricao" title="Descreva brevemente sua atividade"></textarea>
+                </div>
 
                 <!-- Campo oculto para registro de data e hora -->
                 <input type="hidden" name="timestamp" id="timestamp">
@@ -90,7 +109,7 @@
                 <button type="submit">Enviar Pedido de Associação</button>
             </form>
 
-            <!-- Cartões dos Níveis de Associação com h2 corrigidos -->
+            <!-- Cartões dos Níveis de Associação -->
             <aside class="cartoes-niveis">
                 <div class="cartao">
                     <h2>Associação NP</h2>
@@ -131,7 +150,7 @@
     </main>
 
     <footer>
-        <!-- INSIRA O CÓDIGO REAL DO SEU FOOTER AQUI -->
+        <p>&copy; 2026 Câmara de Comércio. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
