@@ -3,28 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atribuições e Fontes - Gestão de Manutenção Hospitalar</title>
+    <title>Início - Gestão de Manutenção Hospitalar</title>
     
-    <meta name="description" content="Página de atribuições, referências e fontes de imagens utilizadas no sistema de Gestão de Manutenção Hospitalar.">
+    <meta name="description" content="Sistema de Gestão de Manutenção Hospitalar e Engenharia Clínica. Acompanhe equipamentos, chamados e suporte técnico.">
     <meta name="author" content="Danilo Rafael da Silva Costa">
     <link rel="icon" href="imagens/favicon.ico">
 
-    <meta property="og:title" content="Atribuições e Fontes - Gestão de Manutenção Hospitalar">
+    <meta property="og:title" content="Início - Gestão de Manutenção Hospitalar">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://danilocosta2223-boop.github.io/wdd231/final/atribuicoes.html">
+    <meta property="og:url" content="https://danilocosta2223-boop.github.io/wdd231/final/index.html">
     <meta property="og:image" content="https://danilocosta2223-boop.github.io/wdd231/final/imagens/hero.jpg">
-    <meta property="og:description" content="Transparência nas referências, fontes de dados e imagens do projeto de Engenharia Clínica.">
+    <meta property="og:description" content="Conectando a Engenharia Clínica à segurança e eficiência no atendimento hospitalar.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Folhas de estilo principais (sem referências a normalize.css ausente) -->
     <link rel="stylesheet" href="estilos/pequeno.css">
     <link rel="stylesheet" href="estilos/grande.css" media="(min-width: 768px)">
-    
-    <!-- Script principal adicionado para atender à auditoria -->
-    <script src="scripts/main.js" defer></script>
 </head>
 <body>
     <header>
@@ -34,7 +30,7 @@
         </div>
         <nav>
             <ul>
-                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html" class="active">Início</a></li>
                 <li><a href="equipamentos.html">Equipamentos</a></li>
                 <li><a href="contato.html">Contato</a></li>
             </ul>
@@ -42,24 +38,36 @@
     </header>
 
     <main class="container-principal">
-        <section class="secao-atribuicoes">
-            <h1>Atribuições, Fontes e Referências</h1>
-            <p>Esta página lista as referências bibliográficas, fontes de imagens e ferramentas externas utilizadas no desenvolvimento deste projeto acadêmico e profissional.</p>
-            
-            <div class="card-conteudo">
-                <h2>1. Banco de Imagens e Mídia</h2>
-                <p>As fotografias e ilustrações utilizadas no projeto atendem aos padrões de licenciamento livre para uso educacional e institucional:</p>
-                <ul>
-                    <li><strong>Imagem do Hero:</strong> Ambiente hospitalar e equipe técnica (banco de imagens ilustrativo de engenharia clínica).</li>
-                    <li><strong>Ícones e Favicon:</strong> Elementos gráficos customizados para identificação visual do sistema.</li>
-                </ul>
+        <section class="secao-hero">
+            <h1 class="visually-hidden">Gestão de Manutenção Hospitalar</h1>
+            <div class="hero-conteudo">
+                <h2>Engenharia Clínica e Confiabilidade Hospitalar</h2>
+                <p>Garantindo o mais alto padrão de disponibilidade, segurança e conformidade dos equipamentos médico-hospitalares para a excelência no atendimento aos pacientes.</p>
+                <div class="hero-botoes">
+                    <a href="equipamentos.html" class="btn-primario">Ver Equipamentos</a>
+                    <a href="contato.html" class="btn-secundario">Abrir Chamado</a>
+                </div>
+            </div>
+            <div class="hero-imagem">
+                <img src="imagens/hero.jpg" alt="Equipe de engenharia clínica realizando manutenção em ambiente hospitalar" class="imagem-modal">
+            </div>
+        </section>
 
-                <h2>2. Referências Técnicas e Normativas</h2>
-                <p>O conteúdo de gestão e rotinas de manutenção baseia-se nas melhores práticas de Engenharia Clínica:</p>
-                <ul>
-                    <li>Diretrizes de manutenção preventiva em equipamentos eletromédicos.</li>
-                    <li>Conformidade com normas regulamentadoras de segurança hospitalar.</li>
-                </ul>
+        <section class="secao-pilares">
+            <h2>Nossos Pilares de Atuação</h2>
+            <div class="grid-pilares">
+                <div class="card-pilar">
+                    <h3>Manutenção Preventiva</h3>
+                    <p>Cronogramas rigorosos para assegurar que monitores, ventiladores e bombas de infusão operem sem falhas críticas.</p>
+                </div>
+                <div class="card-pilar">
+                    <h3>Suporte Corretivo</h3>
+                    <p>Atendimento rápido e eficiente para diagnóstico e solução de falhas diretamente nos setores de atendimento.</p>
+                </div>
+                <div class="card-pilar">
+                    <h3>Conformidade e Normas</h3>
+                    <p>Rigoroso alinhamento às exigências regulatórias nacionais e internacionais de segurança em saúde.</p>
+                </div>
             </div>
         </section>
     </main>
@@ -67,7 +75,9 @@
     <footer>
         <p>&copy; 2026 Gestão de Manutenção Hospitalar. Todos os direitos reservados.</p>
         <p>Danilo Rafael da Silva Costa</p>
-        <p><a href="atribuicoes.html" class="active">Atribuições e Fontes</a></p>
+        <p><a href="atribuicoes.html">Atribuições e Fontes</a></p>
     </footer>
+
+    <script src="scripts/main.js" defer></script>
 </body>
 </html>
