@@ -249,6 +249,14 @@ button:hover {
     border-radius: 8px;
     padding: 1.5rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    animation: aparecer 0.8s ease;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+.cartao:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .cartao-mensagem {
@@ -591,3 +599,4 @@ footer a:focus-visible {
         filter: brightness(1.05);
     }
 }
+
