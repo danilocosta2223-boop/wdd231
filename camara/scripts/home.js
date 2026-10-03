@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (menuButton && navMenu) {
         menuButton.addEventListener('click', () => {
-            navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
+            navMenu.classList.toggle('open');
         });
     }
 
