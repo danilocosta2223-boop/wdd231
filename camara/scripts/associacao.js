@@ -34,13 +34,17 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // 4. Menu Responsivo Mobile (Unificado e seguro)
+    // 4. Menu Responsivo Mobile (Com suporte a acessibilidade aria-expanded)
     const menuButton = document.getElementById("menu-button");
     const navMenu = document.getElementById("animate-menu") || document.querySelector("nav");
 
     if (menuButton && navMenu) {
         menuButton.addEventListener("click", () => {
             navMenu.classList.toggle("open");
+            
+            // Atualiza o atributo aria-expanded dinamicamente
+            const isExpanded = navMenu.classList.contains("open");
+            menuButton.setAttribute("aria-expanded", isExpanded);
         });
     }
 });
