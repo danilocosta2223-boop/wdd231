@@ -545,6 +545,7 @@ footer a:focus-visible {
 
 /* Tablets (min-width: 641px) */
 @media (min-width: 641px) {
+
     #menu-button {
         display: none;
     }
@@ -554,13 +555,22 @@ footer a:focus-visible {
     }
 
     nav ul {
+        display: flex;
         flex-direction: row;
         justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+    }
+
+    nav ul li {
+        margin: 0;
     }
 
     nav ul li a {
         border-bottom: none;
-        padding: 0.75rem 1.25rem;
+        padding: 0.75rem 0.9rem;
+        white-space: nowrap;
     }
 
     nav ul li a.active {
@@ -578,8 +588,17 @@ footer a:focus-visible {
 
 /* Desktops (min-width: 1025px) */
 @media (min-width: 1025px) {
+
     .container-principal {
         padding: 2rem;
+    }
+
+    nav ul {
+        gap: 0.5rem;
+    }
+
+    nav ul li a {
+        padding: 0.85rem 1rem;
     }
 
     #cards-locais {
@@ -590,8 +609,9 @@ footer a:focus-visible {
     }
 
     .card-local img {
-        transition: transform 0.3s ease,
-                    filter 0.3s ease;
+        transition:
+            transform 0.3s ease,
+            filter 0.3s ease;
     }
 
     .card-local img:hover {
@@ -599,4 +619,3 @@ footer a:focus-visible {
         filter: brightness(1.05);
     }
 }
-
