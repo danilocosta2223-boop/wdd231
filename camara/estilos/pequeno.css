@@ -1,50 +1,32 @@
 /* ==========================================
-   1. Estilos Base do Header e Menu (Mobile First)
+   1. Variáveis e Configurações Globais
    ========================================== */
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 1rem;
-    background-color: var(--primary-color, #333);
-    color: #fff;
-    gap: 1rem;
+:root {
+    --primary-color: #1e3a5f;
+    --secondary-color: #2c4c73;
+    --accent-color: #ffd54f;
+    --text-color: #222222;
+    --bg-light: #f5f7fa;
+    --white: #ffffff;
 }
 
-#menu-button {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-/* Estado padrão do nav (oculto no mobile até o JS abrir) */
-nav {
-    display: none;
-    width: 100%;
+html {
+    scroll-behavior: smooth;
 }
 
-nav ul {
-    list-style: none;
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-light);
+    margin: 0;
     padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-nav ul li {
-    margin: 0;
-    width: 100%;
-}
-
-nav ul li a {
-    display: block;
-    padding: 0.75rem 1rem;
-    color: #fff;
-    text-decoration: none;
 }
 
 /* ==========================================
@@ -549,6 +531,56 @@ footer a:hover {
 }
 
 /* ==========================================
+   1. Estilos Base do Header e Menu (Mobile First)
+   ========================================== */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    background-color: var(--primary-color, #333);
+    color: #fff;
+    gap: 1rem;
+}
+
+#menu-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Estado padrão do nav (oculto no mobile até o JS abrir) */
+nav {
+    display: none;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul li {
+    margin: 0;
+    width: 100%;
+}
+
+nav ul li a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* ==========================================
    12. Responsividade (Tablets e Desktops)
    ========================================== */
 
@@ -561,13 +593,13 @@ footer a:hover {
 
     nav {
         display: block !important;
-        width: 100%;
+        width: 100%; /* Ajustado para ocupar toda a largura e distribuir bem os itens */
     }
 
     nav ul {
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-evenly; /* Distribui os 4 itens (Início, Diretório, Associe-se, Sobre) de forma equilibrada */
         align-items: center;
         flex-wrap: wrap;
         gap: 0.5rem;
@@ -606,7 +638,7 @@ footer a:hover {
     }
 
     nav ul {
-        justify-content: center;
+        justify-content: center; /* Centraliza ou mantém space-evenly se preferir espalhado */
         gap: 1rem;
     }
 
@@ -631,4 +663,3 @@ footer a:hover {
         filter: brightness(1.05);
     }
 }
-
