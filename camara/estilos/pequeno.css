@@ -530,21 +530,22 @@ textarea:focus-visible {
    11.5 Correção de Contraste (Acessibilidade WCAG)
    ========================================== */
 
-header,
-header p,
-header span,
-.site-title {
-    color: var(--white, #fff);
+header *,
+nav *,
+footer * {
+    color: #ffffff !important;
 }
 
-nav,
-nav ul li a {
-    color: var(--white, #fff);
+nav ul li a.active {
+    color: var(--accent-color, #ffd54f) !important;
 }
 
-footer,
-footer p {
-    color: var(--white, #fff);
+footer a {
+    color: var(--accent-color, #ffd54f) !important;
+}
+
+footer a:hover {
+    color: #ffca28 !important;
 }
 
 /* ==========================================
@@ -630,3 +631,4 @@ footer p {
         filter: brightness(1.05);
     }
 }
+
