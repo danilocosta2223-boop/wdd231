@@ -512,14 +512,29 @@ textarea:focus-visible {
    11.5 Correção de Contraste (Acessibilidade WCAG)
    ========================================== */
 
-header *,
-nav *,
-footer * {
-    color: #ffffff !important;
+header,
+header p,
+header span,
+.site-title,
+header h1,
+header h2 {
+    color: var(--white, #ffffff);
+}
+
+nav,
+nav ul,
+nav li,
+nav ul li a {
+    color: var(--white, #ffffff);
 }
 
 nav ul li a.active {
     color: var(--accent-color, #ffd54f) !important;
+}
+
+footer,
+footer p {
+    color: var(--white, #ffffff);
 }
 
 footer a {
@@ -530,55 +545,12 @@ footer a:hover {
     color: #ffca28 !important;
 }
 
-/* ==========================================
-   1. Estilos Base do Header e Menu (Mobile First)
-   ========================================== */
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 1rem;
-    background-color: var(--primary-color, #333);
-    color: #fff;
-    gap: 1rem;
+footer a:focus-visible,
+nav ul li a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--accent-color, #ffd54f);
+    outline-offset: 2px;
 }
-
-#menu-button {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-/* Estado padrão do nav (oculto no mobile até o JS abrir) */
-nav {
-    display: none;
-    width: 100%;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-nav ul li {
-    margin: 0;
-    width: 100%;
-}
-
-nav ul li a {
-    display: block;
-    padding: 0.75rem 1rem;
-    color: #fff;
-    text-decoration: none;
-}
-
 
 /* ==========================================
    12. Responsividade (Tablets e Desktops)
@@ -593,13 +565,13 @@ nav ul li a {
 
     nav {
         display: block !important;
-        width: 100%; /* Ajustado para ocupar toda a largura e distribuir bem os itens */
+        width: 100%;
     }
 
     nav ul {
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly; /* Distribui os 4 itens (Início, Diretório, Associe-se, Sobre) de forma equilibrada */
+        justify-content: space-evenly;
         align-items: center;
         flex-wrap: wrap;
         gap: 0.5rem;
@@ -638,7 +610,7 @@ nav ul li a {
     }
 
     nav ul {
-        justify-content: center; /* Centraliza ou mantém space-evenly se preferir espalhado */
+        justify-content: center;
         gap: 1rem;
     }
 
