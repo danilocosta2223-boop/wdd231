@@ -27,16 +27,22 @@
     <link rel="stylesheet" href="estilos/pequeno.css">
     <link rel="stylesheet" href="estilos/grande.css" media="(min-width: 768px)">
 
-    <!-- Script como Módulo (correto, sem defer) -->
+    <!-- Script como Módulo -->
     <script type="module" src="scripts/sobre.js"></script>
 </head>
 <body>
     <header>
-        <img src="imagens/logo.png" alt="Logo da Câmara de Comércio">
-        <p>Câmara de Comércio</p>
+        <div class="logo-container">
+            <img src="imagens/logo.png" alt="Logotipo da Câmara de Comércio" width="50" height="50">
+            <div class="header-text">
+                <p class="site-title">Câmara de Comércio</p>
+                <p>Sobre a Região</p>
+            </div>
+        </div>
+        <button id="menu-button" aria-label="Abrir menu de navegação" aria-controls="animate-menu" aria-expanded="false">☰</button>
     </header>
 
-    <nav>
+    <nav id="animate-menu" aria-label="Navegação principal">
         <ul>
             <li><a href="index.html">Início</a></li>
             <li><a href="diretorio.html">Diretório</a></li>
@@ -61,7 +67,7 @@
 
     <footer>
         <p>&copy; 2026 Câmara de Comércio. Todos os direitos reservados.</p>
-        <p>Danilo Rafael da Silva Costa</p>
+        <p>Danilo Rafael da Silva Costa | WDD231</p>
     </footer>
 </body>
 </html>
