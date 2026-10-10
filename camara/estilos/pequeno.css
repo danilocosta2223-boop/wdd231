@@ -512,29 +512,13 @@ textarea:focus-visible {
    11.5 Correção de Contraste (Acessibilidade WCAG)
    ========================================== */
 
-header,
-header p,
-header span,
-.site-title,
-header h1,
-header h2 {
-    color: var(--white, #ffffff);
-}
-
-nav,
-nav ul,
-nav li,
-nav ul li a {
-    color: var(--white, #ffffff);
+header *,
+nav * {
+    color: #ffffff !important;
 }
 
 nav ul li a.active {
     color: var(--accent-color, #ffd54f) !important;
-}
-
-footer,
-footer p {
-    color: var(--white, #ffffff);
 }
 
 footer a {
@@ -545,12 +529,6 @@ footer a:hover {
     color: #ffca28 !important;
 }
 
-footer a:focus-visible,
-nav ul li a:focus-visible,
-button:focus-visible {
-    outline: 3px solid var(--accent-color, #ffd54f);
-    outline-offset: 2px;
-}
 
 /* ==========================================
    12. Responsividade (Tablets e Desktops)
